@@ -29,8 +29,10 @@ def displayContext(context):
         color = Fore.GREEN
     print(color + "> " + context["content"])
 
-def displayContexts(context,time,count):
+def displayContexts(context,time,count=10000):
     for i in range(0,count):
+        if i >= len(context):
+            break
         displayContext(context[time + i])
         print("   ")
     print(Fore.WHITE)
@@ -42,20 +44,38 @@ def makePrePrompt(text):
     return {"role":"system", "content":text}
 
 class GptAgent:
-    def __init__(self, name,prepromtPath):
+    def __init__(self, name, color,prepromtPath,additionnal=""):
         self.name = name
-        self.prepromt = makePrePrompt(open(prepromtPath, "r").read())
+        self.color = color
+        self.prepromt = makePrePrompt(open(prepromtPath, "r").read() + additionnal)
         self.context = [self.prepromt]
 
     def tell(self,request):
         self.context = gptRequest(self.context,makeRequest(request))
-        return self.context
+        return self.context[len(self.context)-1]["content"]
 
 print("----------------------------")
 
-adele = GptAgent("Adele","agent_preprompt.txt")
-adeleContext = adele.tell("Hello, who are you ?")
-displayContexts(adeleContext,0,3)
+time = 0
+
+adeleAdd = "Your name is Adele."
+adele = GptAgent("Adele",Fore.YELLOW,"agent_preprompt.txt",adeleAdd)
+
+arthurAdd = "Your name is Arthur.\nStart of the conversation :"
+arthur = GptAgent("Arthur",Fore.CYAN,"agent_preprompt.txt",arthurAdd)
+
+displayContexts(adele.context,0,1)
+displayContexts(arthur.context,0,1)
+
+adeleAnswer = adele.tell("Start the conversation.")
+for i in range(0,5):
+    print(adele.color + "> " + adeleAnswer)
+    arthurAnswer = arthur.tell(adeleAnswer)
+    print(arthur.color + "> " + arthurAnswer)
+    adeleAnswer = adele.tell(arthurAnswer)
+
+displayContexts(adele.context,0)
+displayContexts(arthur.context,0)
 
 def test():
     time = 0
