@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "" #open key.txt
 
 
 def gptRequest(context,request):
