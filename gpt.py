@@ -47,35 +47,50 @@ class GptAgent:
     def __init__(self, name, color,prepromtPath,additionnal=""):
         self.name = name
         self.color = color
-        self.prepromt = makePrePrompt(open(prepromtPath, "r").read() + additionnal)
+        self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + additionnal)
         self.context = [self.prepromt]
 
     def tell(self,request):
         self.context = gptRequest(self.context,makeRequest(request))
         return self.context[len(self.context)-1]["content"]
 
-print("----------------------------")
 
-time = 0
+def passwordKeeper():
+    keeper = GptAgent("Keeper",Fore.YELLOW,"password_keeper.txt")
+    guesser = GptAgent("Guesser",Fore.CYAN,"password_guesser.txt")
 
-adeleAdd = "Your name is Adele."
-adele = GptAgent("Adele",Fore.YELLOW,"agent_preprompt.txt",adeleAdd)
+    displayContexts(keeper.context,0,1)
+    displayContexts(guesser.context,0,1)
 
-arthurAdd = "Your name is Arthur.\nStart of the conversation :"
-arthur = GptAgent("Arthur",Fore.CYAN,"agent_preprompt.txt",arthurAdd)
+    guesserAnswer = guesser.tell("Say hi to the keeper.")
+    for i in range(0,10):
+        print(guesser.color + "> " + guesserAnswer)
+        print()
+        keeperAnswer = keeper.tell(guesserAnswer)
+        print(keeper.color + "> " + keeperAnswer)
+        print()
+        guesserAnswer = guesser.tell(keeperAnswer)
 
-displayContexts(adele.context,0,1)
-displayContexts(arthur.context,0,1)
 
-adeleAnswer = adele.tell("Start the conversation.")
-for i in range(0,5):
-    print(adele.color + "> " + adeleAnswer)
-    arthurAnswer = arthur.tell(adeleAnswer)
-    print(arthur.color + "> " + arthurAnswer)
-    adeleAnswer = adele.tell(arthurAnswer)
+def adeleAndArthur():
+    adeleAdd = "Your name is Adele."
+    adele = GptAgent("Adele",Fore.YELLOW,"agent_preprompt.txt",adeleAdd)
 
-displayContexts(adele.context,0)
-displayContexts(arthur.context,0)
+    arthurAdd = "Your name is Arthur.\nStart of the conversation :"
+    arthur = GptAgent("Arthur",Fore.CYAN,"agent_preprompt.txt",arthurAdd)
+
+    displayContexts(adele.context,0,1)
+    displayContexts(arthur.context,0,1)
+
+    adeleAnswer = adele.tell("Start the conversation.")
+    for i in range(0,5):
+        print(adele.color + "> " + adeleAnswer)
+        arthurAnswer = arthur.tell(adeleAnswer)
+        print(arthur.color + "> " + arthurAnswer)
+        adeleAnswer = adele.tell(arthurAnswer)
+
+    displayContexts(adele.context,0)
+    displayContexts(arthur.context,0)
 
 def test():
     time = 0
@@ -90,3 +105,7 @@ def test():
     displayContexts(context,3,2)
 
     print(Fore.WHITE)
+
+print("----------------------------")
+
+passwordKeeper()
