@@ -47,8 +47,15 @@ class GptAgent:
     def __init__(self, name, color,prepromtPath,additionnal=""):
         self.name = name
         self.color = color
-        self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + additionnal)
+        if isinstance(prepromtPath,list):
+            pp = ""
+            for p in prepromtPath:
+                pp += open("prompts/"+p, "r").read()
+            self.prepromt = makePrePrompt(pp + additionnal)
+        else:
+            self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + additionnal)
         self.context = [self.prepromt]
+        
 
     def tell(self,request):
         self.context = gptRequest(self.context,makeRequest(request))
@@ -70,7 +77,6 @@ def passwordKeeper():
         print(keeper.color + "> " + keeperAnswer)
         print()
         guesserAnswer = guesser.tell(keeperAnswer)
-
 
 def adeleAndArthur():
     adeleAdd = "Your name is Adele."
@@ -106,6 +112,6 @@ def test():
 
     print(Fore.WHITE)
 
+print(Fore.WHITE)
 print("----------------------------")
 
-passwordKeeper()
