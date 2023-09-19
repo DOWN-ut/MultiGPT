@@ -1,5 +1,6 @@
 import openai
 from colorama import Fore, Back, Style
+import random
 
 max_response_tokens = 100
 
@@ -51,15 +52,51 @@ class GptAgent:
             pp = ""
             for p in prepromtPath:
                 pp += open("prompts/"+p, "r").read()
-            self.prepromt = makePrePrompt(pp + additionnal)
+            self.prepromt = makePrePrompt(pp +"\n" + additionnal)
         else:
-            self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + additionnal)
+            self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + "\n" + additionnal)
         self.context = [self.prepromt]
         
-
     def tell(self,request):
         self.context = gptRequest(self.context,makeRequest(request))
         return self.context[len(self.context)-1]["content"]
+
+def readAnwsers(answers):
+    requests = []
+    for i in range(0, len(answers)):
+        print(answers[i])
+        if answers[i].find("requests",0,10):
+            requests.append(i)
+    return requests
+
+def conversation():
+
+    bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","You are Bob.")
+    alice = GptAgent("Alice",Fore.BLUE,"agent_conversation.txt","You are Alice.")
+    adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","You are Adele.")
+    arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","You are Arthur.")
+
+    agents = [bob,alice,adele,arthur]
+    answers = []
+    requests = []
+
+    for agent in agents:
+        awsner = agent.tell("Say hi")
+        answers.append(awsner)
+
+    requests = readAnwsers(answers)
+
+    for i in range(0,2):
+        allowed = random.choice(requests)
+        answers.clear()
+        print(allowed)
+        answer = agents[allowed].tell("["+agent.name+"] talks.")
+        print(answer)
+        for a in range(0,len(agents)):
+            if a != allowed :
+                answers.append(agents[a].tell(answer))
+        
+        requests = readAnwsers(answers)
 
 
 def passwordKeeper():
@@ -77,6 +114,8 @@ def passwordKeeper():
         print(keeper.color + "> " + keeperAnswer)
         print()
         guesserAnswer = guesser.tell(keeperAnswer)
+        if(keeperAnswer.find("ENTER")):
+            break
 
 def adeleAndArthur():
     adeleAdd = "Your name is Adele."
@@ -115,3 +154,4 @@ def test():
 print(Fore.WHITE)
 print("----------------------------")
 
+conversation()
