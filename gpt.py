@@ -42,7 +42,7 @@ def makeRequest(text):
     return {"role":"user", "content":text}
 
 def makePrePrompt(text):
-    return {"role":"user", "content":text}
+    return {"role":"system", "content":text}
 
 class GptAgent:
     def __init__(self, name, color,prepromtPath,additionnal=""):
@@ -61,11 +61,11 @@ class GptAgent:
         self.context = gptRequest(self.context,makeRequest(request))
         return self.context[len(self.context)-1]["content"]
 
-    def removeLastContext():
+    def removeLastContext(self):
         self.context.pop()
         return
 
-    def removeContext(id):
+    def removeContext(self,id):
         self.context.pop(id)
         return
 
@@ -80,7 +80,7 @@ def readAnwsers(answers):
 def conversation():
 
     bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
-    alice = GptAgent("Alice",Fore.BLUE,"agent_conversation.txt","Your name is Alice.")
+    alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice.")
     adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
     arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
 
@@ -89,11 +89,12 @@ def conversation():
     ids = []
 
     agentId = 0
-    answer = agents[agentId].tell("Say hi")
-    print(answer)
+    answer = agents[agentId].tell("Say hi and introduce yourself")
+    print(agents[agentId].color + answer)
 
-    for i in range(0,2):
+    for i in range(0,5):
 
+        lastAgentId = agentId
         for a in range(0,len(agents)):
             if a != agentId :
                 answers.append(agents[a].tell(answer))
@@ -105,33 +106,33 @@ def conversation():
         answer = answers[agentId]
         answers.clear()
         ids.clear()
-        print(answer)
+        print(agents[agentId].color + answer)
 
         for a in range(0,len(agents)):
-            if a != agentId :
-                agents[a].removeContext()
+            if a != agentId and a != lastAgentId :
+                agents[a].removeLastContext()
 
     for agent in agents:
         displayContexts(agent.context,1)
 
 def conversation_requests():
 
-    bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
-    alice = GptAgent("Alice",Fore.BLUE,"agent_conversation.txt","Your name is Alice.")
-    adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
-    arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
+    bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation_request.txt","Your name is Bob.")
+    alice = GptAgent("Alice",Fore.BLUE,"agent_conversation_request.txt","Your name is Alice.")
+    adele = GptAgent("Adele",Fore.RED,"agent_conversation_request.txt","Your name is Adele.")
+    arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation_request.txt","Your name is Arthur.")
 
     agents = [bob,alice,adele,arthur]
     answers = []
     requests = []
 
     for agent in agents:
-        awsner = agent.tell("Say hi")
+        awsner = agent.tell("Make a request to be allowed to talk and start the conversation.")
         answers.append(awsner)
 
     requests = readAnwsers(answers)
 
-    for i in range(0,2):
+    for i in range(0,4):
         allowed = random.choice(requests)
         answers.clear()
         print("       < " , allowed)
@@ -203,4 +204,5 @@ def test():
 print(Fore.WHITE)
 print("----------------------------")
 
+#conversation_requests()
 conversation()
