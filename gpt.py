@@ -61,6 +61,9 @@ class GptAgent:
         self.context = gptRequest(self.context,makeRequest(request))
         return self.context[len(self.context)-1]["content"]
 
+    def addContext(self,context):
+        self.context.append(makeRequest(context))
+
     def removeLastContext(self):
         self.context.pop()
         return
@@ -77,6 +80,19 @@ def readAnwsers(answers):
             requests.append(i)
     return requests
 
+def recoverInterlocutors(answer,agents):
+    res = []
+    start = 0
+    while start < len(answer) and answer[start] != ':':
+        start += 1
+
+    for i in range(len(agents)):
+        if answer.find(agents[i].name,start,len(answer)) != -1:
+            res.append(i)
+
+    return res
+
+
 def conversation():
 
     bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
@@ -86,34 +102,35 @@ def conversation():
 
     agents = [bob,alice,adele,arthur]
     answers = []
-    ids = []
+    ids = [0,1,2,3]
 
-    agentId = 0
+    agentId = random.choice(ids)
     answer = agents[agentId].tell("Say hi and introduce yourself")
     print(agents[agentId].color + answer)
 
     for i in range(0,5):
 
-        lastAgentId = agentId
-        for a in range(0,len(agents)):
-            if a != agentId :
-                answers.append(agents[a].tell(answer))
-                ids.append(a)
-            else:
-                answers.append("")
+        answers.clear()
+
+        interlocutors = recoverInterlocutors(answer,agents) 
+        interlocutors.remove(agentId)
+        print(interlocutors)
+        if len(interlocutors) <= 0:
+            interlocutors.append(ids)
 
         agentId = random.choice(ids)
-        answer = answers[agentId]
-        answers.clear()
-        ids.clear()
-        print(agents[agentId].color + answer)
+
+        answer = agents[agentId].tell(answer)
 
         for a in range(0,len(agents)):
-            if a != agentId and a != lastAgentId :
-                agents[a].removeLastContext()
+            if a != agentId :
+                agents[a].addContext(answer)
 
-    for agent in agents:
-        displayContexts(agent.context,1)
+        print(agents[agentId].color + answer)
+        print()
+
+    #for agent in agents:
+    #    displayContexts(agent.context,1)
 
 def conversation_requests():
 
