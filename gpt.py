@@ -92,8 +92,22 @@ def recoverInterlocutors(answer,agents):
 
     return res
 
+def displayInterlocutors(ids,agents):
+    str = "    [ "
+    for i in ids:
+        str += agents[i].name + " "
+    print(str + " ]")
 
-def conversation():
+def processInterlocutors(ids,allIds,coherence):
+    lis = []
+    for i in range(0,coherence):
+        for id in ids:
+            lis.append(id)
+    for id in allIds:
+        lis.append(id)
+    return lis
+
+def conversation(coherence):
 
     bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
     alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice.")
@@ -113,12 +127,17 @@ def conversation():
         answers.clear()
 
         interlocutors = recoverInterlocutors(answer,agents) 
-        interlocutors.remove(agentId)
-        print(interlocutors)
+        interlocutors = processInterlocutors(interlocutors,ids,coherence)
+        
+        while interlocutors.count(agentId) > 0:
+            interlocutors.remove(agentId)
+
+        displayInterlocutors(interlocutors,agents)
+
         if len(interlocutors) <= 0:
             interlocutors.append(ids)
 
-        agentId = random.choice(ids)
+        agentId = random.choice(interlocutors)
 
         answer = agents[agentId].tell(answer)
 
@@ -222,4 +241,4 @@ print(Fore.WHITE)
 print("----------------------------")
 
 #conversation_requests()
-conversation()
+conversation(3)
