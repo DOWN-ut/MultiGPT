@@ -6,10 +6,27 @@ import os
 
 print(Fore.WHITE)
 
+#----------- GAME RULES ----------------
+
+villagerCount = 2
+seerCount = 1
+werewolfCount = 1
+
+#----------- ---------- ----------------
+
+startPrompt = "Start of the party :"
+
+rolesPrompt = "The roles are : "
+rolesPrompt += str(villagerCount) + " villagers , "
+rolesPrompt += str(seerCount) + " seers "
+rolesPrompt += "and " + str(werewolfCount) + " werewolves."
+
 gameRoles = []
-gameRoles.extend(["Villager"] * 2)
-gameRoles.extend(["Seer"] * 1)
-gameRoles.extend(["Werewolf"] * 1)
+gameRoles.extend(["Villager"] * villagerCount)
+gameRoles.extend(["Seer"] * seerCount)
+gameRoles.extend(["Werewolf"] * werewolfCount)
+
+mainLog = ""
 
 now = datetime.now()
 dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
@@ -22,8 +39,27 @@ for role in gameRoles:
 
 
 def addDisplayText(text):
+    global mainLog 
+    mainLog += text + "\n_\n"
     print(text)
 
+def contextToFile(player,context):
+    text = ""
+    for c in context:
+        text +=  c["content"] + "\n_\n"
+    return text
+
+def saveLogs():
+    if not os.path.exists(partyId):
+            os.mkdir(partyId)
+
+    f = open(partyId + "/party.txt","x")
+    f.write(mainLog)
+    f.close()       
+
+    for player in players:
+        player.saveData()
+    
 
 class Player:
     def __init__(self, name, color, role,prepromtPath):
@@ -34,10 +70,8 @@ class Player:
      self.gpt = GptAgent(self.name,self.color,prepromtPath,self.personalPrompt)
      
     def saveData(self):
-        if not os.path.exists(partyId):
-            os.mkdir(partyId)
         f = open(partyId + "/" + self.name + ".txt","x")
-        f.write(contextToStr(self.gpt.context))
+        f.write(contextToFile(self,self.gpt.context))
         f.close()
 
 def createPlayer(name,color,role):
@@ -62,12 +96,14 @@ def printPlayers():
 
 def initPlayers():
      for player in players:
-          prompt = "The players are : "
-          for p in players:
-               if player.name != p.name:
-                    prompt += p.name + ","
-          prompt += " and yourself"
-          player.gpt.addContext(prompt)
+        prompt = rolesPrompt
+        prompt += "\nThe players are : "
+        for p in players:
+            if player.name != p.name:
+                prompt += p.name + ","
+        prompt += " and yourself"
+        prompt += "\n" + startPrompt
+        player.gpt.addContext(prompt)
         
 def recoverPlayers(text):
     res = []
@@ -127,9 +163,7 @@ initPlayers()
 gameMasterTell("The city fall asleep !")
 playRole("Seer")
 
-
-for player in players:
-     player.saveData()
+saveLogs()
 
 
 
