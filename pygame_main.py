@@ -3,99 +3,95 @@ import sys
 import random
 import math
 
-# Initialisation de Pygame
-pygame.init()
+def pygameInterface() :
 
-# Définition de la taille de la fenêtre
-largeur = 800
-hauteur = 600
+    # Initialisation de Pygame
+    pygame.init()
 
-# Création de la fenêtre
-fenetre = pygame.display.set_mode((largeur, hauteur))
+    # Définition de la taille de la fenêtre
+    largeur = 800
+    hauteur = 600
 
-# Titre de la fenêtre
-pygame.display.set_caption("MultiGPT")
+    # Création de la fenêtre
+    fenetre = pygame.display.set_mode((largeur, hauteur))
 
-agents = [
-	{"name": "Bob", "x": 0, "y": 0}
-]
+    # Titre de la fenêtre
+    pygame.display.set_caption("MultiGPT")
 
-# Position du cercle central
-cercle_central_x = largeur // 2
-cercle_central_y = hauteur // 2
+    agents = [
+    	{"name": "Bob", "x": 0, "y": 0}, 
+        {"name": "Alice", "x": 0, "y": 0},
+        {"name": "Adele", "x": 0, "y": 0},
+        {"name": "Toto", "x": 0, "y": 0},
+        {"name": "Lilou", "x": 0, "y": 0},
+        {"name": "Patrick", "x": 0, "y": 0}
+    ]
 
-# Rayon du cercle central
-rayon_central = 50
+    # Position du cercle central
+    cercle_central_x = largeur // 2
+    cercle_central_y = hauteur // 2
 
-# Couleur du cercle central
-couleur_central = (255, 0, 0)  # Rouge
+    # Rayon du cercle central
+    rayon_central = 20
 
-# Nombre de cercles autour du cercle central
-nombre_cercles = 8
+    # Couleur du cercle central
+    couleur_central = (255, 0, 0)  # Rouge
 
-# Rayon des cercles autour
-rayon_cercles = 200
+    # Nombre de cercles autour du cercle central
+    nombre_cercles = 6
 
-# Texte au-dessus du cercle central
-texte = "Game Master"
+    # Rayon des cercles autour
+    rayon_cercles = 200
 
-# Police pour le texte
-police = pygame.font.Font(None, 36)
+    # Texte au-dessus du cercle central
+    texte = "Game Master"
 
-# Liste de couleurs aléatoires pour les cercles
-couleurs_aleatoires = [(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) for _ in range(nombre_cercles)]
+    # Police pour le texte
+    police = pygame.font.Font(None, 36)
 
-vitesse = 5
+    # Liste de couleurs aléatoires pour les cercles
+    couleurs_aleatoires = [(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) for _ in range(nombre_cercles)]
 
-en_deplacement = False
+    # Boucle principale du jeu
+    en_cours = True
+    while en_cours:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                en_cours = False
 
-# Boucle principale du jeu
-en_cours = True
-while en_cours:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            en_cours = False
+        # Effacer l'écran avec la couleur de fond (blanc)
+        fenetre.fill((255, 255, 255))
 
-        '''
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_p:
-                en_deplacement = not en_deplacement
-        '''
+        # Dessiner le cercle central
+        pygame.draw.circle(fenetre, couleur_central, (cercle_central_x, cercle_central_y), rayon_central)
 
-    # Effacer l'écran avec la couleur de fond (blanc)
-    fenetre.fill((255, 255, 255))
-
-    # Dessiner le cercle central
-    pygame.draw.circle(fenetre, couleur_central, (cercle_central_x, cercle_central_y), rayon_central)
-
-    # Dessiner les cercles autour avec des couleurs aléatoires
-    for i in range(nombre_cercles):
-        angle = (2 * math.pi / nombre_cercles) * i
-        x = cercle_central_x + int(rayon_cercles * math.cos(angle))
-        y = cercle_central_y + int(rayon_cercles * math.sin(angle))
-
-        if (i == 0) :
-            '''
-            if en_deplacement:
-                x += 20
-            '''
+        # Dessiner les cercles autour avec des couleurs aléatoires
+        for i in range(nombre_cercles):
+            angle = (2 * math.pi / nombre_cercles) * i
+            x = cercle_central_x + int(rayon_cercles * math.cos(angle))
+            y = cercle_central_y + int(rayon_cercles * math.sin(angle))
 
             #Stock de la position des agents
-            element = agents[0]
-            element['x'] = x
-            element['y'] = y
+            element = agents[i]
 
-        pygame.draw.circle(fenetre, couleurs_aleatoires[i], (x, y), 30)  # Couleurs aléatoires
+            texte_surface = police.render(element['name'], True, couleurs_aleatoires[i])
+            texte_rect = texte_surface.get_rect()
+            texte_rect.center = (x, y - 50)
+            fenetre.blit(texte_surface, texte_rect)
 
-    # Afficher le texte au-dessus du cercle central
-    texte_surface = police.render(texte, True, couleur_central)
-    texte_rect = texte_surface.get_rect()
-    texte_rect.center = (cercle_central_x, cercle_central_y - rayon_central - 20)
-    fenetre.blit(texte_surface, texte_rect)
+            pygame.draw.circle(fenetre, couleurs_aleatoires[i], (x, y), 30)  # Couleurs aléatoires
 
-    # Mettre à jour l'affichage
-    pygame.display.flip()
+        # Afficher le texte au-dessus du cercle central
+        texte_surface = police.render(texte, True, couleur_central)
+        texte_rect = texte_surface.get_rect()
+        texte_rect.center = (cercle_central_x, cercle_central_y - rayon_central - 20)
+        fenetre.blit(texte_surface, texte_rect)
 
-# Quitter Pygame
-pygame.quit()
-sys.exit()
+        # Mettre à jour l'affichage
+        pygame.display.flip()
+
+    # Quitter Pygame
+    pygame.quit()
+    sys.exit()
+
+pygameInterface()
