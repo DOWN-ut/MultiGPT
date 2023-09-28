@@ -9,8 +9,7 @@ keyFile = open("key.txt", "r")
 openai.api_key = keyFile.read() #open key.txt
 
 
-def gptRequest(context,request):
-    context.append(request)
+def gptPull(context):
     chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", 
             messages=context,
@@ -21,6 +20,10 @@ def gptRequest(context,request):
     reply = choices[0].message.content
     context.append({"role":"assistant","content":reply})
     return context
+
+def gptRequest(context,request):
+    context.append(request)
+    return gptPull(context)
 
 def displayContext(context):
     color = Fore.CYAN
@@ -60,6 +63,9 @@ class GptAgent:
     def tell(self,request):
         self.context = gptRequest(self.context,makeRequest(request))
         return self.context[len(self.context)-1]["content"]
+
+    def talk(self):
+        return gptPull(self.context)
 
     def addContext(self,context):
         self.context.append(makeRequest(context))
@@ -132,7 +138,7 @@ def conversation(coherence):
         while interlocutors.count(agentId) > 0:
             interlocutors.remove(agentId)
 
-        displayInterlocutors(interlocutors,agents)
+        #displayInterlocutors(interlocutors,agents)
 
         if len(interlocutors) <= 0:
             interlocutors.append(ids)
@@ -237,8 +243,8 @@ def test():
 
     print(Fore.WHITE)
 
-print(Fore.WHITE)
-print("----------------------------")
+#print(Fore.WHITE)
+#print("----------------------------")
 
 #conversation_requests()
-conversation(3)
+#conversation(3)
