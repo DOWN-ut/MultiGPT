@@ -47,6 +47,12 @@ def makeRequest(text):
 def makePrePrompt(text):
     return {"role":"system", "content":text}
 
+def contextToStr(context):
+     text = ""
+     for c in context:
+          text += c["role"] + " : " + c["content"] + "\n\n"
+     return text
+
 class GptAgent:
     def __init__(self, name, color,prepromtPath,additionnal=""):
         self.name = name
@@ -65,7 +71,8 @@ class GptAgent:
         return self.context[len(self.context)-1]["content"]
 
     def talk(self):
-        return gptPull(self.context)
+        self.context = gptPull(self.context)
+        return self.context[len(self.context)-1]["content"]
 
     def addContext(self,context):
         self.context.append(makeRequest(context))
