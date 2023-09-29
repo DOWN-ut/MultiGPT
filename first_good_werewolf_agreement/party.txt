@@ -1,0 +1,30 @@
+GameMaster : The city fall asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+Arthur : I choose to know the role of Bob.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Alice : I choose to kill Bob.
+_
+Normy : I vote against Alice.
+_
+Alice : I change my vote to Adele.
+_
+Normy : I vote against Adele.
+_
+Alice : I vote against Adele.
+_
+Normy : I vote against Adele.
+_
+GameMaster : The Werewolf fall back asleep.
+_

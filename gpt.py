@@ -13,7 +13,7 @@ def gptPull(context):
     chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", 
             messages=context,
-            temperature = 1,
+            temperature = 0.5,
             max_tokens=max_response_tokens
         )
     choices = chat.choices
@@ -66,6 +66,9 @@ class GptAgent:
             self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + "\n" + additionnal)
         self.context = [self.prepromt]
         
+    def tellFromFile(self,file):
+        return self.tell(open("prompts/"+file, "r").read())
+
     def tell(self,request):
         self.context = gptRequest(self.context,makeRequest(request))
         return self.context[len(self.context)-1]["content"]
@@ -76,6 +79,9 @@ class GptAgent:
 
     def addContext(self,context):
         self.context.append(makeRequest(context))
+    
+    def addContextFromFile(self,file):
+        return self.addContext(open("prompts/"+file, "r").read())
 
     def removeLastContext(self):
         self.context.pop()
