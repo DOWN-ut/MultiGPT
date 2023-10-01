@@ -13,7 +13,7 @@ villagerCount = 2
 seerCount = 1
 werewolfCount = 2
 
-#----------- ---------- ----------------
+#----------- PROMPTS DISPLAYS AND SETUPS ----------------
 
 startPrompt = "Start of the party :"
 
@@ -31,8 +31,6 @@ gameRoles.extend(["Villager"] * villagerCount)
 gameRoles.extend(["Seer"] * seerCount)
 gameRoles.extend(["Werewolf"] * werewolfCount)
 
-nightKill = []
-
 mainLog = ""
 
 now = datetime.now()
@@ -43,6 +41,18 @@ players = []
 playerByRole = {}
 for role in gameRoles:
     playerByRole[role] = []
+
+#Dictionary of all killed players during a night, by role ; syntaxe dict[role(string)] --> players[](Player)
+nightKillInit = {}
+for role in gameRoles:
+    nightKillInit[role] = []
+nightKills = {}
+nightKillCount = 0
+def resetNightKills():
+    global nightKills
+    nightKills = nightKillInit.copy()
+    global nightKillCount
+    nightKillCount = 0
 
 
 def addDisplayText(text,color):
@@ -56,10 +66,11 @@ def contextToFile(player,context):
         text +=  c["content"] + "\n_\n"
     return text
 
-def saveLogs():
+def initLogSaves():
     if not os.path.exists(partyId):
-            os.mkdir(partyId)
+        os.mkdir(partyId)
 
+def saveLogs():
     f = open(partyId + "/party.txt","x")
     f.write(mainLog)
     f.close()       
@@ -81,6 +92,15 @@ class Player:
         f.write(contextToFile(self,self.gpt.context))
         f.close()
 
+    def die(self,killerRole):
+        self.gpt.addContext("You were killed by " + killerRole)
+        self.saveData()
+
+def eliminatePlayer(player,killerRole):
+    players.remove(player)
+    playerByRole[player.role].remove(player)
+    player.die(killerRole)
+
 def createPlayer(name,color,role):
     player = Player(name,color,role,"player_prompt.txt")
     players.append(player)
@@ -92,10 +112,10 @@ def getRandomRole():
      return gameRoles.pop(roleId)
 
 def printPlayers():
-     for key in playerByRole:
-         print(key + " :")
-         for player in playerByRole[key]:
-             print(" > " + player.name)
+    for key in playerByRole:
+        print(key + " :")
+        for player in playerByRole[key]:
+            print(" > " + player.name)
 
 def initPlayers():
      for player in players:
@@ -150,6 +170,16 @@ def gameMasterTellTo(text,playersToTalk):
     addDisplayText(prompt,gameMasterColor)
 
 
+#####------------ ACTIONS ----------------------
+
+
+def roleKillPlayer(playerKilled,role):
+    global nightKills
+    nightKills[role].append(playerKilled)
+    global nightKillCount
+    nightKillCount += 1
+
+
 #####------------ ROLES ----------------------
 
 def playSeer():
@@ -192,6 +222,8 @@ def playWerewolf():
     choice = players[choice]
     #print(choice.name)
 
+    roleKillPlayer(choice,"Werewolf")
+
     gameMasterTellTo("You agreed to kill " + choice.name,playerByRole["Werewolf"])
 
     return choice
@@ -207,6 +239,53 @@ def playRole(role):
      	
     gameMasterTell("The " + role + " fall back asleep.")
 
+
+#####------------ PARTY ----------------------
+
+def applyKills():
+    for key in nightKills:
+        for player in nightKills[key]:
+            eliminatePlayer(player,key)
+
+def morningAnnouncement():
+    if nightKillCount <= 0:
+        gameMasterTell("No body died last night !")
+    else:
+        for key in nightKills:
+            count = len(nightKills[key])
+            if count <= 0:
+                #gameMasterTell(key + " didn't kill anyone last night.")
+                abcd=1 #dummy instruction to make python happy
+            else:
+                gameMasterTell(key + " killed " + str(count) + " players last night !")
+                prompt = "They killed "
+                for i in range(len(nightKills[key])):
+                    player = nightKills[key][i]
+                    if i < len(nightKills[key])-2:
+                        prompt += player.name + ", "
+                    elif i == len(nightKills[key])-2:
+                        prompt += player.name + " and "
+                    else:
+                        prompt += player.name
+                gameMasterTell(prompt + ".")
+
+def partyTurn():
+    resetNightKills()
+
+    gameMasterTell("The city fall asleep !")
+
+    #playRole("Seer")
+
+    #playRole("Werewolf"))
+    roleKillPlayer(players[0],"Werewolf")
+    roleKillPlayer(players[3],"Werewolf")
+
+    applyKills()
+    
+    gameMasterTell("The city wakes up !")
+
+    morningAnnouncement()
+
 createPlayer("Bob",[255,50,50],getRandomRole())
 createPlayer("Alice",[150,150,255],getRandomRole())
 createPlayer("Adele",[255,150,150],getRandomRole())
@@ -216,11 +295,9 @@ createPlayer("Arthur",[255,50,255],getRandomRole())
 print("Party ID : " + partyId)
 printPlayers()
 initPlayers()
+initLogSaves()
 
-nightKill = []
-gameMasterTell("The city fall asleep !")
-playRole("Seer")
-playRole("Werewolf")
+partyTurn()
 
 saveLogs()
 

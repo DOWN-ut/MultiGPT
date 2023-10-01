@@ -41,6 +41,10 @@ def displayContexts(context,time,count=10000):
         print("   ")
     print(Fore.WHITE)
 
+def displayContextOf(agent,context):
+    print("CONTEXT OF " + agent.name)
+    displayContexts(context,1)
+
 def makeRequest(text):
     return {"role":"user", "content":text}
 
@@ -126,49 +130,42 @@ def processInterlocutors(ids,allIds,coherence):
         lis.append(id)
     return lis
 
-def conversation(coherence):
-
-    bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
-    alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice.")
-    adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
-    arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
-
-    agents = [bob,alice,adele,arthur]
+def conversation(coherence,lenght,agents,initPrompt):
     answers = []
     ids = [0,1,2,3]
 
     agentId = random.choice(ids)
-    answer = agents[agentId].tell("Say hi and introduce yourself")
+    answer = agents[agentId].tell(initPrompt)
+    for a in range(0,len(agents)):
+        if a != agentId :
+            agents[a].addContext(answer)
     print(agents[agentId].color + answer)
+    print()
 
-    for i in range(0,5):
-
-        answers.clear()
-
+    for i in range(lenght):
         interlocutors = recoverInterlocutors(answer,agents) 
         interlocutors = processInterlocutors(interlocutors,ids,coherence)
         
         while interlocutors.count(agentId) > 0:
             interlocutors.remove(agentId)
 
-        #displayInterlocutors(interlocutors,agents)
-
         if len(interlocutors) <= 0:
-            interlocutors.append(ids)
+            interlocutors.expend(ids)
 
         agentId = random.choice(interlocutors)
 
-        answer = agents[agentId].tell(answer)
+        answer = agents[agentId].talk()
 
         for a in range(0,len(agents)):
             if a != agentId :
                 agents[a].addContext(answer)
 
         print(agents[agentId].color + answer)
-        print()
-
-    #for agent in agents:
-    #    displayContexts(agent.context,1)
+        inp = input()
+        if inp == "STOP":          
+            for agent in agents:
+                displayContextOf(agent,agent.context)
+            return
 
 def conversation_requests():
 
@@ -260,4 +257,9 @@ def test():
 #print("----------------------------")
 
 #conversation_requests()
-#conversation(3)
+bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
+alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice.")
+adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
+arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
+agents = [bob,alice,adele,arthur]
+conversation(3,10,agents,"Say hi and introduce yourself")
