@@ -1,6 +1,7 @@
 import openai
 from colorama import Fore, Back, Style
 import random
+import math
 
 max_response_tokens = 100
 
@@ -13,7 +14,7 @@ def gptPull(context):
     chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", 
             messages=context,
-            temperature = 0.5,
+            temperature = 0.4,
             max_tokens=max_response_tokens
         )
     choices = chat.choices
@@ -110,42 +111,77 @@ def recoverInterlocutors(answer,agents):
         start += 1
 
     for i in range(len(agents)):
-        if answer.find(agents[i].name,start,len(answer)) != -1:
-            res.append(i)
+        pos = start
+        while True:#for pos in range(start,len(answer)):
+            foundAt = answer.find(agents[i].name,pos)
+            if foundAt != -1:
+                ratio = float(foundAt) / float(len(answer))
+                res.append((i,ratio))
+                pos = foundAt + 1
+            else:
+                break
 
     return res
 
 def displayInterlocutors(ids,agents):
-    str = "    [ "
-    for i in ids:
-        str += agents[i].name + " "
-    print(str + " ]")
+    ss = "    [ "
+    for id in ids:
+        ss += agents[id].name + " "
+    print(ss + " ]")
+
+def displayRawInterlocutors(ids,agents):
+    ss = "    [ "
+    for id in ids:
+        i = id[0]
+        r = id[1]
+        ss += agents[i].name + "(" +str(r)+") "
+    print(ss + " ]")
+
+def interlocutorProbability(positionRatio,baseProbability):
+    x = positionRatio
+    a = baseProbability
+    y = (x*2)-1
+    y *= y #((x*2)-1)²
+    y /= (a+1)*(a+1)
+    y += a
+    return y
+
 
 def processInterlocutors(ids,allIds,coherence):
     lis = []
-    for i in range(0,coherence):
-        for id in ids:
-            lis.append(id)
+
+    for id in ids:
+        intp = interlocutorProbability(id[1],1.0/float(coherence))
+        count = math.ceil(intp * coherence)
+        #print(str(id[0]) + " ("+str(id[1])+") " + str(intp) + " > " + str(count) )
+        for i in range(count):
+            lis.append(id[0])
+
     for id in allIds:
         lis.append(id)
     return lis
 
-def conversation(coherence,lenght,agents,initPrompt):
-    answers = []
-    ids = [0,1,2,3]
-
-    agentId = random.choice(ids)
-    answer = agents[agentId].tell(initPrompt)
+def conversationTalk(agentId,agents,text):
     for a in range(0,len(agents)):
         if a != agentId :
             agents[a].addContext(answer)
-    print(agents[agentId].color + answer)
+    print(agents[agentId].color + text)
     print()
+    return
+
+def conversation(coherence,lenght,agents,initPrompt):
+    answers = []
+    ids = [i for i in range(len(agents))]
+
+    agentId = random.choice(ids)
+    answer = agents[agentId].tell(initPrompt)
+    conversationTalk(agentId,agents,answer)
 
     for i in range(lenght):
         interlocutors = recoverInterlocutors(answer,agents) 
+
         interlocutors = processInterlocutors(interlocutors,ids,coherence)
-        
+
         while interlocutors.count(agentId) > 0:
             interlocutors.remove(agentId)
 
@@ -154,18 +190,14 @@ def conversation(coherence,lenght,agents,initPrompt):
 
         agentId = random.choice(interlocutors)
 
-        answer = agents[agentId].talk()
+        answer = agents[agentId].tell("*"+agents[agentId].name + " : ");#talk()
+        conversationTalk(agentId,agents,answer)
 
-        for a in range(0,len(agents)):
-            if a != agentId :
-                agents[a].addContext(answer)
-
-        print(agents[agentId].color + answer)
-        inp = input()
-        if inp == "STOP":          
-            for agent in agents:
-                displayContextOf(agent,agent.context)
-            return
+        #inp = input()
+        #if inp == "STOP":          
+        #    for agent in agents:
+        #        displayContextOf(agent,agent.context)
+        #    return
 
 def conversation_requests():
 
@@ -262,4 +294,4 @@ alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice
 adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
 arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
 agents = [bob,alice,adele,arthur]
-conversation(3,10,agents,"Say hi and introduce yourself")
+#conversation(3,10,agents,"Say hi and introduce yourself")

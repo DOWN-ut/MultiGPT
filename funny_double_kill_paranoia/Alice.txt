@@ -1,0 +1,20 @@
+GameMaster : The city fall asleep !
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : Werewolf killed 2 players last night !
+_
+GameMaster : They killed Bob and Normy.
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : I think we should consider the possibility that one of the werewolves is trying to divert suspicion by killing two players in one night.
+_
+Arthur : I agree with Adele. It's suspicious that two players were killed in one night. The werewolves might be trying to confuse us.
+_
+I think Adele and Arthur make a good point. It does seem suspicious that two players were killed in one night. We should definitely consider the possibility that the werewolves are trying to divert suspicion.
+_
+Adele : I vote against Alice.
+_
+Arthur : I vote against Alice too. It's concerning that she's trying to divert attention away from the suspicious double kill.
+_

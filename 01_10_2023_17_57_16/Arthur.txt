@@ -1,0 +1,38 @@
+GameMaster : The city fall asleep !
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : Werewolf killed 2 players last night !
+_
+GameMaster : They killed Bob and Normy.
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+I think we should start by discussing what information we have. Did anyone see anything suspicious last night?
+_
+Alice : I didn't see anything suspicious last night. Did anyone else notice anything unusual?
+_
+Adele : I didn't see anything suspicious either. It seems like the werewolves are being very discreet.
+_
+I didn't see anything either. It's definitely concerning that the werewolves are being so careful. We need to be cautious and try to gather more information.
+_
+Adele : Yes, I agree. We should try to gather as much information as possible before making any decisions. Maybe the seer can help us by revealing their findings?
+_
+That's a good point, Adele. Seer, if you have any information, now would be a good time to share it with us. It could help us narrow down our suspicions.
+_
+Alice : I am just a villager, so I don't have any special information. But I think it's important for the seer to come forward and share their findings. It could provide valuable insight into who the werewolves might be.
+_
+Adele : Yes, Alice is right. Seer, if you have any information, please share it with us. It could be crucial in identifying the werewolves and protecting the village.
+_
+Alice : I vote against Arthur.
+_
+Adele : I vote against Arthur as well.
+_
+Alice : GameMaster : The votes are in. Arthur has been eliminated.
+_
+Adele : GameMaster : The city falls asleep!
+_
+GameMaster : Werewolves wake up!
+_
+GameMaster : You agreed to eliminate Arthur
+_

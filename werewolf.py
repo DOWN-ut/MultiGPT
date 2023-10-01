@@ -20,8 +20,10 @@ startPrompt = "Start of the party :"
 gameMasterColor = [0,0,0]
 
 werewolfConvLength = 3
+debatLengthPerPlayer = 3 #mutliplied by the number of remaining players
+dayVoteLength = 1
 
-rolesPrompt = "The roles are : "
+rolesPrompt = "*The roles are : "
 rolesPrompt += str(villagerCount) + " villagers , "
 rolesPrompt += str(seerCount) + " seers "
 rolesPrompt += "and " + str(werewolfCount) + " werewolves."
@@ -55,6 +57,14 @@ def resetNightKills():
     nightKillCount = 0
 
 
+def conversationTalk(playerId,agents,text):
+    #addDisplayPlayerText(players[playerId],text)
+    playerTalk(players[playerId],text)
+
+def addDisplayPlayerText(player,text):
+    text = player.name + " : " + text
+    addDisplayText(text,player.color)
+
 def addDisplayText(text,color):
     global mainLog 
     mainLog += text + "\n_\n"
@@ -63,7 +73,8 @@ def addDisplayText(text,color):
 def contextToFile(player,context):
     text = ""
     for c in context:
-        text +=  c["content"] + "\n_\n"
+        if c["content"][0] != "*":
+            text +=  c["content"] + "\n_\n"
     return text
 
 def initLogSaves():
@@ -169,6 +180,19 @@ def gameMasterTellTo(text,playersToTalk):
     tellTo(prompt,playersToTalk) 
     addDisplayText(prompt,gameMasterColor)
 
+def voteConversation(playersVoting,convLength):
+    choices = []
+    for i in range(0,convLength):    
+        choices = []
+        for player in playersVoting:
+            answer = player.gpt.talk()
+            choices.extend(recoverPlayersFromAnswer(answer))
+            playerTalkTo(player,answer,playersVoting)
+        if all(i == choices[0] for i in choices):
+            break
+
+    choice = Counter(choices).most_common(1)[0][0]
+    return choice
 
 #####------------ ACTIONS ----------------------
 
@@ -205,22 +229,8 @@ def playWerewolf():
         player.gpt.addContext(prompt)
         player.gpt.addContextFromFile("werewolf_turn.txt")
 
-    choices = []
-    for i in range(0,werewolfConvLength):    
-        choices = []
-        for player in playerByRole["Werewolf"]:
-            answer = player.gpt.talk()
-            choices.extend(recoverPlayersFromAnswer(answer))
-            playerTalkTo(player,answer,playerByRole["Werewolf"])
-        if all(i == choices[0] for i in choices):
-            break
-
-    #print(choices)
-    #choices = recoverPlayersFromAnswers(choices)
-    #print(choices)
-    choice = Counter(choices).most_common(1)[0][0]
+    choice = voteConversation(playerByRole["Werewolf"],werewolfConvLength)
     choice = players[choice]
-    #print(choice.name)
 
     roleKillPlayer(choice,"Werewolf")
 
@@ -269,7 +279,26 @@ def morningAnnouncement():
                         prompt += player.name
                 gameMasterTell(prompt + ".")
 
-def partyTurn():
+def dayDebate():
+    gpts = [player.gpt for player in players]
+
+    for player in players:
+        player.gpt.addContextFromFile("debate_turn.txt")
+
+    dl = debatLengthPerPlayer * len(players) 
+    conversation(3,dl,gpts,"*Start the debate and give your opinion")
+
+    gameMasterTell("Now is time to vote ! Designate the player you want to eliminate.")
+    for player in players:
+        player.gpt.addContextFromFile("vote_turn.txt")
+
+    choice = voteConversation(players,dayVoteLength)
+    choice = players[choice]
+
+    gameMasterTell("You agreed to eliminate " + choice.name)
+
+
+def partyTurn(turn):
     resetNightKills()
 
     gameMasterTell("The city fall asleep !")
@@ -281,10 +310,14 @@ def partyTurn():
     roleKillPlayer(players[3],"Werewolf")
 
     applyKills()
-    
-    gameMasterTell("The city wakes up !")
+
+    gameMasterTell("The city wakes up ! This is the " + str(turn) + "th day.")
 
     morningAnnouncement()
+
+    gameMasterTell("Now is time to debate before voting for someone to kill.")
+
+    dayDebate()
 
 createPlayer("Bob",[255,50,50],getRandomRole())
 createPlayer("Alice",[150,150,255],getRandomRole())
@@ -297,7 +330,14 @@ printPlayers()
 initPlayers()
 initLogSaves()
 
-partyTurn()
+#agents = [player.gpt for player in players]
+#txt = "Adele : I think Arthur is a werewolf. What's your opinion Normy ? Are you suspicious Normy ?? Also, i heard Arthur move... What the fuck were you doing Arthur ??"
+#ints = recoverInterlocutors(txt,agents)
+#displayRawInterlocutors(ints,agents)
+#ints = processInterlocutors(ints,[i for i in range(len(agents))],3)
+#displayInterlocutors(ints,agents)
+
+partyTurn(1)
 
 saveLogs()
 

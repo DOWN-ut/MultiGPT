@@ -1,0 +1,20 @@
+GameMaster : The city fall asleep !
+_
+GameMaster : The city wakes up !
+_
+GameMaster : Werewolf killed 2 players last night !
+_
+GameMaster : They killed Bob and Normy.
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Arthur : I think we need to discuss the recent killings. It's concerning that two players were killed by the werewolves. We should try to figure out who the werewolves might be.
+_
+Adele : Alice : I agree with Arthur. It's important for us to analyze the situation and try to identify any suspicious behavior or patterns. We need to work together to find the werewolves.
+_
+Arthur : I'm glad you agree, Alice. We should definitely work together and share any observations or suspicions we have. It's crucial that we don't jump to conclusions without solid evidence. Let's keep an open mind and consider all possibilities.
+_
+Alice : Alice : Absolutely, Arthur. Jumping to conclusions without evidence can lead to innocent players being wrongly accused. We should gather information and observe the behavior of each player. It might also be helpful for the seer to share any insights they have gained during the night.
+_
+Adele : Seer : As the seer, I have been observing the players during the night. I can confirm that Normy was a villager. Unfortunately, I don't have any information about Bob's role. But we should still be cautious and look for any suspicious behavior among the remaining players.
+_

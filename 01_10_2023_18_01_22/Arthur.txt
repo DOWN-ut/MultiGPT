@@ -1,0 +1,40 @@
+GameMaster : The city fall asleep !
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : Werewolf killed 2 players last night !
+_
+GameMaster : They killed Bob and Normy.
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Alice : I think we should start by discussing any suspicions or observations we have. It's important to share any information that might help us figure out who the werewolves are.
+_
+Adele : I agree, Alice. Sharing information is crucial in figuring out who the werewolves are. Does anyone have any suspicions or observations they would like to share?
+_
+Alice : I don't have any specific suspicions at the moment, but I think it's important for us to consider the actions and behavior of each player so far. Has anyone noticed anything unusual or suspicious about anyone?
+_
+Adele : I haven't noticed anything particularly suspicious about anyone yet, but it's still early in the game. We should keep an eye out for any unusual behavior or inconsistencies in their actions.
+_
+I haven't noticed anything suspicious either, but it's still early in the game. We should be cautious and observe everyone's actions closely.
+_
+Adele : I agree, Arthur. It's important for us to be cautious and observant. We shouldn't rush to conclusions, but we should also be mindful of any red flags or inconsistencies in behavior. Let's keep an open mind and continue to gather information.
+_
+I vote against Alice.
+_
+Alice : Wait, Arthur, why are you voting against me? Is there something that makes you suspicious of me? I haven't done anything to indicate that I'm a werewolf.
+_
+I apologize, Alice. It was a hasty decision on my part. I don't have any concrete evidence or suspicions against you. Let's continue to gather information and make a more informed decision.
+_
+Alice : Thank you, Arthur, for reconsidering. It's important for us to base our decisions on solid evidence and observations. Let's continue to discuss and gather information before making any hasty judgments.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Alice : I vote against Adele.
+_
+Adele : I vote against Alice.
+_
+I vote against Alice.
+_
+GameMaster : You agreed to eliminate Alice
+_

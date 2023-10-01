@@ -1,8 +1,0 @@
-GameMaster : The city fall asleep !
-_
-GameMaster : The city wakes up !
-_
-GameMaster : Werewolf killed 2 players last night !
-_
-GameMaster : They killed Bob and Normy.
-_
