@@ -20,8 +20,6 @@ werewolfCount = 2
 
 startPrompt = "Start of the party :"
 
-gameMasterColor = [0,0,0]
-
 werewolfConvLength = 3
 debatLengthPerPlayer = 3 #mutliplied by the number of remaining players
 dayVoteLength = 1
@@ -59,21 +57,23 @@ def resetNightKills():
     global nightKillCount
     nightKillCount = 0
 
+def updateGame(delay = 2):
+    display_game()
+    time.sleep(delay)
 
 def conversationTalk(playerId,agents,text):
     #addDisplayPlayerText(players[playerId],text)
     playerTalk(players[playerId],text)
 
 def addDisplayPlayerText(player,text):
-    text = player.name + " : " + text
-    addDisplayText(text,player.color)
+    addDisplayText(player.name + " : " + text)
     addAMessage(player.name,text)
 
 def addDisplayerGMText(text):
-    addDisplayText(text,gameMasterColor)
-    addAMessage("Game Master",text)
+    addDisplayText(text)
+    addAMessage("GameMaster",text)
 
-def addDisplayText(text,color):
+def addDisplayText(text):
     global mainLog 
     mainLog += text + "\n_\n"
     print(text)
@@ -103,11 +103,21 @@ class Player:
      self.name = name
      self.color = color
      self.role = role
+     self.state = "Neutral"
+     self.damocles = False
      self.personalPrompt = "Your name is " + self.name + " and your role is " + self.role
      self.gpt = GptAgent(self.name,self.color,prepromtPath,self.personalPrompt)
      self.displayer = PlayerDisplayer(name,role,color,0)
      playerDisplayers.append(self.displayer)
      
+    def setState(self,state):
+        self.state = state
+        self.displayer.setState(state) 
+    
+    def setDamocles(self,v):
+        self.damocles = v
+        self.displayer.damocles = v
+
     def place(self,id):
         self.displayer.position = id * (360.0 / len(players))
 
@@ -118,6 +128,7 @@ class Player:
 
     def die(self,killerRole):
         self.gpt.addContext("You were killed by " + killerRole)
+        self.displayer.setDead(True)
         self.saveData()
 
 def eliminatePlayer(player,killerRole):
@@ -187,7 +198,7 @@ def playerTalkTo(player,text,playersToTalk):
     prompt = player.name + " : " + text
     ptt = [p for p in playersToTalk if p != player]
     tellTo(prompt,ptt)
-    addDisplayText(prompt,player.color)
+    addDisplayPlayerText(player,text)
 
 def gameMasterTell(text):
     gameMasterTellTo(text,players)
@@ -195,7 +206,7 @@ def gameMasterTell(text):
 def gameMasterTellTo(text,playersToTalk):
     prompt = "GameMaster : " + text
     tellTo(prompt,playersToTalk) 
-    addDisplayerGMText(prompt)
+    addDisplayerGMText(text)
 
 def voteConversation(playersVoting,convLength):
     choices = []
@@ -217,26 +228,49 @@ def voteConversation(playersVoting,convLength):
 def roleKillPlayer(playerKilled,role):
     global nightKills
     nightKills[role].append(playerKilled)
+    playerKilled.setDamocles(True)
     global nightKillCount
     nightKillCount += 1
 
+def sleep(player):
+    player.setState("Sleep")
+
+def sleepSome(playerToSleep):
+    for player in playerToSleep:
+        sleep(player)
+    
+def sleepAll():
+    sleepSome(players)
+
+def wake(player):
+    if player.state == "Sleep":
+        player.setState("Neutral")
+
+def wakeSome(playerToWake):
+    for player in playerToWake:
+        wake(player)
+
+def wakeAll():
+    wakeSome(players)
 
 #####------------ ROLES ----------------------
 
 def playSeer():
     gameMasterTell("Seer, please tell me the name of the player you would like to know the role")
-     
+    updateGame()
+
     answer = playerByRole["Seer"][0].gpt.talk()
-    playerTalkTo(playerByRole["Seer"][0],answer,[])
-     
+    playerTalkTo(playerByRole["Seer"][0],answer,[])  
     requested = recoverPlayersFromAnswer(answer)
     requested = requested[0]
     
-    time.sleep(1)
+    updateGame()
     gameMasterTellTo("Their role is : " + players[requested].role,playerByRole["Seer"])
+    updateGame()
  
 def playWerewolf():
     gameMasterTell("Werewolves, please choose and agree on the name of the player you want to kill tonight")
+    updateGame()
 
     for player in playerByRole["Werewolf"]:
         prompt = "The other werewolves are : "
@@ -252,21 +286,25 @@ def playWerewolf():
 
     roleKillPlayer(choice,"Werewolf")
 
-    time.sleep(1)
+    updateGame()
     gameMasterTellTo("You agreed to kill " + choice.name,playerByRole["Werewolf"])
 
+    updateGame()
     return choice
          
 def playRole(role):
     gameMasterTell("The " + role + " wakes up.")
-     
+    wakeSome(playerByRole[role])
+    updateGame()
+
     if role == "Seer":
         playSeer()
     elif role == "Werewolf":
         playWerewolf()
      	
     gameMasterTell("The " + role + " fall back asleep.")
-
+    sleepSome(playerByRole[role])
+    updateGame()
 
 #####------------ PARTY ----------------------
 
@@ -296,6 +334,7 @@ def morningAnnouncement():
                     else:
                         prompt += player.name
                 gameMasterTell(prompt + ".")
+    updateGame()
 
 def dayDebate():
     gpts = [player.gpt for player in players]
@@ -306,43 +345,45 @@ def dayDebate():
     dl = debatLengthPerPlayer * len(players) 
     conversation(3,dl,gpts,"*Start the debate and give your opinion")
 
-    time.sleep(1)
+    updateGame()
+
     gameMasterTell("Now is time to vote ! Designate the player you want to eliminate.")
+    updateGame()
+
     for player in players:
         player.gpt.addContextFromFile("vote_turn.txt")
 
     choice = voteConversation(players,dayVoteLength)
     choice = players[choice]
 
-    time.sleep(1)
+    updateGame()
     gameMasterTell("You agreed to eliminate " + choice.name)
+    updateGame()
 
 
 def partyTurn(turn):
     resetNightKills()
+    updateGame(4)
 
     gameMasterTell("The city fall asleep !")
-
-    time.sleep(1)
+    sleepAll()
+    updateGame()
+    
     playRole("Seer")
 
-    time.sleep(1)
     playRole("Werewolf")
-    #roleKillPlayer(players[0],"Werewolf")
-    #roleKillPlayer(players[3],"Werewolf")
 
     applyKills()
-
-    time.sleep(1)
+    
     gameMasterTell("The city wakes up ! This is the " + str(turn) + "th day.")
+    wakeAll()
+    updateGame()
 
-    time.sleep(1)
     morningAnnouncement()
 
-    time.sleep(1)
     gameMasterTell("Now is time to debate before voting for someone to kill.")
+    updateGame()
 
-    time.sleep(1)
     dayDebate()
 
 createPlayer("Bob",[255,50,50],getRandomRole())
@@ -364,20 +405,22 @@ initLogSaves()
 #ints = processInterlocutors(ints,[i for i in range(len(agents))],3)
 #displayInterlocutors(ints,agents)
 
-#partyTurn(1)
-
 setup_window()
 
-for actTime in range(500):
-    display_game(actTime / 500.0)
-    time.sleep(0.01)
-    actTime += 1
-    if actTime % 100 == 0:
-        i = actTime / 100
-        addDisplayPlayerText(players[int(i)],"Hello everyone !")
+partyTurn(1)
+
+a = input()
+
+#for actTime in range(500):
+#    display_game(actTime / 500.0)
+#    time.sleep(0.01)
+#    actTime += 1
+#    if actTime % 100 == 0:
+#        i = actTime / 100
+#        addDisplayPlayerText(players[int(i)],"Hello everyone !")
 
 
-#saveLogs()
+saveLogs()
 
 
 

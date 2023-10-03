@@ -5,10 +5,10 @@ import math
 import random
 import time
 
-# Données de la conversation
+# Données de la conversationPannel
 messagesList = []
 
-gameMasterColor = [0,0,0]
+gameMasterColor = [220,220,220]
 
 roleImages = {}
 roleImages["Villager"] = "images/villager.png"
@@ -23,30 +23,34 @@ headImages["Sad"] = "images/sad.png"
 headImages["Cry"] = "images/cry.png"
 headImages["Winner"] = "images/tongue.png"
 headImages["Sleep"] = "images/sleep.png"
+headImages["Dead"] = "images/grave.png"
 
 playerDisplayers = []
 
 window_size = (800,700)
 right_frame = ""
 left_frame = ""
-conversation = ""
+conversationPannel = ""
 canvas = ""
 fenetre = ""
 
 def addAMessage(playerName, message):
-    conversation.config(state=tk.NORMAL)  # Activer l'édition
-    conversation.insert(tk.END, f"  {playerName} : {message}\n", playerName)
-    conversation.config(state=tk.DISABLED)  # Désactiver l'édition
-    conversation.yview(tk.END) # Faire défiler vers le bas
+    conversationPannel.config(state=tk.NORMAL)  # Activer l'édition
+    conversationPannel.insert(tk.END, f"{playerName} : {message}\n", playerName)
+    conversationPannel.config(state=tk.DISABLED)  # Désactiver l'édition
+    conversationPannel.yview(tk.END) # Faire défiler vers le bas
     #messagesList.append({"name": player, "text": message})
     fenetre.update()
 
 def colorOf(rgb):
     return "#{:02X}{:02X}{:02X}".format(rgb[0],rgb[1],rgb[2])
 
+sleepColor = [0,0,0]
+
 player_circle_distance = 300
 player_card_distance = 225
 player_name_distance = 375
+player_death_distance = 340
 
 
 # Créez une liste pour stocker les objets PhotoImage
@@ -60,18 +64,31 @@ def window_center():
 
 def draw_gamemaster(canvas):
     draw_circle(canvas,(0,0),75,gameMasterColor)
-    draw_text(canvas,(0,0),(50,15),"Game Master",[200,200,200])
+    draw_text(canvas,(0,0),"Game Master",[50,50,50])
 
 def draw_player(canvas,player):
     direction = (math.cos(math.radians(player.position)),math.sin(math.radians(player.position)))
     circle_position = mul(direction,player_circle_distance)
     card_position = mul(direction,player_card_distance)
     name_position = mul(direction,player_name_distance)
+    death_position = mul(direction,player_death_distance)
 
-    #draw_circle(canvas,circle_position,55,player.color)
-    draw_head(canvas,circle_position,"Sleep")
-    draw_text(canvas,name_position,(len(player.name)*10,15),player.name,player.color)
+    if player.dead:
+        draw_head(canvas,circle_position,"Dead")
+    else:
+        if player.state == "Sleep":
+            draw_circle(canvas,circle_position,55,sleepColor)
+        draw_head(canvas,circle_position,player.state)     
+        
+
+    draw_text_rect(canvas,name_position,(len(player.name)*10,15))
+    draw_text(canvas,name_position,player.name,player.color)
     draw_card(canvas,card_position,player.role)
+
+    if player.damocles and not player.dead:
+        draw_damocles(canvas,death_position)
+
+    #draw_talkBubble(canvas,player)
 
 def draw_circle(canvas,center,r,color):
     x = center[0] + window_center()[0]
@@ -85,18 +102,33 @@ def draw_head(canvas,center,emotion):
     image_list.append(image)  # Ajouter l'image à la liste
     canvas.create_image(window_center()[0] + center[0], window_center()[1] + center[1] - 51, anchor=tk.N, image=image)
 
-def draw_text(canvas,position,size,txt,color):
+def draw_text(canvas,position,txt,color): 
+    canvas.create_text(position[0] + window_center()[0],position[1] + window_center()[1], text=txt,fill=colorOf(color))
+
+def draw_text_rect(canvas,position,size):
     rx = window_center()[0] + position[0]
     ry = window_center()[1] + position[1]
     canvas.create_rectangle(rx - (size[0] * 0.5),ry - (size[1] * 0.5),rx + (size[0] * 0.5),ry + (size[1] * 0.5), fill="black")
-    canvas.create_text(position[0] + window_center()[0],position[1] + window_center()[1], text=txt,fill=colorOf(color))
-    
+
 def draw_card(canvas,center,role):
     image_path = roleImages[role]
     image = PhotoImage(file=image_path)  # Charger l'image
     image = image.subsample(9,9)
     image_list.append(image)  # Ajouter l'image à la liste
     canvas.create_image(window_center()[0] + center[0], window_center()[1] + center[1] - 20, anchor=tk.N, image=image)
+
+def draw_damocles(canvas,center):
+    image_path = "images/death.png"
+    image = PhotoImage(file=image_path)  # Charger l'image
+    image = image.subsample(16,16)
+    image_list.append(image)  # Ajouter l'image à la liste
+    canvas.create_image(window_center()[0] + center[0], window_center()[1] + center[1] - 10, anchor=tk.N, image=image)
+
+def draw_talkBubble(canvas,player):
+    direction = (math.cos(math.radians(player.position)),math.sin(math.radians(player.position)))
+    position = mul(direction,player_bubble_distance)
+
+
 
 class PlayerDisplayer:
     def __init__(self,name,role,color,position):
@@ -105,20 +137,30 @@ class PlayerDisplayer:
         self.role = role
         self.color = color
         self.position = position
+        self.state = "Neutral"
+        self.damocles = False
+        self.dead = False
+
+    def setDead(self,d):
+        self.dead = d
+
+    def setState(self,s):
+        self.state = s
+    
 
 def setup_right(right_frame):
-    # Créer un widget Texte défilant pour la conversation dans la partie droite
-    global conversation
-    conversation = scrolledtext.ScrolledText(right_frame, wrap=tk.WORD, state=tk.DISABLED, width=30)
-    conversation.pack(fill=tk.BOTH, expand=True)
-    conversation.configure(bg="#262626")
-    
-    conversation.tag_configure("Game Master", foreground=colorOf(gameMasterColor))
+    # Créer un widget Texte défilant pour la conversationPannel dans la partie droite
+    global conversationPannel
+    conversationPannel = scrolledtext.ScrolledText(right_frame, wrap=tk.WORD, state=tk.DISABLED, width=30)
+    conversationPannel.pack(fill=tk.BOTH, expand=True)
+    conversationPannel.configure(bg="#262626")
+
+    conversationPannel.tag_configure("GameMaster", foreground=colorOf(gameMasterColor), spacing1=10, spacing2=5, lmargin1=10)
     for playerd in playerDisplayers:
-        conversation.tag_configure(playerd.name, foreground=colorOf(playerd.color))
+        conversationPannel.tag_configure(playerd.name, foreground=colorOf(playerd.color), spacing1=10, spacing2=5, lmargin1=10)
 
 
-def display_game(actTime):
+def display_game():
     
     canvas.delete("all")
 
@@ -140,19 +182,19 @@ def setup_window() :
     fenetre.title("WolfGPT")
 
     # Réduire la largeur de la fenêtre avec le texte
-    fenetre.geometry("1200x700")  # Largeur x Hauteur
+    fenetre.geometry("1500x700")  # Largeur x Hauteur
 
     # Diviser la fenêtre en deux parties (gauche et droite)
     global left_frame
-    left_frame = tk.Frame(fenetre)
+    left_frame = tk.Frame(fenetre,relief="flat", borderwidth=0, highlightthickness=0)
     global right_frame
-    right_frame = tk.Frame(fenetre)
+    right_frame = tk.Frame(fenetre,relief="flat", borderwidth=0, highlightthickness=0)
 
     setup_right(right_frame)
 
-    fenetre.configure(bg="grey")
+    fenetre.configure(bg="#262626")
 
-    left_frame.pack(side=tk.LEFT, padx=10)
+    left_frame.pack(side=tk.LEFT, padx=5)
     right_frame.pack(side=tk.RIGHT, padx=10, fill=tk.BOTH, expand=True)
 
     # Créer un canevas pour dessiner les cercles dans la partie gauche
