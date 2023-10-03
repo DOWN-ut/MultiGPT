@@ -1,6 +1,6 @@
 with open("gpt.py") as f:
     exec(f.read())
-with open("pygame_main.py") as f:
+with open("pygame_main2.py") as f:
     exec(f.read())
 from colorama import Fore, Back, Style
 from datetime import datetime
@@ -12,7 +12,7 @@ print(Fore.WHITE)
 
 #----------- GAME RULES ----------------
 
-villagerCount = 2
+villagerCount = 3
 seerCount = 1
 werewolfCount = 2
 
@@ -67,6 +67,11 @@ def conversationTalk(playerId,agents,text):
 def addDisplayPlayerText(player,text):
     text = player.name + " : " + text
     addDisplayText(text,player.color)
+    addAMessage(player.name,text)
+
+def addDisplayerGMText(text):
+    addDisplayText(text,gameMasterColor)
+    addAMessage("Game Master",text)
 
 def addDisplayText(text,color):
     global mainLog 
@@ -100,7 +105,12 @@ class Player:
      self.role = role
      self.personalPrompt = "Your name is " + self.name + " and your role is " + self.role
      self.gpt = GptAgent(self.name,self.color,prepromtPath,self.personalPrompt)
+     self.displayer = PlayerDisplayer(name,role,color,0)
+     playerDisplayers.append(self.displayer)
      
+    def place(self,id):
+        self.displayer.position = id * (360.0 / len(players))
+
     def saveData(self):
         f = open(partyId + "/" + self.name + ".txt","x")
         f.write(contextToFile(self,self.gpt.context))
@@ -132,7 +142,8 @@ def printPlayers():
             print(" > " + player.name)
 
 def initPlayers():
-     for player in players:
+    i = 0
+    for player in players:
         prompt = rolesPrompt
         prompt += "\nThe players are : "
         for p in players:
@@ -141,6 +152,9 @@ def initPlayers():
         prompt += " and yourself"
         prompt += "\n" + startPrompt
         player.gpt.addContext(prompt)
+
+        player.place(i)
+        i += 1
         
 def recoverPlayersFromAnswers(answers):
     res = []
@@ -181,7 +195,7 @@ def gameMasterTell(text):
 def gameMasterTellTo(text,playersToTalk):
     prompt = "GameMaster : " + text
     tellTo(prompt,playersToTalk) 
-    addDisplayText(prompt,gameMasterColor)
+    addDisplayerGMText(prompt)
 
 def voteConversation(playersVoting,convLength):
     choices = []
@@ -332,10 +346,11 @@ def partyTurn(turn):
     dayDebate()
 
 createPlayer("Bob",[255,50,50],getRandomRole())
-createPlayer("Alice",[150,150,255],getRandomRole())
-createPlayer("Adele",[255,150,150],getRandomRole())
-createPlayer("Normy",[75,255,75],getRandomRole())
-createPlayer("Arthur",[255,50,255],getRandomRole())
+createPlayer("Alice",[255,255,50],getRandomRole())
+createPlayer("Adele",[75,255,75],getRandomRole())
+createPlayer("Normy",[255,50,255],getRandomRole())
+createPlayer("Arthur",[50,255,255],getRandomRole())
+createPlayer("Lea",[50,150,50],getRandomRole())
 
 print("Party ID : " + partyId)
 printPlayers()
@@ -349,9 +364,20 @@ initLogSaves()
 #ints = processInterlocutors(ints,[i for i in range(len(agents))],3)
 #displayInterlocutors(ints,agents)
 
-partyTurn(1)
+#partyTurn(1)
 
-saveLogs()
+setup_window()
+
+for actTime in range(500):
+    display_game(actTime / 500.0)
+    time.sleep(0.01)
+    actTime += 1
+    if actTime % 100 == 0:
+        i = actTime / 100
+        addDisplayPlayerText(players[int(i)],"Hello everyone !")
+
+
+#saveLogs()
 
 
 
