@@ -3,6 +3,7 @@ from tkinter import scrolledtext
 from tkinter import PhotoImage
 import math
 import random
+import time
 
 # Données de la conversation
 messagesList = [
@@ -10,8 +11,8 @@ messagesList = [
     {"name": "Adèle", "text": "Salut ! Je suis voyante aaaaaaaaaaaaaaaaaa"}
 ]
 
-#def displayMessages(player, message) : 
-#    messagesList.append({"name" : player, "text : " message})
+def addAMessage(player, message):
+    messagesList.append({"name": player, "text": message})
 
 agents = [
 	{"name": "Bob", "image_path": "images/werewolf.png"}, 
@@ -110,6 +111,27 @@ def draw_circles_with_names_and_images(canvas):
         name = element["name"]
         canvas.create_text(x, y, text=name)
 
+def displayConversation(right_frame, fenetre) :
+    # Créer un widget Texte défilant pour la conversation dans la partie droite
+    conversation = scrolledtext.ScrolledText(right_frame, wrap=tk.WORD, state=tk.DISABLED, width=30)
+    conversation.pack(fill=tk.BOTH, expand=True)
+    conversation.configure(bg="#262626")
+
+    for i in range (6) :
+        conversation.tag_configure(agents[i]["name"], foreground=random_color[i])
+
+    # Parcourir la liste de messages et les afficher
+    for message_data in messagesList:
+        name = message_data["name"]
+        message = message_data["text"]
+        conversation.config(state=tk.NORMAL)  # Activer l'édition
+        conversation.insert(tk.END, f" {name} : {message}\n", message_data["name"])
+        conversation.config(state=tk.DISABLED)  # Désactiver l'édition
+        conversation.yview(tk.END)  # Faire défiler vers le bas
+        fenetre.update()
+        time.sleep(1.5)
+
+
 def display_game() :
 
     # Créer une fenêtre
@@ -141,20 +163,10 @@ def display_game() :
     draw_player(canvas,90,"Bob","Villager")
 
 
-    # Créer un widget Texte défilant pour la conversation dans la partie droite
-    conversation = scrolledtext.ScrolledText(right_frame, wrap=tk.WORD, state=tk.DISABLED, width=30)
-    conversation.pack(fill=tk.BOTH, expand=True)
-    conversation.configure(bg="#262626")
-    conversation.tag_configure("user", foreground="blue")
+    addAMessage("Bob", "Salut, comment ça va ?")
+    addAMessage("Yahnis", "Test")
 
-    # Parcourir la liste de messages et les afficher
-    for message_data in messagesList:
-        name = message_data["name"]
-        message = message_data["text"]
-        conversation.config(state=tk.NORMAL)  # Activer l'édition
-        conversation.insert(tk.END, f" {name} : {message}\n", "user")
-        conversation.config(state=tk.DISABLED)  # Désactiver l'édition
-        conversation.yview(tk.END)  # Faire défiler vers le bas
+    displayConversation(right_frame, fenetre)
 
     # Démarrer la fenêtre principale
     fenetre.mainloop()
