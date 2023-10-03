@@ -1,9 +1,12 @@
 with open("gpt.py") as f:
     exec(f.read())
+with open("pygame_main.py") as f:
+    exec(f.read())
 from colorama import Fore, Back, Style
 from datetime import datetime
 from collections import Counter
 import os
+import time
 
 print(Fore.WHITE)
 
@@ -214,7 +217,8 @@ def playSeer():
      
     requested = recoverPlayersFromAnswer(answer)
     requested = requested[0]
-     
+    
+    time.sleep(1)
     gameMasterTellTo("Their role is : " + players[requested].role,playerByRole["Seer"])
  
 def playWerewolf():
@@ -234,6 +238,7 @@ def playWerewolf():
 
     roleKillPlayer(choice,"Werewolf")
 
+    time.sleep(1)
     gameMasterTellTo("You agreed to kill " + choice.name,playerByRole["Werewolf"])
 
     return choice
@@ -287,6 +292,7 @@ def dayDebate():
     dl = debatLengthPerPlayer * len(players) 
     conversation(3,dl,gpts,"*Start the debate and give your opinion")
 
+    time.sleep(1)
     gameMasterTell("Now is time to vote ! Designate the player you want to eliminate.")
     for player in players:
         player.gpt.addContextFromFile("vote_turn.txt")
@@ -294,6 +300,7 @@ def dayDebate():
     choice = voteConversation(players,dayVoteLength)
     choice = players[choice]
 
+    time.sleep(1)
     gameMasterTell("You agreed to eliminate " + choice.name)
 
 
@@ -302,20 +309,26 @@ def partyTurn(turn):
 
     gameMasterTell("The city fall asleep !")
 
+    time.sleep(1)
     playRole("Seer")
 
+    time.sleep(1)
     playRole("Werewolf")
     #roleKillPlayer(players[0],"Werewolf")
     #roleKillPlayer(players[3],"Werewolf")
 
     applyKills()
 
+    time.sleep(1)
     gameMasterTell("The city wakes up ! This is the " + str(turn) + "th day.")
 
+    time.sleep(1)
     morningAnnouncement()
 
+    time.sleep(1)
     gameMasterTell("Now is time to debate before voting for someone to kill.")
 
+    time.sleep(1)
     dayDebate()
 
 createPlayer("Bob",[255,50,50],getRandomRole())

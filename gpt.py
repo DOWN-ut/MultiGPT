@@ -178,6 +178,7 @@ def conversation(coherence,lenght,agents,initPrompt):
     conversationTalk(agentId,agents,answer)
 
     for i in range(lenght):
+        time.sleep(1)
         interlocutors = recoverInterlocutors(answer,agents) 
 
         interlocutors = processInterlocutors(interlocutors,ids,coherence)
