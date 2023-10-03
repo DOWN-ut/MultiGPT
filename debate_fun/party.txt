@@ -1,0 +1,70 @@
+GameMaster : The city fall asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+Normy : I would like to know the role of Bob.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Bob : I vote against Alice.
+_
+Adele : I vote against Alice.
+_
+GameMaster : You agreed to kill Alice
+_
+GameMaster : The Werewolf fall back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : Werewolf killed 1 players last night !
+_
+GameMaster : They killed Alice.
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : I think we should discuss and analyze the situation before jumping to any conclusions. It's important to consider all the available information and evidence before making any accusations.
+_
+Bob : I agree with Adele. We should take the time to gather information and discuss before making any hasty decisions. It's important to consider everyone's perspectives and listen to what they have to say.
+_
+Arthur : I think it's crucial for us to share any suspicions or observations we might have. We need to work together to uncover the truth and identify the werewolves among us.
+_
+Normy : I think it's important for us to be cautious and not jump to conclusions too quickly. We should gather as much information as possible and listen to each other's opinions before making any decisions.
+_
+Adele : I agree with Bob, Arthur, and Normy. We should approach this with a level-headed mindset and avoid rushing into accusations. It's important for us to share any suspicions or observations we have, but we should also be open to hearing different perspectives. Let's work together to uncover the truth and make informed decisions.
+_
+Normy : I vote against Bob.
+_
+Adele : I understand that Normy has expressed suspicion towards Bob, but I think it's important for us to have more information before making a decision. Let's continue the discussion and see if anyone else has any insights or suspicions.
+_
+Bob : I understand Normy's suspicion, but I would like to clarify that I am just a regular villager. I have no reason to be a werewolf. Let's consider all the information and opinions before making a decision.
+_
+Adele : I appreciate Bob's response and his willingness to address the suspicion. It's important for us to give everyone a fair chance to explain themselves before jumping to conclusions. Let's continue to gather information and hear from others before making a final decision.
+_
+Bob : Thank you, Adele, for your understanding. I'm here to cooperate and help find the werewolves among us. Let's keep the discussion going and see if anyone else has any insights or suspicions.
+_
+Adele : I agree with Bob. It's important for us to keep an open mind and continue the discussion. Let's encourage everyone to share their thoughts and observations so we can make an informed decision.
+_
+Arthur : I vote against Normy.
+_
+Adele : I understand that Arthur has voted against Normy, but I think it's important for us to have a more thorough discussion and consider all perspectives before making a decision. Let's continue to share our thoughts and observations so we can make an informed choice.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Bob : I vote against Normy.
+_
+Adele : I vote against Normy.
+_
+Normy : I vote against Normy.
+_
+Arthur : I vote against Normy.
+_
+GameMaster : You agreed to eliminate Normy
+_

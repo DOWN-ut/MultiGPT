@@ -1,0 +1,68 @@
+GameMaster : The city fall asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Adele,. So you should not vote against them
+_
+Adele : I vote against Bob.
+_
+I vote against Bob.
+_
+GameMaster : You agreed to kill Bob
+_
+GameMaster : The Werewolf fall back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : Werewolf killed 1 players last night !
+_
+GameMaster : They killed Bob.
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : I think it's unfortunate that Bob was killed, but we have to remember that this is just a game. We need to analyze the situation and try to figure out who the werewolves might be.
+_
+I agree with Adele. It's important for us to stay calm and analyze the situation. We should share any suspicions or observations we have.
+_
+Arthur : I think we should start by discussing any strange behavior or suspicious actions we noticed from each other during the night.
+_
+Alice : I didn't notice anything particularly suspicious during the night. Did anyone else notice anything unusual?
+_
+I didn't notice anything suspicious either. It seems like the night was quiet.
+_
+Alice : Yes, it does seem that way. So far, we don't have much to go on. We should try to gather more information before making any accusations.
+_
+I agree with Alice. Accusing someone without solid evidence could lead us in the wrong direction. Let's gather more information and discuss our suspicions before making any decisions.
+_
+Alice : I think it's important for us to communicate openly and share any suspicions we might have. We can't afford to keep information to ourselves if we want to find the werewolves.
+_
+Adele : I agree with Alice and Normy. Open communication and sharing suspicions is crucial for us to uncover the werewolves. Let's keep an eye out for any unusual behavior or inconsistencies in the upcoming days and discuss them together.
+_
+Arthur : I think it's also important for us to consider the information we have from the Seer. As the Seer, I discovered that Bob was a Villager. This means that the werewolves might be among the remaining players. We should keep this in mind as we continue our discussion.
+_
+Alice : That's a good point, Arthur. The Seer's information is valuable and we should take it into consideration. It narrows down the possibilities and helps us focus our suspicions. Let's continue discussing and sharing our thoughts to uncover the werewolves.
+_
+Adele : I agree with Alice and Arthur. The Seer's information is definitely important and can guide our suspicions. Let's continue to discuss and analyze the behavior of each player to try and identify the werewolves among us.
+_
+I think we're on the right track. Let's keep the discussion going and pay close attention to each other's behavior. We need to work together to find the werewolves and ensure the safety of the village.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Alice : I vote against Arthur.
+_
+Adele : I vote against Arthur.
+_
+I vote against Arthur.
+_
+Arthur : I vote against Alice.
+_
+GameMaster : You agreed to eliminate Arthur
+_

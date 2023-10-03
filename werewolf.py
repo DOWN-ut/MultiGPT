@@ -244,8 +244,7 @@ def playRole(role):
     if role == "Seer":
         playSeer()
     elif role == "Werewolf":
-        global nightKill
-        nightKill.append(playWerewolf())
+        playWerewolf()
      	
     gameMasterTell("The " + role + " fall back asleep.")
 
@@ -303,11 +302,11 @@ def partyTurn(turn):
 
     gameMasterTell("The city fall asleep !")
 
-    #playRole("Seer")
+    playRole("Seer")
 
-    #playRole("Werewolf"))
-    roleKillPlayer(players[0],"Werewolf")
-    roleKillPlayer(players[3],"Werewolf")
+    playRole("Werewolf")
+    #roleKillPlayer(players[0],"Werewolf")
+    #roleKillPlayer(players[3],"Werewolf")
 
     applyKills()
 
