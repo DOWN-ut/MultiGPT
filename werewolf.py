@@ -12,9 +12,10 @@ print(Fore.WHITE)
 
 #----------- GAME RULES ----------------
 
-villagerCount = 3
+villagerCount = 2
 seerCount = 1
 werewolfCount = 2
+witchCount = 1
 
 #----------- PROMPTS DISPLAYS AND SETUPS ----------------
 
@@ -33,6 +34,7 @@ gameRoles = []
 gameRoles.extend(["Villager"] * villagerCount)
 gameRoles.extend(["Seer"] * seerCount)
 gameRoles.extend(["Werewolf"] * werewolfCount)
+gameRoles.extend(["Witch"] * witchCount)
 
 mainLog = ""
 
@@ -81,8 +83,9 @@ def addDisplayText(text):
 def contextToFile(player,context):
     text = ""
     for c in context:
-        if c["content"][0] != "*":
-            text +=  c["content"] + "\n_\n"
+        if len(c["content"]) > 0:
+            if c["content"][0] != "*":
+                text +=  c["content"] + "\n_\n"
     return text
 
 def initLogSaves():
@@ -255,6 +258,31 @@ def wakeAll():
 
 #####------------ ROLES ----------------------
 
+def playWitch():
+    gameMasterTell("Witch, the victim is: " + nightKills.get("Werewolf")[-1].name)
+    gameMasterTell("Do you wish to: let it die, save it or kill someone else ? If you decide to kill "
+                   "someone else, tell me its name.")
+
+    # add prompt to give more explanations
+    prompt = "Please make a choice influenced by your knowledge of the game, between 'I let [victim_name] die.'," \
+             "'I save [victim_name].', or 'I decide to kill [extra_victim_name] in addition.'. " \
+             "This extra victim cannot be you, neither the current victim."
+    playerByRole["Witch"][0].gpt.addContext(prompt)
+    playerByRole["Witch"][0].gpt.addContextFromFile("witch_turn.txt")
+
+    answer = playerByRole["Witch"][0].gpt.talk()
+    playerTalkTo(playerByRole["Witch"][0], answer, [])
+
+    requested = recoverPlayersFromAnswer(answer)
+    requested = requested[0]
+
+    if "kill" in answer:
+        nightKills["Witch"].append(players[requested[0]])
+    elif "save" in answer:
+        nightKills["Werewolf"].pop()
+
+    print(nightKills)
+
 def playSeer():
     gameMasterTell("Seer, please tell me the name of the player you would like to know the role")
     updateGame()
@@ -301,8 +329,10 @@ def playRole(role):
         playSeer()
     elif role == "Werewolf":
         playWerewolf()
+    elif role == "Witch":
+        playWitch()
      	
-    gameMasterTell("The " + role + " fall back asleep.")
+    gameMasterTell("The " + role + " fall(s) back asleep.")
     sleepSome(playerByRole[role])
     updateGame()
 
@@ -365,7 +395,7 @@ def partyTurn(turn):
     resetNightKills()
     updateGame(4)
 
-    gameMasterTell("The city fall asleep !")
+    gameMasterTell("The city falls asleep !")
     sleepAll()
     updateGame()
     
