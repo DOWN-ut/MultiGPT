@@ -260,8 +260,10 @@ def wakeAll():
 
 def playWitch():
     gameMasterTell("Witch, the victim is: " + nightKills.get("Werewolf")[-1].name)
+    updateGame()
     gameMasterTell("Do you wish to: let it die, save it or kill someone else ? If you decide to kill "
                    "someone else, tell me its name.")
+    updateGame()
 
     # add prompt to give more explanations
     prompt = "Please make a choice influenced by your knowledge of the game, between 'I let [victim_name] die.'," \
@@ -272,6 +274,7 @@ def playWitch():
 
     answer = playerByRole["Witch"][0].gpt.talk()
     playerTalkTo(playerByRole["Witch"][0], answer, [])
+    updateGame()
 
     requested = recoverPlayersFromAnswer(answer)
     requested = requested[0]
@@ -402,6 +405,8 @@ def partyTurn(turn):
     playRole("Seer")
 
     playRole("Werewolf")
+
+    playRole("Witch")
 
     applyKills()
     
