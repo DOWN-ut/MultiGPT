@@ -1,0 +1,5 @@
+*Please make a choice influenced by your knowledge of the game.
+You can write :
+- "I do nothing."
+- "I decide to kill [extra_victim_name] in addition."
+The extra victim cannot be you, neither the current victim.

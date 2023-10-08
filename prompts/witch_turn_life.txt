@@ -1,0 +1,4 @@
+*Please make a choice influenced by your knowledge of the game.
+You can write :
+- "I let [victim_name] die."
+- "I save [victim_name]."

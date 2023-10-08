@@ -22,7 +22,7 @@ witchCount = 1
 startPrompt = "Start of the party :"
 
 werewolfConvLength = 3
-debatLengthPerPlayer = 3 #mutliplied by the number of remaining players
+debatLengthPerPlayer = 2 #mutliplied by the number of remaining players
 dayVoteLength = 1
 
 rolesPrompt = "*The roles are : "
@@ -47,12 +47,19 @@ playerByRole = {}
 for role in gameRoles:
     playerByRole[role] = []
 
+#Dictionnary of the role's powers and their usage
+rolePowers = {}
+rolePowers["Witch"] = {}
+rolePowers["Witch"]["Life"] = True
+rolePowers["Witch"]["Death"] = True
+ 
 #Dictionary of all killed players during a night, by role ; syntaxe dict[role(string)] --> players[](Player)
 nightKillInit = {}
 for role in gameRoles:
     nightKillInit[role] = []
 nightKills = {}
 nightKillCount = 0
+
 def resetNightKills():
     global nightKills
     nightKills = nightKillInit.copy()
@@ -216,7 +223,7 @@ def voteConversation(playersVoting,convLength):
     for i in range(0,convLength):    
         choices = []
         for player in playersVoting:
-            answer = player.gpt.talk()
+            answer = player.gpt.tell("*"+player.name + " : ")#talk()
             choices.extend(recoverPlayersFromAnswer(answer))
             playerTalkTo(player,answer,playersVoting)
         if all(i == choices[0] for i in choices):
@@ -234,6 +241,13 @@ def roleKillPlayer(playerKilled,role):
     playerKilled.setDamocles(True)
     global nightKillCount
     nightKillCount += 1
+
+def removeKillFromRole(playerKilled,role):
+    global nightKills
+    nightKills[role].remove(playerKilled)
+    playerKilled.setDamocles(False)
+    global nightKillCount
+    nightKillCount -= 1
 
 def sleep(player):
     player.setState("Sleep")
@@ -261,16 +275,19 @@ def wakeAll():
 def playWitch():
     gameMasterTell("Witch, the victim is: " + nightKills.get("Werewolf")[-1].name)
     updateGame()
-    gameMasterTell("Do you wish to: let it die, save it or kill someone else ? If you decide to kill "
-                   "someone else, tell me its name.")
+    gameMasterTell("Do you wish to : let it die, save it or kill someone else ?")
     updateGame()
 
     # add prompt to give more explanations
-    prompt = "Please make a choice influenced by your knowledge of the game, between 'I let [victim_name] die.'," \
-             "'I save [victim_name].', or 'I decide to kill [extra_victim_name] in addition.'. " \
-             "This extra victim cannot be you, neither the current victim."
-    playerByRole["Witch"][0].gpt.addContext(prompt)
-    playerByRole["Witch"][0].gpt.addContextFromFile("witch_turn.txt")
+    if rolePowers["Witch"]["Life"] and rolePowers["Witch"]["Death"]:
+        print(">                           Witch both")
+        playerByRole["Witch"][0].gpt.addContextFromFile("witch_turn_both.txt")
+    elif rolePowers["Witch"]["Life"]:
+        print(">                           Witch life")
+        playerByRole["Witch"][0].gpt.addContextFromFile("witch_turn_life.txt")
+    elif rolePowers["Witch"]["Death"]:
+        print(">                           Witch death")
+        playerByRole["Witch"][0].gpt.addContextFromFile("witch_turn_death.txt")
 
     answer = playerByRole["Witch"][0].gpt.talk()
     playerTalkTo(playerByRole["Witch"][0], answer, [])
@@ -280,11 +297,16 @@ def playWitch():
     requested = requested[0]
 
     if "kill" in answer:
-        nightKills["Witch"].append(players[requested[0]])
+        #nightKills["Witch"].append(players[requested[0]])
+        rolePowers["Witch"]["Death"] = False
+        roleKillPlayer(players[requested],"Witch")
     elif "save" in answer:
-        nightKills["Werewolf"].pop()
+        #nightKills["Werewolf"].pop()
+        rolePowers["Witch"]["Life"] = False
+        removeKillFromRole(players[requested],"Werewolf")
+    updateGame()
 
-    print(nightKills)
+    #print(nightKills)
 
 def playSeer():
     gameMasterTell("Seer, please tell me the name of the player you would like to know the role")
@@ -341,6 +363,12 @@ def playRole(role):
 
 #####------------ PARTY ----------------------
 
+def villageWin():
+    addDisplayerGMText("The village wins !")
+
+def werewolvesWin():
+    addDisplayerGMText("The werewolves wins !")
+
 def applyKills():
     for key in nightKills:
         for player in nightKills[key]:
@@ -391,6 +419,7 @@ def dayDebate():
 
     updateGame()
     gameMasterTell("You agreed to eliminate " + choice.name)
+    eliminatePlayer(choice,"Everyone")
     updateGame()
 
 
@@ -406,7 +435,8 @@ def partyTurn(turn):
 
     playRole("Werewolf")
 
-    playRole("Witch")
+    if rolePowers["Witch"]["Life"] or rolePowers["Witch"]["Death"]:
+        playRole("Witch")
 
     applyKills()
     
@@ -442,7 +472,14 @@ initLogSaves()
 
 setup_window()
 
-partyTurn(1)
+for i in range(50): 
+    partyTurn(i)
+    if len(playerByRole["Werewolf"]) <= 0: #If there is no werewolf left, the village wins
+        villageWin()
+        break
+    elif len(playerByRole["Werewolf"]) == len(players): #If there is as many werewolf as players, then only the werewolves are left and they won
+        werewolvesWin()
+        break
 
 a = input()
 

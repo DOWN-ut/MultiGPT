@@ -1,0 +1,84 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Bob
+_
+GameMaster : Do you wish to: let it die, save it or kill someone else ? If you decide to kill someone else, tell me its name.
+_
+I save Bob.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Normy : I think we should start by discussing our suspicions and any information we have gathered so far. As the Seer, I discovered that Alice is a Werewolf. We should be cautious of her actions and statements.
+_
+Arthur : I agree, Normy. If the Seer has identified Alice as a Werewolf, we should definitely keep a close eye on her. It's important for the Seer to share any other information they have gathered as well.
+_
+Normy : I haven't discovered any other roles yet, but I will continue to use my ability to gather more information. It's crucial for us to work together and share any suspicions or observations we have. Let's keep an open mind and listen to what everyone has to say.
+_
+Adele : I think it's important for us to be cautious and not jump to conclusions too quickly. While the Seer's information about Alice is concerning, we should also consider the possibility that the Seer could be mistaken or that Alice may have a valid explanation for any suspicious behavior. Let's gather more information and hear from everyone before making any final decisions.
+_
+Arthur : I agree with Adele. While the Seer's information is valuable, we should also consider the possibility of false accusations or misunderstandings. It's important for us to have an open discussion and hear from Alice as well. Let's gather more information and listen to everyone's perspectives before making any hasty decisions.
+_
+I think it's important for us to consider all possibilities and not solely rely on the Seer's information. While it's concerning that Alice has been identified as a Werewolf, we should also keep in mind that there could be other factors at play. Let's encourage open communication and gather more evidence before making any decisions.
+_
+Alice : I understand your concerns, but I want to assure you all that I am not a Werewolf. I believe there may be a misunderstanding or a mistake in the Seer's information. I am willing to answer any questions and provide any information that may help clear my name. Let's work together to find the true Werewolves and not let suspicion divide us.
+_
+Alice, thank you for addressing our concerns. It's important for us to give everyone a fair chance to explain themselves. Let's keep an open mind and continue gathering information before making any final judgments. If anyone has any questions for Alice or any other suspicions, now is the time to voice them.
+_
+Alice : Thank you, Bob, for your understanding. I am here to answer any questions and address any concerns that anyone may have. Let's work together to uncover the true Werewolves and ensure the safety of the village.
+_
+Alice, I appreciate your willingness to cooperate and address our concerns. It's important for us to maintain a sense of unity and trust as we navigate through this game. Let's continue the discussion and hear from others before making any decisions.
+_
+Lea : I agree with Bob. It's crucial for us to maintain a sense of unity and trust as we navigate through this game. Let's continue the discussion and gather more information before making any decisions.
+_
+Arthur : I think it's important for us to approach this situation with caution and gather as much information as possible. While the Seer's information about Alice is concerning, we should also consider other factors and give everyone a fair chance to explain themselves. Let's continue the discussion and ask any necessary questions to help us make an informed decision.
+_
+Lea : I think it's important for us to keep an open mind and consider all possibilities. While the Seer's information about Alice is concerning, we should also remember that there could be other factors at play. Let's continue the discussion and gather more information before making any final judgments.
+_
+I agree with Lea and Arthur. It's important for us to approach this situation with an open mind and gather as much information as possible. Let's continue the discussion and ask any necessary questions to ensure a fair and informed decision.
+_
+Alice : Thank you all for giving me a chance to address your concerns. I understand the importance of gathering more information and keeping an open mind. I am here to cooperate and provide any additional information that may help in our decision-making process. Let's continue the discussion and work together to find the true Werewolves.
+_
+Thank you, Alice, for your cooperation. Let's continue the discussion and ask any remaining questions to gather more information. It's important for us to work together and make an informed decision for the safety of the village.
+_
+Normy : I think it's important for us to keep the conversation going and ask any remaining questions to gather more information. Let's continue to listen to each other's perspectives and make sure we consider all possibilities before making our decision.
+_
+Arthur : I agree with Normy. Let's continue the conversation and ask any remaining questions to gather more information. It's important for us to consider all possibilities and make a well-informed decision.
+_
+I think it's important for us to continue the conversation and ask any remaining questions to gather more information. Let's keep an open mind and consider all perspectives before making our decision. We're here to work together and ensure the safety of the village.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+I vote against Alice.
+_
+Alice : I vote against Alice.
+_
+Adele : I vote against Alice.
+_
+Normy : Normy : I vote against Alice.
+_
+Arthur : Arthur : I vote against Alice.
+_
+Lea : I vote against Alice.
+_
+GameMaster : You agreed to eliminate Alice
+_
