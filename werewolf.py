@@ -9,6 +9,7 @@ from datetime import datetime
 from collections import Counter
 import os
 import time
+import sys 
 
 print(Fore.WHITE)
 
@@ -62,6 +63,7 @@ for role in gameRoles:
 nightKills = {}
 nightKillCount = 0
 
+enable_audio = False
 audioCount = 0
 voices = {}
 voices["GameMaster"] = "en-US-News-N"
@@ -72,12 +74,20 @@ def resetNightKills():
     global nightKillCount
     nightKillCount = 0
 
-def updateGame(delay = 0):
+def updateGame(delay = -1):
     display_game()
-    time.sleep(delay)
+    if delay == -1:
+        if not enable_audio :
+            time.sleep(2)
+        else:
+            time.sleep(0)
+    else:
+        time.sleep(delay)
 
 
 def speak(player,text):
+    if not enable_audio:
+        return
     global audioCount
     path = f"./{partyId}/{audioCount}.wav"
     audioCount += 1
@@ -468,6 +478,9 @@ def partyTurn(turn):
     updateGame()
 
     dayDebate()
+
+
+enable_audio = int(sys.argv[1])
 
 createPlayer("Bob",[255,50,50],"en-US-Neural2-A",getRandomRole())
 createPlayer("Alice",[255,255,50],"en-US-Neural2-C",getRandomRole())
