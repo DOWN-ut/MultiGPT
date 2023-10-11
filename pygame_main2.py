@@ -26,7 +26,6 @@ headImages["Sleep"] = "images/sleep.png"
 headImages["Dead"] = "images/grave.png"
 
 playerDisplayers = []
-playersByName = {}
 
 window_size = (800,700)
 right_frame = ""
@@ -41,7 +40,6 @@ def addAMessage(playerName, message):
     conversationPannel.config(state=tk.DISABLED)  # Désactiver l'édition
     conversationPannel.yview(tk.END) # Faire défiler vers le bas
     #messagesList.append({"name": player, "text": message})
-    draw_talkBubble(canvas,playersByName[playerName],message)
     fenetre.update()
 
 def colorOf(rgb):
@@ -53,7 +51,7 @@ player_circle_distance = 300
 player_card_distance = 225
 player_name_distance = 375
 player_death_distance = 340
-player_bubble_distance = 100
+
 
 # Créez une liste pour stocker les objets PhotoImage
 image_list = []
@@ -126,15 +124,9 @@ def draw_damocles(canvas,center):
     image_list.append(image)  # Ajouter l'image à la liste
     canvas.create_image(window_center()[0] + center[0], window_center()[1] + center[1] - 10, anchor=tk.N, image=image)
 
-def draw_talkBubble(canvas,player,message):
+def draw_talkBubble(canvas,player):
     direction = (math.cos(math.radians(player.position)),math.sin(math.radians(player.position)))
     position = mul(direction,player_bubble_distance)
-    rx = window_center()[0] + position[0]
-    ry = window_center()[1] + position[1]
-    size = [200,100]
-    canvas.create_rectangle(rx - (size[0] * 0.5),ry - (size[1] * 0.5),rx + (size[0] * 0.5),ry + (size[1] * 0.5), fill="white")
-    canvas.create_text(rx,ry, text=message,fill=colorOf([0,0,0]))
-
 
 
 
@@ -149,7 +141,6 @@ class PlayerDisplayer:
         self.damocles = False
         self.dead = False
         playerDisplayers.append(self)
-        playersByName[self.name] = self
 
     def setDead(self,d):
         self.dead = d
@@ -216,16 +207,3 @@ def setup_window() :
 
     # Démarrer la fenêtre principale
     #fenetre.mainloop()
-
-def test():
-    setup_window()
-
-    p = PlayerDisplayer("Bob","Villager",[255,50,50],0)
-
-    display_game()
-    addAMessage("Bob","Hello everyone !")
-
-    a = input()
-
-
-test()

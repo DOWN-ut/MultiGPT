@@ -2,6 +2,8 @@ with open("gpt.py") as f:
     exec(f.read())
 with open("pygame_main2.py") as f:
     exec(f.read())
+with open("tts.py") as f:
+    exec(f.read())
 from colorama import Fore, Back, Style
 from datetime import datetime
 from collections import Counter
@@ -60,15 +62,29 @@ for role in gameRoles:
 nightKills = {}
 nightKillCount = 0
 
+audioCount = 0
+voices = {}
+voices["GameMaster"] = "en-US-News-N"
+
 def resetNightKills():
     global nightKills
     nightKills = nightKillInit.copy()
     global nightKillCount
     nightKillCount = 0
 
-def updateGame(delay = 2):
+def updateGame(delay = 0):
     display_game()
     time.sleep(delay)
+
+
+def speak(player,text):
+    global audioCount
+    path = f"./{partyId}/{audioCount}.wav"
+    audioCount += 1
+    if isinstance(player,str):
+        makeSpeech(voices[player],text,path)
+    else:
+        makeSpeech(player.voice,text,path)
 
 def conversationTalk(playerId,agents,text):
     #addDisplayPlayerText(players[playerId],text)
@@ -77,10 +93,12 @@ def conversationTalk(playerId,agents,text):
 def addDisplayPlayerText(player,text):
     addDisplayText(player.name + " : " + text)
     addAMessage(player.name,text)
+    speak(player,text)
 
 def addDisplayerGMText(text):
     addDisplayText(text)
     addAMessage("GameMaster",text)
+    speak("GameMaster",text)
 
 def addDisplayText(text):
     global mainLog 
@@ -109,9 +127,10 @@ def saveLogs():
     
 
 class Player:
-    def __init__(self, name, color, role,prepromtPath):
+    def __init__(self, name, color,voice, role,prepromtPath):
      self.name = name
      self.color = color
+     self.voice = voice
      self.role = role
      self.state = "Neutral"
      self.damocles = False
@@ -145,8 +164,8 @@ def eliminatePlayer(player,killerRole):
     playerByRole[player.role].remove(player)
     player.die(killerRole)
 
-def createPlayer(name,color,role):
-    player = Player(name,color,role,"player_prompt.txt")
+def createPlayer(name,color,voice,role):
+    player = Player(name,color,voice,role,"player_prompt.txt")
     players.append(player)
     playerByRole[role].append(player)
     return player
@@ -450,12 +469,12 @@ def partyTurn(turn):
 
     dayDebate()
 
-createPlayer("Bob",[255,50,50],getRandomRole())
-createPlayer("Alice",[255,255,50],getRandomRole())
-createPlayer("Adele",[75,255,75],getRandomRole())
-createPlayer("Normy",[255,50,255],getRandomRole())
-createPlayer("Arthur",[50,255,255],getRandomRole())
-createPlayer("Lea",[50,150,50],getRandomRole())
+createPlayer("Bob",[255,50,50],"en-US-Neural2-A",getRandomRole())
+createPlayer("Alice",[255,255,50],"en-US-Neural2-C",getRandomRole())
+createPlayer("Adele",[75,255,75],"en-US-Neural2-E",getRandomRole())
+createPlayer("Normy",[255,50,255],"en-US-Neural2-D",getRandomRole())
+createPlayer("Arthur",[50,255,255],"en-US-Neural2-I",getRandomRole())
+createPlayer("Lea",[50,150,50],"en-US-Neural2-H",getRandomRole())
 
 print("Party ID : " + partyId)
 printPlayers()
@@ -470,6 +489,8 @@ initLogSaves()
 #displayInterlocutors(ints,agents)
 
 setup_window()
+
+partyTurn(0)
 
 for i in range(50): 
     partyTurn(i)
