@@ -118,7 +118,6 @@ class Player:
      self.personalPrompt = "Your name is " + self.name + " and your role is " + self.role
      self.gpt = GptAgent(self.name,self.color,prepromtPath,self.personalPrompt)
      self.displayer = PlayerDisplayer(name,role,color,0)
-     playerDisplayers.append(self.displayer)
      
     def setState(self,state):
         self.state = state
