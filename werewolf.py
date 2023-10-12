@@ -67,6 +67,12 @@ audioCount = 0
 voices = {}
 voices["GameMaster"] = "en-US-News-N"
 
+replaying = False
+partyData = []
+replayIndex = 0
+replayAudioIndex = 0
+replayPlayersRoles = []
+
 def resetNightKills():
     global nightKills
     nightKills = {}
@@ -85,17 +91,35 @@ def updateGame(delay = -1):
     else:
         time.sleep(delay)
 
+def replayAudio(index):
+    path = partyId + "/" + str(index) + ".wav"
+    if os.path.isfile(path):
+        playsound(path)
+        return True
+    else:
+        return False
 
 def speak(player,text):
     if not enable_audio:
         return
     global audioCount
+    global replayAudioIndex
     path = f"./{partyId}/{audioCount}.wav"
     audioCount += 1
     if isinstance(player,str):
-        makeSpeech(voices[player],text,path)
+        if replaying:
+            if not replayAudio(replayAudioIndex):
+                makeSpeech(voices[player],text,path)
+        else:
+            makeSpeech(voices[player],text,path)
     else:
-        makeSpeech(player.voice,text,path)
+        if replaying:
+            if not replayAudio(replayAudioIndex):
+                makeSpeech(player.voice,text,path)
+        else:
+            makeSpeech(player.voice,text,path)
+    replayAudioIndex += 1
+
 
 def conversationTalk(playerId,agents,text):
     #addDisplayPlayerText(players[playerId],text)
@@ -107,7 +131,7 @@ def addDisplayPlayerText(player,text):
     speak(player,text)
 
 def addDisplayerGMText(text):
-    addDisplayText(text)
+    addDisplayText("GameMaster : " + text)
     addAMessage("GameMaster",text)
     speak("GameMaster",text)
 
@@ -128,6 +152,12 @@ def initLogSaves():
     if not os.path.exists(partyId):
         os.mkdir(partyId)
 
+def initMainLog():
+    global mainLog
+    for player in players:
+        mainLog += player.role + " "
+    mainLog += "\n_\n"
+
 def saveLogs():
     f = open(partyId + "/party.txt","x")
     f.write(mainLog)
@@ -136,6 +166,55 @@ def saveLogs():
     for player in players:
         player.saveData()
     
+def loadParty(path):
+    global partyData
+    global replayIndex
+    global replayPlayersRoles
+    partyData = open(path, "r").read().split('_')
+    replayPlayersRoles = partyData[0].split(" ")
+    for i in range(len(replayPlayersRoles)):
+        replayPlayersRoles[i] = replayPlayersRoles[i].replace("\n","")
+    replayIndex = 1
+
+def readPartyLine(index):
+    if index >= len(partyData):
+        return False
+
+    line = partyData[index]
+    line = line[1:-1]
+    if len(line) <= 0:
+        return False
+
+    if line[0] == '>':
+        action = line.split(" ")[1]
+        target = line.split(" ")[2].replace("\n","")
+        print("Action : " + action + "  " + target)
+        if action == "damocles":
+            getPlayerByName(target).setDamocles(True)
+        elif action == "undamocles":
+            getPlayerByName(target).setDamocles(False)
+        elif action == "kill":
+            getPlayerByName(target).die("Werewolf")
+        elif action == "sleep":
+            if target == "all":
+                sleepAll()
+            else:
+                sleep(getPlayerByName(target))
+        elif action == "wake":
+            if target == "all":
+                wakeAll()
+            else:
+                wake(getPlayerByName(target))
+    else:
+        interlo = line.split(":",1)[0].replace(" ","")
+        text = line.split(":",1)[1]
+        if interlo == "GameMaster":
+            addDisplayerGMText(text)
+        else:
+            addDisplayPlayerText(getPlayerByName(interlo),text)
+
+
+    return True
 
 class Player:
     def __init__(self, name, color,voice,perso, role,prepromtPath):
@@ -170,7 +249,8 @@ class Player:
     def die(self,killerRole):
         self.gpt.addContext("You were killed by " + killerRole)
         self.displayer.setDead(True)
-        self.saveData()
+        if not replaying :
+            self.saveData()
 
 def eliminatePlayer(player,killerRole):
     print("Removing " + player.name + " from ")
@@ -180,12 +260,20 @@ def eliminatePlayer(player,killerRole):
     if player in playerByRole[player.role]:
         playerByRole[player.role].remove(player)
     player.die(killerRole)
+    global mainLog
+    mainLog += "> kill " + player.name + "\n_\n"
 
 def createPlayer(name,color,voice,perso,role):
     player = Player(name,color,voice,perso,role,"player_prompt.txt")
     players.append(player)
     playerByRole[role].append(player)
     return player
+
+def getPlayerByName(name):
+    for player in players:
+        if player.name == name:
+            return player
+    return None
 
 def getRandomRole():
      roleId = random.randint(0,len(gameRoles)-1)
@@ -276,6 +364,8 @@ def roleKillPlayer(playerKilled,role):
     playerKilled.setDamocles(True)
     global nightKillCount
     nightKillCount += 1
+    global mainLog
+    mainLog += "> damocles " + playerKilled.name + "\n_\n"
 
 def removeKillFromRole(playerKilled,role):
     global nightKills
@@ -283,9 +373,13 @@ def removeKillFromRole(playerKilled,role):
     playerKilled.setDamocles(False)
     global nightKillCount
     nightKillCount -= 1
+    global mainLog
+    mainLog += "> undamocles " + playerKilled.name + "\n_\n"
 
 def sleep(player):
     player.setState("Sleep")
+    global mainLog
+    mainLog += "> sleep " + player.name + "\n_\n"
 
 def sleepSome(playerToSleep):
     for player in playerToSleep:
@@ -297,6 +391,8 @@ def sleepAll():
 def wake(player):
     if player.state == "Sleep":
         player.setState("Neutral")
+        global mainLog
+        mainLog += "> wake " + player.name + "\n_\n"
 
 def wakeSome(playerToWake):
     for player in playerToWake:
@@ -514,21 +610,38 @@ def partyTurn(turn):
 
     dayDebate()
 
+def replayParty():
+    global replayIndex
+    updateGame()
+    while readPartyLine(replayIndex):
+        updateGame()
+        replayIndex += 1
 
 enable_audio = int(sys.argv[1])
+replaying = len(sys.argv) >= 3
 
-createPlayer("Baptiste",[255,50,50],"en-US-Neural2-A","baptiste_perso.txt",getRandomRole())
-createPlayer("Christina",[255,255,50],"en-US-Neural2-C","christina_perso.txt",getRandomRole())
-createPlayer("Adele",[75,255,75],"en-US-Neural2-E","adele_perso.txt",getRandomRole())
-createPlayer("Normy",[255,50,255],"en-US-Standard-I","normy_perso.txt",getRandomRole())
-createPlayer("Arthur",[50,255,255],"en-US-Neural2-I","arthur_perso.txt",getRandomRole())
-createPlayer("Lea",[50,150,50],"en-US-Neural2-H","lea_perso.txt",getRandomRole())
+if replaying:    
+    partyId = sys.argv[2]
+    print("Loading party : " +  partyId)
+    loadParty(partyId + "/party.txt")
+    #print(partyData)
 
+createPlayer("Baptiste",[255,50,50],"en-US-Neural2-A","baptiste_perso.txt",replayPlayersRoles[0] if len(replayPlayersRoles) > 0 else getRandomRole())
+createPlayer("Christina",[255,255,50],"en-US-Neural2-C","christina_perso.txt",replayPlayersRoles[1] if len(replayPlayersRoles) > 0 else getRandomRole())
+createPlayer("Adele",[75,255,75],"en-US-Neural2-E","adele_perso.txt",replayPlayersRoles[2] if len(replayPlayersRoles) > 0 else getRandomRole())
+createPlayer("Normy",[255,50,255],"en-US-Neural2-D","normy_perso.txt",replayPlayersRoles[3] if len(replayPlayersRoles) > 0 else getRandomRole())
+createPlayer("Arthur",[50,255,255],"en-US-Neural2-I","arthur_perso.txt",replayPlayersRoles[4] if len(replayPlayersRoles) > 0 else getRandomRole())
+createPlayer("Lea",[50,150,50],"en-US-Neural2-H","lea_perso.txt",replayPlayersRoles[5] if len(replayPlayersRoles) > 0 else getRandomRole())
+    
 print("Party ID : " + partyId)
-printPlayers()
-initPlayers()
-initLogSaves()
 
+initPlayers()
+if not replaying:
+    initMainLog()
+    initLogSaves()
+    
+
+printPlayers()
 #agents = [player.gpt for player in players]
 #txt = "Adele : I think Arthur is a werewolf. What's your opinion Normy ? Are you suspicious Normy ?? Also, i heard Arthur move... What the fuck were you doing Arthur ??"
 #ints = recoverInterlocutors(txt,agents)
@@ -538,21 +651,20 @@ initLogSaves()
 
 setup_window()
 
-#partyTurn(0)
-
-
-for i in range(50): 
-    partyTurn(i)
-    if len(playerByRole["Werewolf"]) <= 0: #If there is no werewolf left, the village wins
-        villageWin()
-        break
-    elif len(playerByRole["Werewolf"]) == len(players): #If there is as many werewolf as players, then only the werewolves are left and they won
-        werewolvesWin()
-        break
-    elif len(players) == 2 and  len(playerByRole["Werewolf"]) == 1:
-        werewolvesWin()
-        break
-
+if not replaying:
+    for i in range(10): 
+        partyTurn(i)
+        if len(playerByRole["Werewolf"]) <= 0: #If there is no werewolf left, the village wins
+            villageWin()
+            break
+        elif len(playerByRole["Werewolf"]) == len(players): #If there is as many werewolf as players, then only the werewolves are left and they won
+            werewolvesWin()
+            break
+        elif len(players) == 2 and  len(playerByRole["Werewolf"]) == 1:
+            werewolvesWin()
+            break
+else:
+    replayParty()
 #a = input()
 
 #for actTime in range(500):
@@ -563,8 +675,8 @@ for i in range(50):
 #        i = actTime / 100
 #        addDisplayPlayerText(players[int(i)],"Hello everyone !")
 
-
-saveLogs()
+if not replaying:
+    saveLogs()
 
 
 

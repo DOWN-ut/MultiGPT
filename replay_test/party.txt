@@ -1,0 +1,122 @@
+Villager Witch Seer Werewolf Werewolf Villager 
+_
+GameMaster : The city falls asleep !
+_
+> sleep Baptiste
+_
+> sleep Christina
+_
+> sleep Adele
+_
+> sleep Normy
+_
+> sleep Arthur
+_
+> sleep Lea
+_
+GameMaster : The Seer wakes up.
+_
+> wake Adele
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+Adele : I want to know the role of Arthur.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+> sleep Adele
+_
+GameMaster : The Werewolf wakes up.
+_
+> wake Normy
+_
+> wake Arthur
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Normy : I vote against Adele.
+_
+Arthur : I vote against Adele.
+_
+> damocles Adele
+_
+GameMaster : You agreed to kill Adele
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+> sleep Normy
+_
+> sleep Arthur
+_
+GameMaster : The Witch wakes up.
+_
+> wake Christina
+_
+GameMaster : Witch, the victim is: Adele
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+Christina : I save Adele.
+_
+> undamocles Adele
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+> sleep Christina
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+> wake Baptiste
+_
+> wake Christina
+_
+> wake Adele
+_
+> wake Normy
+_
+> wake Arthur
+_
+> wake Lea
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Baptiste : Hey everyone! So, it seems like we had a peaceful night with no deaths. That's definitely a good start. Let's try to figure out who might be the werewolves among us. Any thoughts or suspicions?
+_
+Lea : Hey Baptiste! I'm glad no one got hurt last night. I don't have any specific suspicions yet, but I think it's important for us to share any strange behavior or observations we might have noticed.
+_
+Adele : I don't have any suspicions yet, but let's keep an eye out for any unusual behavior.
+_
+Lea : I agree, Adele. We should definitely be vigilant and observe everyone's actions and words. It's still early in the game, so we don't have much to go on, but let's keep an open mind and consider everyone's perspectives. Is there anything else we should keep in mind?
+_
+Normy : I think we should pay attention to how people defend themselves when they are accused. It can give us clues about their innocence or guilt. Let's also remember that the werewolves might try to blend in and act like innocent villagers, so we have to be cautious.
+_
+Lea : That's a good point, Normy. The way people react when they're accused can definitely be telling. We should also be mindful of the fact that the werewolves might try to manipulate the situation by pointing fingers at innocent villagers. Let's try to approach this with a fair and open mindset, while still being cautious.
+_
+Christina : I think it's important for us to gather as much information as possible before making any accusations. We should ask each other questions and try to piece together any inconsistencies or suspicious behavior. It's also worth considering that the werewolves might try to deceive us by acting innocent, so we need to be cautious and not jump to conclusions too quickly.
+_
+Baptiste : Hey everyone, I have a joke to lighten up the mood! Why don't skeletons fight each other? They don't have the guts! Alright, now back to the discussion. I agree with Christina, gathering information is key. Let's ask each other questions and share any observations we have. Remember, we're all working together to figure this out.
+_
+Adele : I vote against Arthur.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Christina : I vote against Arthur.
+_
+Adele : I vote against Arthur.
+_
+Normy : I vote against Arthur.
+_
+Arthur : I vote against Adele.
+_
+Lea : I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur,who was a Werewolf
+_
+> kill Arthur
+_

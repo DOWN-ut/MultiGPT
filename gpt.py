@@ -179,7 +179,7 @@ def conversation(coherence,lenght,agents,initPrompt):
 
     for i in range(lenght-1):
         time.sleep(1)
-        print("      -  Convo turn " + str(i))
+        #print("      -  Convo turn " + str(i))
         interlocutors = recoverInterlocutors(answer,agents) 
 
         interlocutors = processInterlocutors(interlocutors,ids,coherence)
