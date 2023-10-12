@@ -25,7 +25,7 @@ witchCount = 1
 startPrompt = "Start of the party :"
 
 werewolfConvLength = 3
-debatLengthPerPlayer = 2 #mutliplied by the number of remaining players
+debatLengthPerPlayer = 1.5 #mutliplied by the number of remaining players
 dayVoteLength = 1
 
 rolesPrompt = "*The roles are : "
@@ -137,14 +137,16 @@ def saveLogs():
     
 
 class Player:
-    def __init__(self, name, color,voice, role,prepromtPath):
+    def __init__(self, name, color,voice,perso, role,prepromtPath):
      self.name = name
      self.color = color
      self.voice = voice
      self.role = role
      self.state = "Neutral"
+     self.perso = perso
      self.damocles = False
-     self.personalPrompt = "Your name is " + self.name + " and your role is " + self.role
+     self.personalPrompt = "Your name is " + self.name + " and your role is " + self.role + "\n"
+     self.personalPrompt += open("prompts/"+self.perso, "r").read()
      self.gpt = GptAgent(self.name,self.color,prepromtPath,self.personalPrompt)
      self.displayer = PlayerDisplayer(name,role,color,0)
      
@@ -170,12 +172,16 @@ class Player:
         self.saveData()
 
 def eliminatePlayer(player,killerRole):
-    players.remove(player)
-    playerByRole[player.role].remove(player)
+    print("Removing " + player.name + " from ")
+    print(players)
+    if player in players:
+        players.remove(player)
+    if player in playerByRole[player.role]:
+        playerByRole[player.role].remove(player)
     player.die(killerRole)
 
-def createPlayer(name,color,voice,role):
-    player = Player(name,color,voice,role,"player_prompt.txt")
+def createPlayer(name,color,voice,perso,role):
+    player = Player(name,color,voice,perso,role,"player_prompt.txt")
     players.append(player)
     playerByRole[role].append(player)
     return player
@@ -407,6 +413,7 @@ def werewolvesWin():
     addDisplayerGMText("The werewolves wins !")
 
 def applyKills():
+    print(players)
     for key in nightKills:
         for player in nightKills[key]:
             eliminatePlayer(player,key)
@@ -440,8 +447,9 @@ def dayDebate():
     for player in players:
         player.gpt.addContextFromFile("debate_turn.txt")
 
-    dl = debatLengthPerPlayer * len(players) 
-    conversation(3,dl,gpts,"*Start the debate and give your opinion")
+    dl = int(debatLengthPerPlayer * len(players) )
+    print("We are running " + str(dl) + " convo turns : " + str(debatLengthPerPlayer) + " for each " + str(len(players)))
+    conversation(2,dl,gpts,"*Start the debate and give your opinion")
 
     updateGame()
 
@@ -491,12 +499,12 @@ def partyTurn(turn):
 
 enable_audio = int(sys.argv[1])
 
-createPlayer("Bob",[255,50,50],"en-US-Neural2-A",getRandomRole())
-createPlayer("Alice",[255,255,50],"en-US-Neural2-C",getRandomRole())
-createPlayer("Adele",[75,255,75],"en-US-Neural2-E",getRandomRole())
-createPlayer("Normy",[255,50,255],"en-US-Neural2-D",getRandomRole())
-createPlayer("Arthur",[50,255,255],"en-US-Neural2-I",getRandomRole())
-createPlayer("Lea",[50,150,50],"en-US-Neural2-H",getRandomRole())
+createPlayer("Baptiste",[255,50,50],"en-US-Neural2-A","baptiste_perso.txt",getRandomRole())
+createPlayer("Christina",[255,255,50],"en-US-Neural2-C","christina_perso.txt",getRandomRole())
+createPlayer("Adele",[75,255,75],"en-US-Neural2-E","adele_perso.txt",getRandomRole())
+createPlayer("Normy",[255,50,255],"en-US-Standard-I","normy_perso.txt",getRandomRole())
+createPlayer("Arthur",[50,255,255],"en-US-Neural2-I","arthur_perso.txt",getRandomRole())
+createPlayer("Lea",[50,150,50],"en-US-Neural2-H","lea_perso.txt",getRandomRole())
 
 print("Party ID : " + partyId)
 printPlayers()

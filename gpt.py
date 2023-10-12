@@ -14,7 +14,7 @@ def gptPull(context):
     chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", 
             messages=context,
-            temperature = 0.4,
+            temperature = 0.65,
             max_tokens=max_response_tokens
         )
     choices = chat.choices
@@ -177,8 +177,9 @@ def conversation(coherence,lenght,agents,initPrompt):
     answer = agents[agentId].tell(initPrompt)
     conversationTalk(agentId,agents,answer)
 
-    for i in range(lenght):
+    for i in range(lenght-1):
         time.sleep(1)
+        print("      -  Convo turn " + str(i))
         interlocutors = recoverInterlocutors(answer,agents) 
 
         interlocutors = processInterlocutors(interlocutors,ids,coherence)

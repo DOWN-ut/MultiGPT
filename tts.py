@@ -42,4 +42,4 @@ def makeSpeech(voice_name:str,text:str,path:str):
 
 
 print(list_voices("en-US"))
-#makeSpeech("en-US-News-N","Hello everyone","./audiotests/test1.wav")
+#makeSpeech("en-US-Standard-I","Hello everyone","./audiotests/test1.wav")
