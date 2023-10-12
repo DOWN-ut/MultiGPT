@@ -454,10 +454,11 @@ def playSeer():
     answer = playerByRole["Seer"][0].gpt.talk()
     playerTalkTo(playerByRole["Seer"][0],answer,[])  
     requested = recoverPlayersFromAnswer(answer)
-    requested = requested[0]
-    
-    updateGame()
-    gameMasterTellTo("Their role is : " + players[requested].role,playerByRole["Seer"])
+    if len(requested) > 0:
+        requested = requested[0]
+        updateGame()
+        gameMasterTellTo("Their role is : " + players[requested].role,playerByRole["Seer"])
+
     updateGame()
  
 def playWerewolf():
@@ -627,7 +628,10 @@ def replayParty():
         replayIndex += 1
 
 def winConditionW2():
-    return len(players) == 2 and  len(playerByRole["Werewolf"]) == 1
+    if len(players) == 2 and len(playerByRole["Werewolf"]) == 1:
+        return True
+    elif len(players) == 3 and len(playerByRole["Werewolf"]) == 2:
+        return True
 def winConditionW():
     return len(playerByRole["Werewolf"]) == len(players)
 def winConditionV():
