@@ -1,0 +1,124 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I would like to know the role of Normy.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Christina
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 0th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+I think it's important for us to share any suspicions or observations we may have. I would like to start by saying that I am the Seer, and I discovered that Normy is a Werewolf. We should consider this information when making our decision.
+_
+Baptiste : Wow, Christina coming in strong with some valuable information! Normy being a Werewolf definitely raises some eyebrows. We should definitely take this into consideration when deciding who to vote for. Any thoughts from the rest of you?
+_
+Adele : I don't have any suspicions at the moment. I'm just going to go with the flow and see what everyone else thinks.
+_
+Normy : I... I don't understand what's going on... Why are we accusing each other? Can't we just have a peaceful party?
+_
+Arthur : I don't trust anyone here. We can't afford to be naive. We need to be cautious and consider all possibilities.
+_
+I understand your confusion, Normy. But we need to find the werewolves among us in order to protect the village. It's a necessary part of the game. We should trust the information given by the Seer, as they have a special ability to uncover the truth.
+_
+Adele : I agree with Christina. We should trust the information from the Seer, but also keep an open mind and listen to everyone's opinions before making a decision.
+_
+Baptiste : Hey everyone, let's not forget to keep the atmosphere light and fun! We're here to have a good time, even if we're trying to figure out who the werewolves are. Normy, I know it can be overwhelming, but it's all part of the game. Let's try to enjoy the process and keep our spirits up!
+_
+I appreciate your perspective, Baptiste. It's important to strike a balance between the seriousness of the game and maintaining a positive atmosphere. Let's keep the game in mind, but also remember to have fun and enjoy the party.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Normy. I think we should consider the information provided by the Seer and take action accordingly.
+_
+I vote against Normy as well. The Seer's information is valuable, and we should take it into consideration when making our decision.
+_
+Adele : I vote against Normy. Let's trust the Seer's information and see where it leads us.
+_
+Normy : I vote against... Normy.
+_
+Arthur : I vote against Normy. The Seer's information is compelling, and we need to prioritize the safety of the village.
+_
+Lea : I vote against Normy as well. It seems like the majority of us are in agreement and the Seer's information is worth considering.
+_
+GameMaster : You agreed to eliminate Normy,who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I would like to know the role of Lea.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Arthur
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : Werewolf killed 1 players last night !
+_
+GameMaster : They killed Arthur.
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : I think we should start by discussing any suspicions or information we have. It's important to share what we know in order to make an informed decision.
+_
+Lea : I agree with Adele. Sharing information and suspicions can help us narrow down our options and make a more informed decision. Let's hear from everyone and see if anyone has any insights or observations.
+_
+Baptiste : Alright, let's keep the conversation going! It's important for us to listen to each other and consider all perspectives. Does anyone have any suspicions or observations they'd like to share? Remember, we're all here to find the werewolves and protect the village.
+_
+Lea : I don't have any specific suspicions at the moment. I think it's important for us to listen to each other and consider all possibilities before making any accusations. Let's keep an open mind and gather more information before coming to a conclusion.
+_
+Baptiste : Absolutely, Lea! Keeping an open mind is crucial in a game like this. We shouldn't rush to judgment without sufficient evidence. Let's continue to discuss and gather more information before making any decisions. Remember, we're all working together to figure out the truth.
+_
+I agree with Baptiste and Lea. We should approach this with a calm and rational mindset. It's important for us to listen to each other and evaluate the information we have before jumping to conclusions. Let's continue sharing our thoughts and observations to make the best decision for the village.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Lea. I'm sorry, but I have a gut feeling that something is off. Let's see how the votes go and discuss further.
+_
+I vote against Baptiste. While I understand your gut feeling, Baptiste, I believe it's important to consider all perspectives and not make hasty decisions. Let's continue discussing and gathering more information before we finalize our votes.
+_
+Adele : I vote against Lea. Let's consider all the information and opinions before making a final decision.
+_
+Lea : I vote against Baptiste. While I understand your gut feeling, Baptiste, I believe it's important for us to have an open and inclusive discussion before jumping to conclusions. Let's continue to gather more information and consider all perspectives before making our final decision.
+_
+GameMaster : You agreed to eliminate Lea,who was a Werewolf
+_

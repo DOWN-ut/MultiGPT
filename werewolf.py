@@ -549,6 +549,9 @@ for i in range(50):
     elif len(playerByRole["Werewolf"]) == len(players): #If there is as many werewolf as players, then only the werewolves are left and they won
         werewolvesWin()
         break
+    elif len(players) == 2 and  len(playerByRole["Werewolf"]) == 1:
+        werewolvesWin()
+        break
 
 #a = input()
 
