@@ -322,16 +322,16 @@ def playWitch():
     updateGame()
 
     requested = recoverPlayersFromAnswer(answer)
-    requested = requested[0]
-
-    if "kill" in answer:
-        #nightKills["Witch"].append(players[requested[0]])
-        rolePowers["Witch"]["Death"] = False
-        roleKillPlayer(players[requested],"Witch")
-    elif "save" in answer:
-        #nightKills["Werewolf"].pop()
-        rolePowers["Witch"]["Life"] = False
-        removeKillFromRole(players[requested],"Werewolf")
+    if 0 < len(requested):
+        requested = requested[0]
+        if "kill" in answer:
+            #nightKills["Witch"].append(players[requested[0]])
+            rolePowers["Witch"]["Death"] = False
+            roleKillPlayer(players[requested],"Witch")
+        elif "save" in answer:
+            #nightKills["Werewolf"].pop()
+            rolePowers["Witch"]["Life"] = False
+            removeKillFromRole(players[requested],"Werewolf")
     updateGame()
 
     #print(nightKills)
@@ -503,7 +503,7 @@ initLogSaves()
 
 setup_window()
 
-partyTurn(0)
+#partyTurn(0)
 
 for i in range(50): 
     partyTurn(i)
