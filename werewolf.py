@@ -512,7 +512,7 @@ def partyTurn(turn):
     gameMasterTell("Now is time to debate before voting for someone to kill.")
     updateGame()
 
-    #dayDebate()
+    dayDebate()
 
 
 enable_audio = int(sys.argv[1])
