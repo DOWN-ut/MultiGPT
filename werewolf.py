@@ -33,6 +33,8 @@ rolesPrompt += str(villagerCount) + " villagers , "
 rolesPrompt += str(seerCount) + " seers "
 rolesPrompt += "and " + str(werewolfCount) + " werewolves."
 
+allGameRoles = ["Village","Werewolf","Seer","Witch"]
+
 gameRoles = []
 gameRoles.extend(["Villager"] * villagerCount)
 gameRoles.extend(["Seer"] * seerCount)
@@ -57,9 +59,6 @@ rolePowers["Witch"]["Life"] = True
 rolePowers["Witch"]["Death"] = True
  
 #Dictionary of all killed players during a night, by role ; syntaxe dict[role(string)] --> players[](Player)
-nightKillInit = {}
-for role in gameRoles:
-    nightKillInit[role] = []
 nightKills = {}
 nightKillCount = 0
 
@@ -70,7 +69,9 @@ voices["GameMaster"] = "en-US-News-N"
 
 def resetNightKills():
     global nightKills
-    nightKills = nightKillInit.copy()
+    nightKills = {}
+    for role in allGameRoles:
+        nightKills[role] = []
     global nightKillCount
     nightKillCount = 0
 
@@ -173,7 +174,7 @@ class Player:
 
 def eliminatePlayer(player,killerRole):
     print("Removing " + player.name + " from ")
-    print(players)
+    #print(players)
     if player in players:
         players.remove(player)
     if player in playerByRole[player.role]:
@@ -483,6 +484,14 @@ def partyTurn(turn):
     sleepAll()
     updateGame()
     
+    '''roleKillPlayer(players[0],"Werewolf")
+    roleKillPlayer(players[1],"Werewolf")
+    roleKillPlayer(players[2],"Werewolf")
+    roleKillPlayer(players[3],"Werewolf")
+    applyKills()'''
+    
+    #roleKillPlayer(players[0],"Werewolf")
+
     if len(playerByRole["Seer"]) > 0:
         playRole("Seer")
 
@@ -503,7 +512,7 @@ def partyTurn(turn):
     gameMasterTell("Now is time to debate before voting for someone to kill.")
     updateGame()
 
-    dayDebate()
+    #dayDebate()
 
 
 enable_audio = int(sys.argv[1])
@@ -530,6 +539,7 @@ initLogSaves()
 setup_window()
 
 #partyTurn(0)
+
 
 for i in range(50): 
     partyTurn(i)

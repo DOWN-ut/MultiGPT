@@ -1,0 +1,40 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Baptiste  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Christina  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The city wakes up ! This is the 3th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Adele  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The city wakes up ! This is the 4th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Normy  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_

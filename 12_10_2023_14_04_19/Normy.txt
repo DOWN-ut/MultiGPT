@@ -1,0 +1,4 @@
+GameMaster : The city falls asleep !
+_
+You were killed by Werewolf
+_
