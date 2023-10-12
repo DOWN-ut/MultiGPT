@@ -67,6 +67,8 @@ audioCount = 0
 voices = {}
 voices["GameMaster"] = "en-US-News-N"
 
+speedRun = False
+
 replaying = False
 partyData = []
 replayIndex = 0
@@ -553,7 +555,7 @@ def dayDebate():
 
     dl = int(debatLengthPerPlayer * len(players) )
     print("We are running " + str(dl) + " convo turns : " + str(debatLengthPerPlayer) + " for each " + str(len(players)))
-    conversation(2,dl,gpts,"*Start the debate and give your opinion")
+    conversation(3,2,dl,gpts,"*Start the debate and give your opinion")
 
     updateGame()
 
@@ -605,6 +607,13 @@ def partyTurn(turn):
 
     morningAnnouncement()
 
+    if winConditionV(): 
+        return
+    elif winConditionW(): 
+        return
+    elif winConditionW2():
+        return
+
     gameMasterTell("Now is time to debate before voting for someone to kill.")
     updateGame()
 
@@ -616,6 +625,13 @@ def replayParty():
     while readPartyLine(replayIndex):
         updateGame()
         replayIndex += 1
+
+def winConditionW2():
+    return len(players) == 2 and  len(playerByRole["Werewolf"]) == 1
+def winConditionW():
+    return len(playerByRole["Werewolf"]) == len(players)
+def winConditionV():
+    return len(playerByRole["Werewolf"]) <= 0
 
 enable_audio = int(sys.argv[1])
 replaying = len(sys.argv) >= 3
@@ -654,13 +670,13 @@ setup_window()
 if not replaying:
     for i in range(10): 
         partyTurn(i)
-        if len(playerByRole["Werewolf"]) <= 0: #If there is no werewolf left, the village wins
+        if winConditionV(): #If there is no werewolf left, the village wins
             villageWin()
             break
-        elif len(playerByRole["Werewolf"]) == len(players): #If there is as many werewolf as players, then only the werewolves are left and they won
+        elif winConditionW(): #If there is as many werewolf as players, then only the werewolves are left and they won
             werewolvesWin()
             break
-        elif len(players) == 2 and  len(playerByRole["Werewolf"]) == 1:
+        elif winConditionW2():
             werewolvesWin()
             break
 else:
@@ -677,6 +693,8 @@ else:
 
 if not replaying:
     saveLogs()
+else:
+    a = input()
 
 
 

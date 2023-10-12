@@ -70,16 +70,19 @@ class GptAgent:
         else:
             self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + "\n" + additionnal)
         self.context = [self.prepromt]
+        self.lastTalked = 1
         
     def tellFromFile(self,file):
         return self.tell(open("prompts/"+file, "r").read())
 
     def tell(self,request):
         self.context = gptRequest(self.context,makeRequest(request))
+        self.lastTalked = 1
         return self.context[len(self.context)-1]["content"]
 
     def talk(self):
         self.context = gptPull(self.context)
+        self.lastTalked = 1
         return self.context[len(self.context)-1]["content"]
 
     def addContext(self,context):
@@ -147,12 +150,12 @@ def interlocutorProbability(positionRatio,baseProbability):
     return y
 
 
-def processInterlocutors(ids,allIds,coherence):
+def processInterlocutors(ids,allIds,coherence,equality,agents):
     lis = []
 
     for id in ids:
         intp = interlocutorProbability(id[1],1.0/float(coherence))
-        count = math.ceil(intp * coherence)
+        count = math.ceil(intp * coherence * (1 + (agents[id[0]].lastTalked * equality)))
         #print(str(id[0]) + " ("+str(id[1])+") " + str(intp) + " > " + str(count) )
         for i in range(count):
             lis.append(id[0])
@@ -169,7 +172,7 @@ def conversationTalk(agentId,agents,text):
     print()
     return
 
-def conversation(coherence,lenght,agents,initPrompt):
+def conversation(coherence,equality,lenght,agents,initPrompt):
     answers = []
     ids = [i for i in range(len(agents))]
 
@@ -182,7 +185,7 @@ def conversation(coherence,lenght,agents,initPrompt):
         #print("      -  Convo turn " + str(i))
         interlocutors = recoverInterlocutors(answer,agents) 
 
-        interlocutors = processInterlocutors(interlocutors,ids,coherence)
+        interlocutors = processInterlocutors(interlocutors,ids,coherence,equality,agents)
 
         while interlocutors.count(agentId) > 0:
             interlocutors.remove(agentId)
@@ -194,6 +197,10 @@ def conversation(coherence,lenght,agents,initPrompt):
 
         answer = agents[agentId].tell("*"+agents[agentId].name + " : ");#talk()
         conversationTalk(agentId,agents,answer)
+
+        for ai in range(len(agents)):
+            if ai != agentId:
+                agents[ai].lastTalked += 1
 
         #inp = input()
         #if inp == "STOP":          

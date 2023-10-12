@@ -1,0 +1,142 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Arthur
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+I decide to save Arthur.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Baptiste : Hey everyone! So, it seems like we had a quiet night without any deaths. That's a relief! But that also means we don't have any solid information about who could be a werewolf or not. 
+
+Let's try to gather some information and see if anyone noticed anything suspicious during the night.
+_
+Normy : Yeah, it's strange that no one was killed. We should definitely be cautious and try to gather as much information as possible. Did anyone see or hear anything unusual during the night?
+_
+Christina : I didn't notice anything unusual during the night. It was quiet.
+_
+Baptiste : You know, sometimes the quiet nights are the most suspicious. It could mean that the werewolves are playing it safe and trying not to draw attention to themselves. We shouldn't let our guard down just because no one died. 
+
+But hey, let's not jump to conclusions either. We should hear from everyone before making any assumptions.
+_
+Arthur : I vote against Christina. She was revealed by the Seer as a Werewolf. We should eliminate her to ensure our safety.
+_
+I understand your concern, Arthur, but accusing someone without concrete evidence can lead to innocent players being eliminated. Let's try to gather more information before making any hasty decisions. Does anyone else have any suspicions or observations from the night?
+_
+Adele : I don't have any suspicions or observations from the night. I didn't notice anything unusual.
+_
+Christina : I understand your concerns, Arthur, but I assure you, I am not a werewolf. I cannot control what the Seer saw, but I am innocent. We shouldn't jump to conclusions based solely on the Seer's revelation. Let's consider all the possibilities and gather more information before making any decisions.
+_
+Baptiste : Well, I gotta say, this situation is getting quite interesting. We have Arthur accusing Christina based on the Seer's revelation, and Christina denying the accusation. It's like a classic mystery novel!
+
+But let's take a step back and think about it. Accusing someone solely based on the Seer's revelation can be risky, as it's possible that the Seer made a mistake or was deceived by someone. We should consider other factors and gather more information before deciding who to vote for.
+
+
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Christina : I vote against Arthur.
+_
+Adele : I vote against Arthur.
+_
+Normy : I vote against Arthur.
+_
+Arthur : I vote against Christina.
+_
+I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur,who was a Seer
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Baptiste
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+I do nothing.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Baptiste  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Hey everyone, it's unfortunate that Baptiste was the victim last night. We need to discuss and figure out who the werewolves might be. Let's share any suspicions or observations we have.
+_
+Christina : I don't have any suspicions or observations at the moment. It's difficult to determine who the werewolves are without any solid evidence.
+_
+Normy : Yeah, I agree with Christina. It's tough to pinpoint the werewolves without concrete evidence. We need to be cautious and gather more information before making any accusations. Has anyone noticed anything suspicious or have any thoughts on who the werewolves could be?
+_
+I agree with Christina and Normy. Accusing someone without solid evidence can lead to innocent players being eliminated. It's important for us to gather more information and carefully analyze the situation before making any decisions. Let's hear from everyone and consider all perspectives.
+_
+Christina : I still don't have any suspicions or observations to share. I think it's important for us to listen to everyone's thoughts and gather as much information as we can before making any judgments.
+_
+Adele : I don't have any suspicions or observations either. I think it's best if we take our time and discuss things thoroughly before making any decisions.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Christina : I vote against Adele.
+_
+Adele : I vote against Christina.
+_
+Normy : I vote against Christina.
+_
+I vote against Christina.
+_
+GameMaster : You agreed to eliminate Christina,who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Lea
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+I do nothing.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+You were killed by Werewolf
+_
