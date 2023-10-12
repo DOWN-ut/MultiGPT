@@ -301,6 +301,9 @@ def wakeAll():
 #####------------ ROLES ----------------------
 
 def playWitch():
+    if len(playerByRole["Witch"]) <= 0:
+        return
+    
     gameMasterTell("Witch, the victim is: " + nightKills.get("Werewolf")[-1].name)
     updateGame()
     gameMasterTell("Do you wish to : let it die, save it or kill someone else ?")
@@ -337,6 +340,9 @@ def playWitch():
     #print(nightKills)
 
 def playSeer():
+    if len(playerByRole["Seer"]) <= 0:
+        return
+    
     gameMasterTell("Seer, please tell me the name of the player you would like to know the role")
     updateGame()
 
@@ -350,6 +356,9 @@ def playSeer():
     updateGame()
  
 def playWerewolf():
+    if len(playerByRole["Werewolf"]) <= 0:
+        return
+    
     gameMasterTell("Werewolves, please choose and agree on the name of the player you want to kill tonight")
     updateGame()
 
@@ -446,7 +455,7 @@ def dayDebate():
     choice = players[choice]
 
     updateGame()
-    gameMasterTell("You agreed to eliminate " + choice.name + ",who was a " + choice.name)
+    gameMasterTell("You agreed to eliminate " + choice.name + ",who was a " + choice.role)
     eliminatePlayer(choice,"Everyone")
     updateGame()
 
