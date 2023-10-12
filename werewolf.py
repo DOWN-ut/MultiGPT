@@ -446,7 +446,7 @@ def dayDebate():
     choice = players[choice]
 
     updateGame()
-    gameMasterTell("You agreed to eliminate " + choice.name)
+    gameMasterTell("You agreed to eliminate " + choice.name + ",who was a " + choice.name)
     eliminatePlayer(choice,"Everyone")
     updateGame()
 
