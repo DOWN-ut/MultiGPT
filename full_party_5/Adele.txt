@@ -1,0 +1,64 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Normy
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Lea : Lea: Good morning, everyone! It's great to see that nobody died last night. I think we should use this opportunity to gather information and discuss our suspicions.
+_
+Arthur : Arthur: Good morning, Lea. While it's fortunate that nobody died last night, we shouldn't let our guard down. We still need to be vigilant and keep an eye out for any suspicious behavior.
+_
+Lea : Lea: You're absolutely right, Arthur. We can't afford to become complacent. We should all share our thoughts and observations to uncover any clues that might help us identify the werewolves among us.
+_
+Baptiste : Baptiste: Good morning, everyone! I hope you all had a restful night. Let's start by sharing any suspicions or odd behaviors that stood out to us yesterday.
+_
+Lea : Lea: Good morning, Baptiste! I agree, sharing our suspicions will help us piece together the puzzle. Personally, I didn't notice anything particularly suspicious yesterday, but I'm eager to hear what others have to say.
+_
+Baptiste : Baptiste: Well, Lea, I have a feeling that Adele might be hiding something. She seemed a bit too quiet during our previous discussions. It could be just a hunch, but I think it's worth considering. What do you all think?
+_
+Adele: Oh great, now I'm under suspicion. Just what I needed.
+_
+Lea : Lea: Adele, I understand that being suspected can be uncomfortable, but we're just trying to gather information here. It doesn't mean we're accusing you. We're all in this together and we need to consider everyone's perspectives. Let's remain calm and open-minded while we discuss.
+_
+Adele: Fine, let's discuss. But I don't have any suspicions myself. I'm just trying to survive this game like the rest of you.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Adele.
+_
+Christina : I vote against Adele.
+_
+Adele: I vote against Christina.
+_
+Normy : I vote against Adele.
+_
+Arthur : Arthur: I vote against Adele.
+_
+Lea : Lea: I vote against Adele.
+_
+GameMaster : You agreed to eliminate Adele,who was a Villager
+_
+You were killed by Everyone
+_

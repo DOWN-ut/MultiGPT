@@ -554,7 +554,7 @@ def dayDebate():
     for player in players:
         player.gpt.addContextFromFile("debate_turn.txt")
 
-    dl = int(debatLengthPerPlayer * len(players) )
+    dl = max(5,int(debatLengthPerPlayer * len(players) ))
     print("We are running " + str(dl) + " convo turns : " + str(debatLengthPerPlayer) + " for each " + str(len(players)))
     conversation(3,2,dl,gpts,"*Start the debate and give your opinion")
 
@@ -697,7 +697,7 @@ else:
 
 if not replaying:
     saveLogs()
-    
+
 a = input()
 
 
