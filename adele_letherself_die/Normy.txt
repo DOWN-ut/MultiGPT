@@ -1,0 +1,132 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Baptiste
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Baptiste  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Arthur : I strongly suspect Christina because she was revealed as a werewolf by the Seer. We should eliminate her to protect the village.
+_
+Christina : I understand your suspicion, Arthur. However, I believe we should consider all possibilities before making a decision.
+_
+Arthur : I don't trust anyone's words here. I think everyone is trying to deceive us. We should eliminate Christina as a precaution.
+_
+Lea : Arthur, I understand your concern, but I think we should give Christina a chance to defend herself. Let's hear what she has to say before jumping to conclusions.
+_
+I don't understand what's happening. Can someone explain it to me again?
+_
+Adele : Christina, do you have anything to say in your defense?
+_
+Christina : I understand your suspicions, but I assure you, I am not a werewolf. I believe we should consider all the information we have and not rush into a decision.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Christina : I vote against Baptiste.
+_
+Adele : I vote against Christina.
+_
+I vote against Christina.
+_
+Arthur : I vote against Christina.
+_
+Lea : I vote against Christina.
+_
+GameMaster : You agreed to eliminate Christina, who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Normy
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : I think we should consider the possibility that there are no werewolves among us. It's unusual for no one to have died last night.
+_
+Arthur : I don't trust Adele's theory. It could be a ploy to divert suspicion away from herself. We should remain vigilant and not rule out the possibility of there still being werewolves among us.
+_
+Lea : I understand both perspectives. While it is true that it is unusual for no one to have died, we shouldn't jump to conclusions. Let's gather more information and discuss our suspicions before making any decisions.
+_
+Adele : I agree with Lea. Let's not rush to accuse anyone without solid evidence. It's important to gather more information and discuss our suspicions before taking action.
+_
+Arthur : I still believe we need to be cautious. Just because no one died last night doesn't mean there are no werewolves among us. We should continue our investigation and pay close attention to each other's behaviors.
+_
+I think it's important to consider all possibilities and not jump to conclusions too quickly. Let's gather more information and observe each other's actions before accusing anyone.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Adele : I vote against Arthur.
+_
+I vote against Arthur.
+_
+Arthur : I vote against Adele.
+_
+Lea : I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Seer
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Adele
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 3th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Adele  
+_

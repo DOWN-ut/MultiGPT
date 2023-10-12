@@ -330,7 +330,8 @@ def playerTalk(player,text):
     return playerTalkTo(player,text,players)
    
 def playerTalkTo(player,text,playersToTalk):
-    prompt = player.name + " : " + filterAnwser(text)
+    text = filterAnwser(text)
+    prompt = player.name + " : " + text
     ptt = [p for p in playersToTalk if p != player]
     tellTo(prompt,ptt)
     addDisplayPlayerText(player,text)
