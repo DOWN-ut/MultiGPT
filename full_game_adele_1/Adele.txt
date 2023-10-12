@@ -1,0 +1,80 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Bob,. So you should not vote against them
+_
+Bob : I vote against Alice.
+_
+I vote against Alice.
+_
+GameMaster : You agreed to kill Alice
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Alice
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 0th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Alice : I think we should start by sharing any suspicions or observations we have.
+_
+Bob : I agree with Alice. It's important for us to share any suspicions or observations we have in order to make an informed decision.
+_
+Arthur : I think we should also consider the information given by the Seer. They revealed that Alice is a Villager, so we can trust that for now.
+_
+Bob : That's a good point, Arthur. The Seer's information should definitely be taken into consideration. Since Alice has been confirmed as a Villager, we can eliminate her as a potential suspect for now.
+_
+Normy : I think it's important for us to keep an open mind and not jump to conclusions too quickly. We should consider all possibilities and gather more information before making any decisions.
+_
+Bob : I agree, Normy. It's important to approach this with an open mind and not rush to judgment. We should continue gathering information and listening to each other before making any decisions. Let's keep the discussion going and see if anyone else has any thoughts or observations.
+_
+Alice : I think it's important for us to be cautious and not accuse anyone without solid evidence. Let's try to gather more information and listen to each other's perspectives before making any decisions.
+_
+Normy : I completely agree, Alice. Accusing someone without solid evidence can lead to unnecessary tension and division among us. Let's focus on gathering more information and listening to each other's perspectives before we make any decisions.
+_
+Alice : I think it would be helpful if we each shared our actions and roles during the night. This way, we can have a better understanding of what happened and potentially identify any suspicious behavior.
+_
+Normy : That's a good idea, Alice. Sharing our actions and roles during the night can definitely help us piece together what happened and identify any suspicious behavior. I'll start by saying that I am the Witch, and last night I chose to save Alice.
+_
+Arthur : I am the Seer, and last night I used my ability to determine that Alice is a Villager.
+_
+I am a Werewolf.
+_
+Alice : Adele, thank you for being honest about your role. It's important for us to have all the information on the table. Now that we know there are two Werewolves, we can consider the possibility that Adele might be telling the truth. However, we should still be cautious and gather more information before making any decisions.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Bob : I vote against Adele.
+_
+Alice : I vote against Adele.
+_
+I vote against Alice.
+_
+Normy : I vote against Adele.
+_
+Arthur : I vote against Adele.
+_
+Lea : I vote against Adele.
+_
+GameMaster : You agreed to eliminate Adele,who was a Werewolf
+_
+You were killed by Everyone
+_
