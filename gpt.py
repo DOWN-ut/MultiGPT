@@ -14,7 +14,7 @@ def gptPull(context):
     chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", 
             messages=context,
-            temperature = 0.65,
+            temperature = 0.75,
             max_tokens=max_response_tokens
         )
     choices = chat.choices

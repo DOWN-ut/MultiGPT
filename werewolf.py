@@ -422,7 +422,14 @@ def morningAnnouncement():
     if nightKillCount <= 0:
         gameMasterTell("No body died last night !")
     else:
+        gameMasterTell(str(nightKillCount) + " players died last night :")
+        allDeath = ""
         for key in nightKills:
+            if len(nightKills[key]) > 0:
+                for p in nightKills[key]:
+                    allDeath += p.name + "  "
+        gameMasterTell(allDeath)
+        '''for key in nightKills:
             count = len(nightKills[key])
             if count <= 0:
                 #gameMasterTell(key + " didn't kill anyone last night.")
@@ -438,7 +445,7 @@ def morningAnnouncement():
                         prompt += player.name + " and "
                     else:
                         prompt += player.name
-                gameMasterTell(prompt + ".")
+                gameMasterTell(prompt + ".")'''
     updateGame()
 
 def dayDebate():
@@ -476,16 +483,18 @@ def partyTurn(turn):
     sleepAll()
     updateGame()
     
-    playRole("Seer")
+    if len(playerByRole["Seer"]) > 0:
+        playRole("Seer")
 
     playRole("Werewolf")
 
     if rolePowers["Witch"]["Life"] or rolePowers["Witch"]["Death"]:
-        playRole("Witch")
+        if len(playerByRole["Witch"]) > 0:
+            playRole("Witch")
 
     applyKills()
     
-    gameMasterTell("The city wakes up ! This is the " + str(turn) + "th day.")
+    gameMasterTell("The city wakes up ! This is the " + str(turn+1) + "th day.")
     wakeAll()
     updateGame()
 
@@ -531,7 +540,7 @@ for i in range(50):
         werewolvesWin()
         break
 
-a = input()
+#a = input()
 
 #for actTime in range(500):
 #    display_game(actTime / 500.0)
