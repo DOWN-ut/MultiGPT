@@ -107,6 +107,13 @@ def readAnwsers(answers):
             requests.append(i)
     return requests
 
+def filterAnwser(text):
+    pos = text.find(":",0,15)
+    if pos >= 0:
+        return text[pos+1:]
+    else:
+        return text
+
 def recoverInterlocutors(answer,agents):
     res = []
     start = 0

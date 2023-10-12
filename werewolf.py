@@ -330,7 +330,7 @@ def playerTalk(player,text):
     return playerTalkTo(player,text,players)
    
 def playerTalkTo(player,text,playersToTalk):
-    prompt = player.name + " : " + text
+    prompt = player.name + " : " + filterAnwser(text)
     ptt = [p for p in playersToTalk if p != player]
     tellTo(prompt,ptt)
     addDisplayPlayerText(player,text)
@@ -556,7 +556,7 @@ def dayDebate():
 
     dl = max(5,int(debatLengthPerPlayer * len(players) ))
     print("We are running " + str(dl) + " convo turns : " + str(debatLengthPerPlayer) + " for each " + str(len(players)))
-    conversation(3,2,dl,gpts,"*Start the debate and give your opinion")
+    conversation(2,3,dl,gpts,"*Start the debate and give your opinion")
 
     updateGame()
 
@@ -570,7 +570,7 @@ def dayDebate():
     choice = players[choice]
 
     updateGame()
-    gameMasterTell("You agreed to eliminate " + choice.name + ",who was a " + choice.role)
+    gameMasterTell("You agreed to eliminate " + choice.name + ", who was a " + choice.role)
     eliminatePlayer(choice,"Everyone")
     updateGame()
 
