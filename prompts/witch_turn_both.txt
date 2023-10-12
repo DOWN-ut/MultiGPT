@@ -1,6 +1,7 @@
-*Please make a choice influenced by your knowledge of the game.
-You can write :
+*Please make a choice influenced by your knowledge of the current party and your personnality.
+You can only write :
 - "I let [victim_name] die."
 - "I save [victim_name]."
 - "I decide to kill [extra_victim_name] in addition."
+- "I do nothing."
 The extra victim cannot be you, neither the current victim.

@@ -432,11 +432,11 @@ def playWitch():
     requested = recoverPlayersFromAnswer(answer)
     if 0 < len(requested):
         requested = requested[0]
-        if "kill" in answer:
+        if "kill" in answer and rolePowers["Witch"]["Death"]:
             #nightKills["Witch"].append(players[requested[0]])
             rolePowers["Witch"]["Death"] = False
             roleKillPlayer(players[requested],"Witch")
-        elif "save" in answer:
+        elif "save" in answer and rolePowers["Witch"]["Life"]:
             #nightKills["Werewolf"].pop()
             rolePowers["Witch"]["Life"] = False
             removeKillFromRole(players[requested],"Werewolf")
@@ -697,8 +697,8 @@ else:
 
 if not replaying:
     saveLogs()
-else:
-    a = input()
+    
+a = input()
 
 
 

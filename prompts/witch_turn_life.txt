@@ -1,4 +1,5 @@
-*Please make a choice influenced by your knowledge of the game.
-You can write :
+*Please make a choice influenced by your knowledge of the the current party and your personnality.
+You can only write :
 - "I let [victim_name] die."
 - "I save [victim_name]."
+- "I do nothing."
