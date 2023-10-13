@@ -84,19 +84,19 @@ GameMaster : Adele
 _
 GameMaster : Now is time to debate before voting for someone to kill.
 _
-Lea : Lea: Good morning everyone! It's unfortunate that we lost Adele last night. We need to discuss and figure out who the werewolves might be. Any thoughts or suspicions?
+Lea : Good morning everyone! It's unfortunate that we lost Adele last night. We need to discuss and figure out who the werewolves might be. Any thoughts or suspicions?
 _
-Baptiste : Baptiste: Good morning, Lea. It's a shame about Adele. As the Seer, I can confirm that Normy was a Werewolf. So we know at least one of the wolves. Any other suspicions or information from anyone else?
+Baptiste : Good morning, Lea. It's a shame about Adele. As the Seer, I can confirm that Normy was a Werewolf. So we know at least one of the wolves. Any other suspicions or information from anyone else?
 _
-Lea : Lea: Thank you for sharing that information, Baptiste. That's definitely a valuable piece of information. As for other suspicions, I don't want to accuse anyone without concrete evidence. Let's try to gather more information and hear from others before making any hasty decisions.
+Lea : Thank you for sharing that information, Baptiste. That's definitely a valuable piece of information. As for other suspicions, I don't want to accuse anyone without concrete evidence. Let's try to gather more information and hear from others before making any hasty decisions.
 _
-Baptiste : Baptiste: Absolutely, Lea. It's important to gather more information before making any accusations. Let's hear from everyone else. Normy, do you have anything to say in your defense?
+Baptiste : Absolutely, Lea. It's important to gather more information before making any accusations. Let's hear from everyone else. Normy, do you have anything to say in your defense?
 _
-Lea : Lea: Normy, it's your chance to speak up and share any information or thoughts you might have. We're all here to listen and consider everyone's perspective.
+Lea : Normy, it's your chance to speak up and share any information or thoughts you might have. We're all here to listen and consider everyone's perspective.
 _
-Normy : Normy: Uh, well, I don't really have much to say. I'm just a simple villager, you know. I don't really know what's going on.
+Normy : Uh, well, I don't really have much to say. I'm just a simple villager, you know. I don't really know what's going on.
 _
-Arthur : Arthur: Normy, your claim of being a simple villager is quite convenient. But we need more than just claims to make informed decisions. We should all be proactive in gathering information and sharing our suspicions.
+Arthur : Normy, your claim of being a simple villager is quite convenient. But we need more than just claims to make informed decisions. We should all be proactive in gathering information and sharing our suspicions.
 _
 GameMaster : Now is time to vote ! Designate the player you want to eliminate.
 _
@@ -186,15 +186,15 @@ GameMaster : Now is time to debate before voting for someone to kill.
 _
 Arthur : I think it's suspicious that nobody died last night. There could be several reasons for this. One possibility is that the werewolves targeted someone who was protected by the Seer or the Witch. Another possibility is that the wolves intentionally didn't kill to avoid suspicion. We need to gather more information and discuss our suspicions.
 _
-Baptiste : Baptiste: I agree with Arthur. The fact that nobody died last night is definitely suspicious. We should consider the possibility that the werewolves are trying to blend in and avoid suspicion. It's important for us to share any suspicions or information we have in order to make an informed decision. Let's hear from everyone else.
+Baptiste : I agree with Arthur. The fact that nobody died last night is definitely suspicious. We should consider the possibility that the werewolves are trying to blend in and avoid suspicion. It's important for us to share any suspicions or information we have in order to make an informed decision. Let's hear from everyone else.
 _
-Arthur : Arthur: Baptiste, I'm glad you share my suspicions. We need to be cautious and analyze everyone's behavior. Keep in mind that the werewolves could be trying to manipulate us and divert our attention from them. We should all share any information or suspicions we have, even if they seem insignificant. Let's make sure we don't miss any crucial details.
+Arthur : Baptiste, I'm glad you share my suspicions. We need to be cautious and analyze everyone's behavior. Keep in mind that the werewolves could be trying to manipulate us and divert our attention from them. We should all share any information or suspicions we have, even if they seem insignificant. Let's make sure we don't miss any crucial details.
 _
-Baptiste : Baptiste: Absolutely, Arthur. We shouldn't overlook any details, no matter how small they may seem. It's important for us to work together and share our observations in order to uncover the truth. Let's keep an open mind and encourage everyone to participate in the discussion.
+Baptiste : Absolutely, Arthur. We shouldn't overlook any details, no matter how small they may seem. It's important for us to work together and share our observations in order to uncover the truth. Let's keep an open mind and encourage everyone to participate in the discussion.
 _
-Arthur : Arthur: Baptiste, I appreciate your emphasis on working together and keeping an open mind. We need to remember that our goal is to eliminate the werewolves and ensure the safety of the village. Let's continue discussing and analyzing each other's actions and statements. We must be thorough and vigilant in our search for the truth.
+Arthur : Baptiste, I appreciate your emphasis on working together and keeping an open mind. We need to remember that our goal is to eliminate the werewolves and ensure the safety of the village. Let's continue discussing and analyzing each other's actions and statements. We must be thorough and vigilant in our search for the truth.
 _
-Baptiste : Baptiste: Absolutely, Arthur. Our main objective is to identify and eliminate the werewolves. We need to carefully consider everyone's actions and statements, looking for any inconsistencies or suspicious behavior. Let's keep the conversation going and encourage everyone to share their thoughts and suspicions. Together, we can find the truth and protect the village.
+Baptiste : Absolutely, Arthur. Our main objective is to identify and eliminate the werewolves. We need to carefully consider everyone's actions and statements, looking for any inconsistencies or suspicious behavior. Let's keep the conversation going and encourage everyone to share their thoughts and suspicions. Together, we can find the truth and protect the village.
 _
 GameMaster : Now is time to vote ! Designate the player you want to eliminate.
 _
@@ -202,9 +202,9 @@ Baptiste : I vote against Lea.
 _
 Christina : I vote against Lea.
 _
-Arthur : Arthur: I vote against Lea.
+Arthur : I vote against Lea.
 _
-Lea : Lea: I vote against Arthur.
+Lea : I vote against Arthur.
 _
 GameMaster : You agreed to eliminate Lea,who was a Werewolf
 _
