@@ -1,0 +1,82 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I would like to know the role of Christina.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Adele
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Adele  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Normy : Hey everyone, it's a shame that Adele was killed last night. We should try to figure out who the werewolves are and make sure we don't lose any more innocent villagers. Any thoughts on who might be suspicious?
+_
+Christina : I think we should be cautious and not jump to conclusions too quickly. Let's gather more information before accusing anyone.
+_
+Lea : I agree with Christina. It's important for us to gather more information and analyze the situation before accusing anyone. Let's keep an open mind and listen to each other's opinions.
+_
+Arthur : I don't trust anyone here. I think we should all be on high alert and not trust anyone's words blindly. We need to be skeptical and question everything.
+_
+Hey guys, I have a joke to lighten up the mood. Why don't skeletons fight each other? They don't have the guts! But on a serious note, I think it's important for us to stay calm and logical in our approach. Let's gather information, analyze behaviors, and see if we notice any suspicious patterns. We shouldn't let paranoia cloud our judgment, but we also shouldn't ignore any red flags.
+_
+Arthur : I don't trust your joke, Baptiste. This is a serious matter and we shouldn't be distracted by jokes. We need to focus on finding the werewolves and eliminating them. Let's not get complacent and stay vigilant.
+_
+Christina : I understand Arthur's concern, but it's also important to maintain a positive and supportive atmosphere. Let's try to strike a balance between being serious and keeping the mood light. We can still have a sense of humor while being cautious.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+I vote against Normy.
+_
+Christina : I vote against Normy.
+_
+Normy : I vote against Baptiste.
+_
+Arthur : I vote against Normy.
+_
+Lea : I vote against Normy.
+_
+GameMaster : You agreed to eliminate Normy, who was a Villager
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I would like to know the role of Arthur.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+You were killed by Werewolf
+_
