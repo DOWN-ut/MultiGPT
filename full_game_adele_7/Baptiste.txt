@@ -1,0 +1,130 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Normy,. So you should not vote against them
+_
+I vote against Christina.
+_
+Normy : I vote against Lea.
+_
+Alright, let's vote against Lea then.
+_
+Normy : I vote against Lea.
+_
+GameMaster : You agreed to kill Lea
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Lea
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Lea  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Normy :  Good morning, everyone. It's unfortunate that we lost Lea last night. We should discuss and try to figure out who the werewolves are. Any thoughts on who might be suspicious?
+_
+Adele : I don't know, it's too early to tell.
+_
+Normy : I understand, Adele. It is indeed early in the game, but we shouldn't dismiss any possibilities. Let's try to analyze the situation and gather information from each other. Does anyone have any suspicions or observations from last night?
+_
+Adele : I don't have any suspicions or observations at the moment.
+_
+Christina : I agree with Adele, it's still too early to have concrete suspicions. We should gather more information before jumping to conclusions.
+_
+Arthur : I vote against Baptiste. He seems too calm and relaxed for someone who just lost a fellow villager. I think he might be trying to divert attention away from himself.
+_
+Oh, Arthur, always trying to stir things up with your accusations. Can't a werewolf mourn the loss of a fellow villager too? I assure you, I am just as saddened by Lea's death as anyone else. Let's not jump to conclusions based on emotions, my friend.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+I vote against Arthur.
+_
+Christina : I vote against Arthur.
+_
+Adele : I vote against Arthur.
+_
+Normy : I vote against Arthur.
+_
+Arthur : I vote against Baptiste.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Villager
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Normy,. So you should not vote against them
+_
+I vote against Christina.
+_
+Normy : I vote against Christina.
+_
+GameMaster : You agreed to kill Christina
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Christina
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Alright, everyone, it seems like we had a quiet night without any deaths. This means that either the werewolves didn't choose a target or the witch saved someone. We should discuss and share any suspicions or observations we have. Let's try to find the werewolves among us.
+_
+Christina : I agree with Baptiste. It's interesting that no one died last night. We should consider the possibility that the witch saved someone, or maybe the werewolves decided not to attack. Let's share any suspicions or observations we have so far.
+_
+Adele : I don't have any suspicions or observations at the moment. It's hard to tell who the werewolves might be without any concrete evidence.
+_
+Well, Adele, it's understandable that we don't have any concrete evidence yet. But we can still analyze the behavior of the players and look for any inconsistencies or suspicious actions. Let's keep an open mind and share any little details that might seem off to us.
+_
+Christina : I agree with Baptiste. We should pay attention to any unusual behavior or inconsistencies in the players' actions. It's important to keep an open mind and share any suspicions, no matter how small they may seem.
+_
+Adele : I understand, but I still don't have any suspicions or observations to share at the moment. Let's continue to observe and gather more information before making any conclusions.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+I vote against Adele.
+_
+Christina : I vote against Adele.
+_
+Adele : I vote against Baptiste.
+_
+Normy : I vote against Adele.
+_
+GameMaster : You agreed to eliminate Adele, who was a Witch
+_
