@@ -1,0 +1,150 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I choose to know the role of Christina.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Christina
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Christina  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Lea : Hey everyone! It's a shame that Christina didn't make it through the night. Let's try to figure out who could be responsible for her death. Any thoughts or suspicions?
+_
+Arthur : I think we should be suspicious of Baptiste. He was the one who voted against Christina last night.
+_
+Lea : Hmm, I understand your concern, Arthur. But let's not jump to conclusions just yet. It's important to consider all possibilities before accusing someone.
+_
+Hey guys, I'm just a simple villager, but I think it's worth considering the possibility that Christina's death could have been the result of a random attack by the werewolves. We shouldn't assume that Baptiste is guilty based solely on his vote. Let's keep an open mind and gather more information before making any accusations.
+_
+Arthur : I understand your point, Normy. But we can't ignore the fact that Baptiste was the only one who voted against Christina. It's definitely suspicious and warrants further investigation.
+_
+Baptiste : Hey, hey, hold on a second! I know my vote may seem suspicious, but let's not forget that I am a werewolf. It's in my nature to target villagers like Christina. But hey, maybe I just wanted to mess with you guys and voted randomly, who knows? Let's not take this game too seriously, right? *winks*
+_
+Baptiste, you make a good point about not taking the game too seriously. It's possible that your vote was just a random choice to throw us off. However, we can't ignore the fact that you're a werewolf, and it does raise suspicions. Let's keep an eye on Baptiste, but also consider other possibilities. We shouldn't rush to judgment without more evidence.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Adele : I vote against Arthur.
+_
+I vote against Arthur.
+_
+Arthur : I vote against Baptiste.
+_
+Lea : I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I choose to know the role of Adele.
+_
+GameMaster : Their role is : Witch
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Normy
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : Hey everyone! It's interesting that no one died last night. It could mean that the werewolves didn't agree on a target, or maybe the Seer's information helped protect someone. We should discuss who could be the werewolves among us. Any thoughts or suspicions?
+_
+Baptiste : Well, well, well, isn't it quite the twist that no one died last night? It seems like the werewolves might be struggling to make a decision. But hey, let's not get too complacent. We still need to be on the lookout for any suspicious behavior.
+_
+Adele : I agree with Baptiste. It's definitely unexpected that no one died, but we shouldn't let our guard down. We should still keep an eye out for any unusual behavior or suspicious actions.
+_
+Lea : I think we should also consider the possibility that the Seer might have found valuable information last night, which could explain why no one died. It's important for us to listen to each other's opinions and gather as much information as we can before making any accusations. Let's continue to be observant and open-minded.
+_
+Baptiste : Lea, you're absolutely right! We shouldn't overlook the possibility that the Seer might have discovered something crucial. It's important for us to listen to each other and share any information or suspicions we might have. Let's work together to find the true identities of the werewolves and ensure the safety of the village!
+_
+Adele : I think we should also consider that the werewolves might be trying to play it safe after losing one of their own yesterday. They could be laying low and trying to blend in. Let's not forget to keep a close eye on everyone, even those who might seem innocent.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Lea.
+_
+Adele : I vote against Lea.
+_
+I vote against Lea.
+_
+Lea : I vote against Baptiste.
+_
+GameMaster : You agreed to eliminate Lea, who was a Villager
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I choose to know the role of Baptiste.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Adele
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 3th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Adele  
+_

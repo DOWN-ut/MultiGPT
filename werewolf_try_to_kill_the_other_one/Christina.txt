@@ -1,0 +1,124 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I choose to know the role of Arthur.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Christina
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+I think we should start by discussing if anyone has any suspicions or observations from the first night.
+_
+Normy : Well, I didn't notice anything suspicious during the night. But let's hear what the others have to say.
+_
+Adele : I didn't notice anything either. But it's still early, we should keep an eye out for any strange behavior.
+_
+Baptiste :  So, did anyone have any weird dreams last night? Maybe we can get some clues from that.
+_
+Arthur : I don't trust anyone's dreams. They could be lying or making things up.
+_
+Lea : I agree with Arthur, dreams can be unreliable. We should focus on observing the players' behavior during the day.
+_
+Arthur : Exactly, Lea. We should pay attention to how everyone interacts and try to pick up on any inconsistencies or suspicious behavior.
+_
+I'm sorry, I didn't catch that. Could you please repeat what you said?
+_
+Adele : Arthur and Lea are right. We should focus on observing everyone's behavior during the day and look for any inconsistencies or suspicious actions. We can't rely on dreams or hearsay.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Normy.
+_
+I vote against Normy.
+_
+Adele : I vote against Normy.
+_
+Normy : I vote against Baptiste.
+_
+Arthur : I vote against Normy.
+_
+Lea : I vote against Normy.
+_
+GameMaster : You agreed to eliminate Normy, who was a Villager
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I choose to know the role of Arthur.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Baptiste
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Baptiste  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : I think we should discuss any suspicious behavior or observations from the previous day. Did anyone notice anything unusual about Baptiste or have any suspicions?
+_
+Arthur : I didn't notice anything specific about Baptiste yesterday, but we should still keep an eye out for any strange actions or inconsistencies in people's behavior.
+_
+I'm sorry, I didn't catch that. Could you please repeat what you said?
+_
+Lea : I agree with Arthur. We should pay attention to any unusual behavior or inconsistencies in how people are acting. Let's try to gather more information before making any hasty decisions.
+_
+Adele : We should be careful not to jump to conclusions too quickly. Let's gather more information and observe everyone's behavior before making any accusations.
+_
+I think it's important for us to take our time and not rush into accusing anyone. We should gather more information and observe everyone's behavior closely before making any decisions. Let's keep an open mind and stay vigilant.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+I vote against Lea.
+_
+Adele : I vote against Lea.
+_
+Arthur : I vote against Christina.
+_
+Lea : I vote against Christina.
+_
+GameMaster : You agreed to eliminate Lea, who was a Witch
+_
