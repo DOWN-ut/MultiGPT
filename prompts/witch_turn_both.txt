@@ -1,4 +1,4 @@
-*Please make a choice influenced by your knowledge of the current party and your personnality.
+*Please make a choice influenced by your knowledge of the current party and your personality.
 You can only write :
 - "I let [victim_name] die."
 - "I save [victim_name]."
