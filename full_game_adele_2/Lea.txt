@@ -1,0 +1,72 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Adele,. So you should not vote against them
+_
+Adele : I vote against Christina.
+_
+I vote against Christina.
+_
+GameMaster : You agreed to kill Christina
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Christina
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : I think we should be cautious and not rush to accuse anyone. We don't have any information yet, so let's gather more evidence before making any decisions.
+_
+Normy : I agree with Christina. It's important to gather more information before accusing anyone. Let's take our time and observe everyone's behavior.
+_
+Adele : I think we should listen to what Christina and Normy are saying. It's too early to start accusing anyone without solid evidence. Let's keep an eye on everyone and see if we notice any suspicious behavior.
+_
+Christina : I think it's important for us to remain vigilant and observant. We should pay attention to any unusual behavior or inconsistencies in people's actions. Let's not jump to conclusions, but instead gather more information and discuss our observations.
+_
+Baptiste : I agree with Christina, Normy, and Adele. We shouldn't rush to accuse anyone without concrete evidence. Let's keep an open mind and carefully observe everyone's behavior. It's important to gather more information before making any decisions.
+_
+Arthur : I think it's wise to be cautious and not jump to conclusions. We should gather as much information as possible before accusing anyone. Let's pay attention to everyone's actions and try to identify any suspicious behavior. Remember, we can't trust anyone completely until we have solid evidence.
+_
+Adele : I think we all agree on being cautious and gathering more information. Let's continue observing and discussing, but let's also remember to keep an open mind and consider multiple perspectives.
+_
+Christina : I believe it's important for us to maintain a rational and logical approach throughout this process. Let's analyze the information we have and think critically before making any decisions. We should also encourage open and honest communication among ourselves to ensure that we're getting a complete picture of the situation.
+_
+Arthur : I agree with Christina. We should use logic and reason to guide our decision-making process. Let's encourage everyone to share their thoughts and observations openly, so we can gather as much information as possible. Remember, we need to be thorough and consider all possibilities before accusing anyone.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Lea.
+_
+Christina : I vote against Lea.
+_
+Adele : I vote against Lea.
+_
+Normy : I vote against Lea.
+_
+Arthur : I vote against Lea.
+_
+I vote against Lea.
+_
+GameMaster : You agreed to eliminate Lea,who was a Werewolf
+_
+You were killed by Everyone
+_

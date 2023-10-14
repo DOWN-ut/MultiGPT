@@ -1,0 +1,184 @@
+The city falls asleep !
+_
+The Seer wakes up.
+_
+Seer, please tell me the name of the player you would like to know the role
+_
+Normy : I want to know the role of Baptiste.
+_
+Their role is : Villager
+_
+The Seer fall(s) back asleep.
+_
+The Werewolf wakes up.
+_
+Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Adele : I vote against Christina.
+_
+Lea : I vote against Christina.
+_
+You agreed to kill Christina
+_
+The Werewolf fall(s) back asleep.
+_
+The Witch wakes up.
+_
+Witch, the victim is: Christina
+_
+Do you wish to : let it die, save it or kill someone else ?
+_
+Arthur : I decide to save Christina.
+_
+The Witch fall(s) back asleep.
+_
+The city wakes up ! This is the 1th day.
+_
+No body died last night !
+_
+Now is time to debate before voting for someone to kill.
+_
+Christina : I think we should be cautious and not rush to accuse anyone. We don't have any information yet, so let's gather more evidence before making any decisions.
+_
+Normy : I agree with Christina. It's important to gather more information before accusing anyone. Let's take our time and observe everyone's behavior.
+_
+Adele : I think we should listen to what Christina and Normy are saying. It's too early to start accusing anyone without solid evidence. Let's keep an eye on everyone and see if we notice any suspicious behavior.
+_
+Christina : I think it's important for us to remain vigilant and observant. We should pay attention to any unusual behavior or inconsistencies in people's actions. Let's not jump to conclusions, but instead gather more information and discuss our observations.
+_
+Baptiste : I agree with Christina, Normy, and Adele. We shouldn't rush to accuse anyone without concrete evidence. Let's keep an open mind and carefully observe everyone's behavior. It's important to gather more information before making any decisions.
+_
+Arthur : I think it's wise to be cautious and not jump to conclusions. We should gather as much information as possible before accusing anyone. Let's pay attention to everyone's actions and try to identify any suspicious behavior. Remember, we can't trust anyone completely until we have solid evidence.
+_
+Adele : I think we all agree on being cautious and gathering more information. Let's continue observing and discussing, but let's also remember to keep an open mind and consider multiple perspectives.
+_
+Christina : I believe it's important for us to maintain a rational and logical approach throughout this process. Let's analyze the information we have and think critically before making any decisions. We should also encourage open and honest communication among ourselves to ensure that we're getting a complete picture of the situation.
+_
+Arthur : I agree with Christina. We should use logic and reason to guide our decision-making process. Let's encourage everyone to share their thoughts and observations openly, so we can gather as much information as possible. Remember, we need to be thorough and consider all possibilities before accusing anyone.
+_
+Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Lea.
+_
+Christina : I vote against Lea.
+_
+Adele : I vote against Lea.
+_
+Normy : I vote against Lea.
+_
+Arthur : I vote against Lea.
+_
+Lea : I vote against Lea.
+_
+You agreed to eliminate Lea,who was a Werewolf
+_
+The city falls asleep !
+_
+The Seer wakes up.
+_
+Seer, please tell me the name of the player you would like to know the role
+_
+Normy : I want to know the role of Arthur.
+_
+Their role is : Witch
+_
+The Seer fall(s) back asleep.
+_
+The Werewolf wakes up.
+_
+Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Adele : I vote against Baptiste.
+_
+You agreed to kill Baptiste
+_
+The Werewolf fall(s) back asleep.
+_
+The Witch wakes up.
+_
+Witch, the victim is: Baptiste
+_
+Do you wish to : let it die, save it or kill someone else ?
+_
+Arthur : I do nothing.
+_
+The Witch fall(s) back asleep.
+_
+The city wakes up ! This is the 2th day.
+_
+1 players died last night :
+_
+Baptiste  
+_
+Now is time to debate before voting for someone to kill.
+_
+Adele : I think it's important for us to discuss and analyze the situation. We lost Baptiste last night, and we need to consider who could be responsible for his death. Let's share our observations and suspicions to gather more information.
+_
+Normy : I agree with Adele. We need to carefully analyze the situation and share any suspicions or observations we may have. It's crucial that we gather as much information as possible to make an informed decision. Let's discuss openly and consider all possibilities.
+_
+Christina : I believe it's important for us to be thorough in our analysis. Let's not jump to conclusions based on assumptions or personal biases. Instead, let's carefully examine everyone's behavior and look for any patterns or inconsistencies. We should encourage open and honest communication to ensure that all perspectives are heard.
+_
+Arthur : I think we should also consider the possibility of multiple werewolves working together. If there are two werewolves, they could be coordinating their actions to throw us off track. Let's keep an eye out for any suspicious alliances or unusual behavior among the players.
+_
+Christina : I agree with Arthur's point. We should consider the possibility of multiple werewolves working together. It's important to observe any suspicious alliances or coordinated behavior among the players. Let's not overlook any potential connections that may exist between the remaining players.
+_
+Arthur : I also want to emphasize the importance of being cautious and not trusting anyone blindly. We should continue to analyze the information we have and question the motives and actions of each player. Remember, anyone could be lying or manipulating the situation. Let's be vigilant and gather as much evidence as possible before making any decisions.
+_
+Now is time to vote ! Designate the player you want to eliminate.
+_
+Christina : I vote against Arthur.
+_
+Adele : I vote against Arthur.
+_
+Normy : I vote against Arthur.
+_
+Arthur : I vote against Christina.
+_
+You agreed to eliminate Arthur,who was a Witch
+_
+The city falls asleep !
+_
+The Seer wakes up.
+_
+Seer, please tell me the name of the player you would like to know the role
+_
+Normy : I want to know the role of Christina.
+_
+Their role is : Villager
+_
+The Seer fall(s) back asleep.
+_
+The Werewolf wakes up.
+_
+Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Adele : I vote against Normy.
+_
+You agreed to kill Normy
+_
+The Werewolf fall(s) back asleep.
+_
+The city wakes up ! This is the 3th day.
+_
+1 players died last night :
+_
+Normy  
+_
+Now is time to debate before voting for someone to kill.
+_
+Adele : I think it's important for us to discuss and analyze the situation. We lost Normy last night, and we need to consider who could be responsible for his death. Let's share our observations and suspicions to gather more information.
+_
+Christina : I believe it's crucial for us to carefully analyze the situation and consider all possibilities. We should discuss any suspicious behavior or patterns that we have noticed among the players. Let's keep an open mind and encourage everyone to share their observations and thoughts.
+_
+Adele : I agree with Christina. We should take the time to analyze the situation and consider all possibilities. It's important to listen to each other and share any suspicions or observations we may have. Let's gather as much information as possible before making any decisions.
+_
+Now is time to vote ! Designate the player you want to eliminate.
+_
+Christina : I vote against Adele.
+_
+Adele : I vote against Christina.
+_
+You agreed to eliminate Adele,who was a Werewolf
+_
+The village wins !
+_
