@@ -1,0 +1,72 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Christina,. So you should not vote against them
+_
+Christina : I vote against Adele.
+_
+I vote against Baptiste.
+_
+Christina : I vote against Adele.
+_
+I vote against Adele.
+_
+GameMaster : You agreed to kill Adele
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Adele
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Adele  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : I think we should start by sharing any suspicious behavior or observations we have noticed.
+_
+Baptiste : Hey everyone! So, I've been thinking about the roles we have here. With two villagers, one seer, two werewolves, and myself as the witch, we need to be cautious about who we suspect. Let's start by discussing any strange or suspicious actions you may have noticed from anyone.
+_
+Normy :  Well, I haven't noticed anything suspicious yet. But it's still early in the game, so we should keep our eyes open and pay attention to everyone's behavior.
+_
+I don't trust anyone here. We should be on high alert and not trust anyone's words blindly.
+_
+Normy :  That's a fair point, Arthur. It's important to be cautious and not jump to conclusions. We should gather more information and discuss our suspicions before making any decisions.
+_
+I don't think we should waste time discussing suspicions. We need to take action and eliminate someone.
+_
+Lea : I understand your concern, Arthur, but rushing to eliminate someone without solid evidence could lead to an innocent person being voted out. We should try to gather more information before making any decisions.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Christina : I vote against Arthur.
+_
+Normy :  I vote against Arthur.
+_
+I vote against Christina.
+_
+Lea : I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Werewolf
+_
+You were killed by Everyone
+_

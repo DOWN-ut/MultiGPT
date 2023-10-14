@@ -1,0 +1,61 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Adele
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Adele  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina :  Good morning, everyone. It's unfortunate that we lost Adele last night. We need to be careful and consider our options carefully. 
+I think we should start by sharing any suspicions or observations we may have.
+_
+I've always been suspicious of Baptiste. He's been acting quite suspiciously since the beginning of the game. I think we should consider voting against him.
+_
+Normy : Hey guys, I know I might not be the smartest here, but I have a feeling we shouldn't jump to conclusions too quickly. Let's hear what Baptiste has to say before we make any decisions. Maybe there's a good explanation for his behavior.
+_
+Lea : I agree with Normy. It's important to give everyone a chance to explain themselves before making any hasty decisions. Baptiste, can you please share your thoughts on the situation?
+_
+I don't trust Baptiste. I think he's just going to lie and try to deceive us. We shouldn't waste our time listening to his excuses. Let's just vote against him and move on.
+_
+Baptiste : Hey everyone, sorry if I've been acting a bit suspicious. It's just my sense of humor sometimes gets the best of me. I promise I'm just a regular villager and not a werewolf. I totally understand why you might be suspicious, but I assure you, I'm innocent. Let's not rush to judgment and consider all the facts before making a decision.
+_
+Lea : I appreciate your honesty, Baptiste. It's important for us to trust each other and give everyone the benefit of the doubt. Let's not rush into accusing anyone without solid evidence. We should gather more information and discuss further before making a final decision.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Christina : I vote against Arthur.
+_
+Normy : I vote against Arthur.
+_
+I vote against Baptiste.
+_
+Lea : I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Villager
+_
+You were killed by Everyone
+_
