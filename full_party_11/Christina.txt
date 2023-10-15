@@ -1,0 +1,64 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Baptiste
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Adele : Well, looks like no one died last night. That's a relief, I guess. But we still need to figure out who the werewolves are. Any ideas, guys?
+_
+Baptiste : Hey everyone, glad to see we're all still alive! I have a feeling we should be careful not to jump to conclusions too quickly. It's only the first day, and we don't have much information yet. Let's try to gather some more clues before making any accusations. Any thoughts on how we should proceed?
+_
+Arthur : I don't trust anyone here. We can't take anyone's word for it. Everyone could be lying. Let's not trust anyone and keep a close eye on everyone's actions.
+_
+Adele : Hmm, I don't know. It's hard to trust anyone at this point. But I agree with Arthur that we shouldn't jump to conclusions too quickly. We need more information before we start accusing anyone.
+_
+Baptiste : You know what they say, trust is like a mirror, once it's broken it's never the same. But let's try to keep an open mind and not let paranoia consume us. We should observe everyone's behavior and look for any suspicious actions or inconsistencies.
+_
+Normy : Yeah, Baptiste is right. We shouldn't let paranoia divide us. It's important to stay objective and gather as much information as possible before making any decisions. Let's keep an eye out for any unusual behavior or patterns that could help us identify the werewolves.
+_
+Arthur : I still think we should vote against someone. We can't just sit here and do nothing. I vote against Christina.
+_
+Normy : I vote against Christina as well.
+_
+Baptiste : Hold on a minute, let's not be too hasty with our votes. We don't have any concrete evidence against Christina yet. It's only the first day, and we still have a lot of time to gather more information. Let's try to have a constructive discussion and consider all possibilities before making a decision.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Christina.
+_
+I vote against Adele.
+_
+Adele : I vote against Christina.
+_
+Normy : I vote against Christina.
+_
+Arthur : I vote against Christina.
+_
+Lea : I vote against Christina.
+_
+GameMaster : You agreed to eliminate Christina, who was a Villager
+_
+You were killed by Everyone
+_

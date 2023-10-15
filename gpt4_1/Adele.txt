@@ -1,0 +1,116 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Arthur
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : Arthur being saved is suspicious.
+_
+Normy : Hmm, you think so? I thought it was more of a lucky break, really.
+_
+Baptiste : I agree with Christina. Seems Arthur has a guardian angel, or he's trying to play us. I mean, come on, what are the odds?
+_
+Christina : Exactly, too convenient.
+_
+Maybe the Witch just wanted to keep everyone alive. No big deal.
+_
+Christina : Perhaps, but we can't be naive.
+_
+Arthur : Yeah, sure, all of you just gang up on me. Classic. You're all probably lying. Nothing convenient about it. I bet one of you is a werewolf trying to throw shade my way.
+_
+Baptiste : Oh, Arthur, it's not about ganging up. It's about strategy. Don't take it personally. But hey, if it was me, I'd just say thank you to the Witch and maybe crack a joke about it. You know, something like "I guess I'm just too handsome to die." Lighten up, mate.
+_
+Normy : Oh, is that how it works, Baptiste? I'll try to remember that one. You're right, gotta keep the mood light, haha.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Christina : I vote against Arthur.
+_
+I vote against Arthur.
+_
+Normy : I vote against Baptiste.
+_
+Arthur : I vote against Baptiste.
+_
+Lea : I vote against Baptiste.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Villager
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Lea
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Lea  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Normy : Poor Lea, she didn't see it coming. Now, I'm just throwing this out there, but don't you think Christina acted a bit strangely yesterday? Just saying.
+_
+I guess she did. It's hard to tell who's acting weird and who's just scared though.
+_
+Christina : Scared? More like cautious.
+_
+Yeah, whatever. Doesn't really matter.
+_
+Baptiste : I've got a hunch about Normy. Always playing the innocent one, aren't you, Normy? Just like a wolf in sheep's clothing... or should I say, like a Normy in a Normy's clothing? No? Too early for bad jokes? Okay, I'll see myself out.
+_
+Normy : Oh Baptiste, you got me there! I'm just a simple Normy in a Normy's clothing, haha. I wish I was as clever as you.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Normy.
+_
+Christina : I vote against Normy.
+_
+I vote against Normy.
+_
+Normy : I vote against Christina.
+_
+GameMaster : You agreed to eliminate Normy, who was a Seer
+_

@@ -555,11 +555,11 @@ def dayDebate():
     for player in players:
         player.gpt.addContextFromFile("debate_turn.txt")
 
-    dl = max(5,int(debatLengthPerPlayer * len(players) ))
+    dl = max(5,int(debatLengthPerPlayer * len(players) * 1.5)) 
     print("We are running " + str(dl) + " convo turns : " + str(debatLengthPerPlayer) + " for each " + str(len(players)))
-    conversation(2,3,dl,gpts,"*Start the debate and give your opinion")
+    conversation(2,5,dl,gpts,"*Start the debate and give your opinion",1)
 
-    updateGame()
+    updateGame(1)
 
     gameMasterTell("Now is time to vote ! Designate the player you want to eliminate.")
     updateGame()
@@ -578,7 +578,7 @@ def dayDebate():
 
 def partyTurn(turn):
     resetNightKills()
-    updateGame(4)
+    updateGame(1)
 
     gameMasterTell("The city falls asleep !")
     sleepAll()
@@ -671,6 +671,9 @@ printPlayers()
 #displayInterlocutors(ints,agents)
 
 setup_window()
+
+for i in range(50):
+    updateGame(0.1)
 
 if not replaying:
     for i in range(10): 

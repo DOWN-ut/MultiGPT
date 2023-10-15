@@ -1,0 +1,76 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Lea
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Lea  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : Poor Lea...Who could do this?
+_
+Adele : Dunno, don't care.
+_
+Christina : We should care, Adele. We need to find out who did this.
+_
+Oh wow, someone's gone already? That's a bummer for Lea. So who's the big bad wolf then, eh? I don't have a clue!
+_
+Christina : I don't know, Normy. It's too early to tell.
+_
+Adele : Whatever.
+_
+Baptiste : Why so uninterested, Adele? Got a guilty conscience perhaps? Just pulling your leg! But we should give it some thought.
+_
+Arthur : Christina, your sympathy is suspicious. Are you trying to divert attention from yourself? Or maybe you, Adele, with your complete nonchalance, are you the werewolf? Everyone here is a suspect!
+_
+Christina : Not fair, Arthur. Just concerned.
+_
+Baptiste : Hey, lay off Christina, Arthur! She's not the only one showing concern, you know? I do agree though, Adele's indifference is raising some eyebrows. But hey, what do I know? I might as well be chasing my tail. Get it? 'Cause I'm a...never mind.
+_
+Christina : Thanks, Baptiste. Let's stay focused.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Adele.
+_
+Christina : I vote against Adele.
+_
+Adele : I vote against Arthur.
+_
+I vote against Adele.
+_
+Arthur : I vote against Adele.
+_
+GameMaster : You agreed to eliminate Adele, who was a Witch
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+You were killed by Werewolf
+_

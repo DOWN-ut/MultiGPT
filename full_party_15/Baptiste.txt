@@ -1,0 +1,94 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Normy
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Lea : Hey everyone! Good morning! It's great to see that nobody died last night. I think we're off to a good start. Let's try to figure out who the werewolves might be. Any thoughts or suspicions?
+_
+Arthur : I don't trust anyone here. We need to be cautious and not trust each other too easily.
+_
+Hey Lea and Arthur! Good morning! I know it's early, but I have a feeling that Normy might be suspicious. What do you guys think?
+_
+Lea : Hey Baptiste and Arthur! Good morning to you too! I understand your concerns, Baptiste. However, I think it's important for us to gather more information before we make any accusations. Let's keep an open mind and observe everyone's behavior throughout the day. We should try to find evidence before jumping to conclusions. What do you think, Arthur?
+_
+Hey Lea, I totally agree with you. We shouldn't jump to conclusions without any solid evidence. Let's keep an eye on everyone's behavior and see if anything stands out. I think it's important for us to have an open conversation and share any suspicions or observations we may have. Communication is key, right? What do you think, Arthur?
+_
+Christina : I think Baptiste and Lea make good points. It's important for us to be cautious and observe everyone's behavior, but we shouldn't accuse anyone without solid evidence. Let's keep an open mind and encourage everyone to share their thoughts and observations.
+_
+Lea : I completely agree, Christina. Accusing someone without evidence can lead us in the wrong direction and potentially cause unnecessary conflict. Let's focus on gathering information and having open and honest conversations. Remember, we're all on the same team here, and our goal is to find the werewolves and protect the village. So let's work together and support each other.
+_
+Adele : I think it's important for us to be cautious and not trust anyone too easily. We should gather more information before making any accusations. Let's observe everyone's behavior and have open conversations to find any suspicious patterns.
+_
+Normy : Hey everyone, good morning! I agree with what has been said so far. It's important for us to be cautious and not jump to conclusions without solid evidence. Let's keep an open mind and actively observe everyone's behavior. By having open conversations and sharing our thoughts and observations, we can work together to uncover any suspicious patterns or behaviors.
+_
+Adele : I agree with Normy. We should keep an open mind and actively observe everyone's behavior. Sharing our thoughts and observations can help us uncover any suspicious patterns or behaviors. Let's work together to find the werewolves and protect the village.
+_
+Arthur : I still don't trust anyone here. We need to gather more evidence and be cautious about trusting anyone too easily. Let's keep an eye on each other and be vigilant.
+_
+Hey Arthur, I understand your caution and the need for more evidence. It's important for us to stay vigilant and observe everyone's behavior. However, let's also remember to maintain a positive atmosphere and work together as a team. Accusing each other without solid evidence can lead to unnecessary tension. Let's focus on gathering information and having open discussions. Together, we can find the werewolves and protect the village. What do you say?
+_
+Normy : Hey Baptiste, I appreciate your perspective. It's important for us to maintain a positive atmosphere and work together. Let's focus on gathering information and having open discussions, as you mentioned. Accusing each other without evidence can create unnecessary tension and hinder our progress. By keeping an open mind and actively observing, we can make informed decisions and identify the werewolves. Let's continue working as a team and support each other.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+I vote against Normy.
+_
+Christina : I vote against Normy.
+_
+Adele : I vote against Normy.
+_
+Normy : I vote against Normy.
+_
+Arthur : I vote against Normy.
+_
+Lea : I vote against Normy.
+_
+GameMaster : You agreed to eliminate Normy, who was a Villager
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Baptiste
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+You were killed by Werewolf
+_

@@ -1,0 +1,68 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Christina,. So you should not vote against them
+_
+Christina : I vote against Adele.
+_
+I vote against Normy.
+_
+Christina : I changed my mind. I vote against Normy as well.
+_
+Great, I also vote against Normy.
+_
+GameMaster : You agreed to kill Normy
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Normy
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 2 players died last night :
+_
+GameMaster : Normy  Adele  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina :  Good morning everyone. It's unfortunate that we lost Normy and Adele last night. We need to figure out who is responsible for these deaths. Any thoughts on who might be the werewolves?
+_
+I don't trust anyone here. We need to be very careful and not trust anyone blindly.
+_
+Lea : I understand your concerns, Arthur. It's important to be cautious, but we also can't let suspicion tear us apart. We should try to gather more information before making any accusations.
+_
+Christina : I agree with Lea. We should try to gather more information before jumping to conclusions. We could start by discussing any suspicious behavior or strange actions that anyone may have noticed during the night.
+_
+Lea : I haven't noticed anything particularly suspicious during the night. Has anyone else observed anything unusual or have any suspicions about a specific player? Let's share our thoughts and see if we can find any leads.
+_
+Christina : I haven't noticed anything unusual either. It seems like we don't have much to go on at the moment. We should try to gather more information before making any hasty decisions.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Christina : I vote against Arthur as well.
+_
+I vote against Baptiste.
+_
+Lea : I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Werewolf
+_
+You were killed by Everyone
+_

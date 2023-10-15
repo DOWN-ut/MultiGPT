@@ -2,6 +2,7 @@ import openai
 from colorama import Fore, Back, Style
 import random
 import math
+import time
 
 max_response_tokens = 100
 
@@ -11,15 +12,23 @@ openai.api_key = keyFile.read() #open key.txt
 
 
 def gptPull(context):
-    chat = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo", 
-            messages=context,
-            temperature = 0.75,
-            max_tokens=max_response_tokens
-        )
-    choices = chat.choices
-    reply = choices[0].message.content
-    context.append({"role":"assistant","content":reply})
+    while True:
+        try:
+            chat = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo", 
+                    messages=context,
+                    temperature = 0.85,
+                    max_tokens=max_response_tokens
+                )
+            choices = chat.choices
+            reply = choices[0].message.content
+            context.append({"role":"assistant","content":reply})
+            return context
+
+        except Exception as error:
+            print(">>>>>>>>>  OPEN AI RATE LIMIT  <<<< WAITING 5 seconds",error)
+            time.sleep(5)
+
     return context
 
 def gptRequest(context,request):
@@ -172,14 +181,15 @@ def processInterlocutors(ids,allIds,coherence,equality,agents):
     return lis
 
 def conversationTalk(agentId,agents,text):
+    p = agents[agentId].name + " : " + text
     for a in range(0,len(agents)):
         if a != agentId :
-            agents[a].addContext(answer)
-    print(agents[agentId].color + text)
+            agents[a].addContext(p)
+    print(agents[agentId].color + p)
     print()
     return
 
-def conversation(coherence,equality,lenght,agents,initPrompt):
+def conversation(coherence,equality,lenght,agents,initPrompt,delay=1):
     answers = []
     ids = [i for i in range(len(agents))]
 
@@ -188,7 +198,7 @@ def conversation(coherence,equality,lenght,agents,initPrompt):
     conversationTalk(agentId,agents,answer)
 
     for i in range(lenght-1):
-        time.sleep(1)
+        time.sleep(delay)
         #print("      -  Convo turn " + str(i))
         interlocutors = recoverInterlocutors(answer,agents) 
 
@@ -311,3 +321,5 @@ adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele."
 arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
 agents = [bob,alice,adele,arthur]
 #conversation(3,10,agents,"Say hi and introduce yourself")
+
+#conversation(2,4,8,agents,"Say hi and introduce yourself")
