@@ -1,0 +1,105 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I want to see Baptiste.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Arthur
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Arthur  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Lea : Oh no, poor Arthur! I didn't expect that. Does anyone have any ideas? I honestly have no clue yet. Maybe we can share if anyone saw something weird?
+_
+Normy : Huh? Wait, someone died already? Damn. I don’t get this game. Why Arthur though? That’s kinda sus. Anyone got beef with him?
+_
+Adele : No idea. I just want to go back to sleep. This game is weird. Anyone wanna skip?
+_
+I checked Baptiste, he’s a villager. I got nothing else. Anyone seem off to you?
+_
+Adele : I don’t know, everyone looks tired. Christina, you sound too sure. Maybe you’re hiding something.
+_
+Baptiste : Yo chill, Adele, I’m always tired, but never sus.  
+Christina, thanks for clearing my beautiful name.  
+Arthur probably died 'cause he always eats the last chips at parties.  
+Lea, you look nervous, blink twice if you’re a werewolf.
+_
+Adele : Baptiste, you talk too much. I just want food, not drama. Nobody here seems trustworthy.
+_
+Normy : Damn Adele, chill, it’s just a game. I’m lost but Christina saying she’s seer is kinda bold. Or is she just making stuff up?  
+Baptiste always talks too much, but that’s just his thing.  
+Lea, you got anything to say or just scared of Baptiste’s chips-stealing vibes?
+_
+Adele : Normy, I don’t trust anyone who claims roles this early. Feels desperate. Everyone’s acting weird, but maybe that’s just how we all are.
+_
+I get that, Adele. But I had to share, or I’d look shady.  
+Normy, you can check me next if you want.  
+Lea’s quiet. Makes me nervous.
+_
+Adele : Yeah, Lea is always too quiet. Quiet people make me nervous too. Maybe she’s just bored like me. Or maybe not.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Lea
+_
+I vote against Lea
+_
+Adele : I vote against Lea
+_
+Normy : I vote against Lea
+_
+Lea : I vote against Normy
+_
+GameMaster : You agreed to eliminate Lea, who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I want to see Adele.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Christina
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+You were killed by Werewolf
+_

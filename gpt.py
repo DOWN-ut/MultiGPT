@@ -10,16 +10,25 @@ max_response_tokens = 100
 keyFile = open("key.txt", "r")
 openai.api_key = keyFile.read() #open key.txt
 
+model = "gpt-3.5-turbo"
 
 def gptPull(context):
     while True:
         try:
-            chat = openai.ChatCompletion.create(
-                    model="gpt-3.5-turbo", 
-                    messages=context,
-                    temperature = 0.85,
-                    max_tokens=max_response_tokens
-                )
+            if model.startswith("gpt-3") or model.startswith("gpt-4"):
+                chat = openai.ChatCompletion.create(
+                        model=model, 
+                        messages=context,
+                        temperature = 0.85,
+                        max_tokens=max_response_tokens
+                    )
+            else:
+                chat = openai.Completion.create(
+                        model=model, 
+                        prompt=contextToStr(context)
+                        #max_completion_tokens=max_response_tokens
+                    )
+
             choices = chat.choices
             reply = choices[0].message.content
             context.append({"role":"assistant","content":reply})
@@ -311,15 +320,25 @@ def test():
 
     print(Fore.WHITE)
 
+def conversationFive():
+    bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
+    alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice.")
+    adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
+    arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
+
+    agents = [bob,alice,adele,arthur]
+
+    conversation(3,10,5,agents,"Say hi and introduce yourself",2)
+
 #print(Fore.WHITE)
 #print("----------------------------")
 
 #conversation_requests()
-bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
-alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice.")
-adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
-arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
-agents = [bob,alice,adele,arthur]
-#conversation(3,10,agents,"Say hi and introduce yourself")
+
+#model = "gpt-5-mini-2025-08-07"
+
+#conversationFive()
+
+
 
 #conversation(2,4,8,agents,"Say hi and introduce yourself")

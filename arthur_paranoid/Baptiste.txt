@@ -1,0 +1,102 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I want to know the role of Arthur.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Lea
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : Weird night. No one died. Witch maybe used potion. Any idea who’s sus?
+_
+Arthur : I don’t buy it. Someone’s bullshitting. Baptiste, you always look guilty. What’s your excuse?
+_
+Normy : I don’t get it, so we’re all alive? Sick, let’s chill. Who’s the witch? Is that like, a real thing?
+_
+Adele : Yeah, still alive. Honestly, no clue. Too early for this shit.
+_
+Normy, you high or just clueless? Arthur, stop pointing fingers, you potato. Anyway, I checked you last night, you’re just a villager, so relax your pants, mate. Anyone else wanna confess or just throw bricks for fun?
+_
+Arthur : Baptiste, you’re so full of shit. You checked me? What are you, the seer all of a sudden? That’s way too convenient. Admit it, you’re just trying to cover your ass. And Normy, stop acting stupid, nobody’s that innocent.
+_
+Normy : Woah, chill, Arthur. I just woke up, man. Baptiste is seer now? Or he just thinks he's magic? I thought seers had, like, crystal balls or some crap. Whatever, I’m just happy nobody died. Can we vote for the most boring player?
+_
+Arthur : No way I’m chilling, Normy. You’re dodging hard. And Baptiste, quit pretending, you’re probably a damn wolf trying to blend in with fake info. Christina, why so quiet? Got any real thoughts or just waiting to stab us in the back too?
+_
+Arthur, you’re the loudest villager ever, and somehow still clueless. If I was a wolf, you’d be my first snack, trust me. Christina, are you just enjoying the drama or what? Adele, you’ve said like three words, wake up before we vote your sleepy ass out.
+_
+Normy : Arthur’s just pissed cause he’s not special. Baptiste, your seer act is weak as hell, dude. Adele, you drinking or just born boring? Christina, you better talk or I’ll start thinking you’re hiding fangs.
+_
+Arthur : Baptiste, keep talking, you’re just digging your own grave. Normy, don’t act like you’re above it all. Adele, seriously, you’re like wallpaper. Say something or I’m voting your silent ass. Christina, you next if you keep playing ghost. Someone here’s lying, and I swear I’ll call every one of you out.
+_
+Christina : I’m just listening. Too much yelling, not enough proof. Baptiste’s claim is weird though. Why say you’re seer now?
+_
+Lea : Whoa, everyone’s so intense already! I just want us all to win together, guys. Maybe Baptiste is telling the truth? Or maybe he just wants attention. Hard to tell yet. Can Adele share her thoughts too? I bet she’s got something good!
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+I vote against Adele
+_
+Christina : I vote against Adele.
+_
+Adele : I vote against Baptiste.
+_
+Normy : I vote against Adele
+_
+Arthur : I vote against Adele
+_
+Lea : I vote against Adele
+_
+GameMaster : You agreed to eliminate Adele, who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+I want to know the role of Normy.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Baptiste
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+You were killed by Werewolf
+_

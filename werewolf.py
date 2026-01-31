@@ -20,13 +20,18 @@ seerCount = 1
 werewolfCount = 2
 witchCount = 1
 
+#----------- CONVERSATION ----------------
+
+conversationCoherence = 2
+conversationEquality = 5
+
 #----------- PROMPTS DISPLAYS AND SETUPS ----------------
 
 startPrompt = "Start of the party :"
 
 werewolfConvLength = 3
 debatLengthPerPlayer = 1.5 #mutliplied by the number of remaining players
-dayVoteLength = 1
+dayVoteLength = 3
 
 rolesPrompt = "*The roles are : "
 rolesPrompt += str(villagerCount) + " villagers , "
@@ -349,6 +354,30 @@ def voteConversation(playersVoting,convLength):
     for i in range(0,convLength):    
         choices = []
         for player in playersVoting:
+            answer = player.gpt.tell("*"+player.name + " : ")
+            choices.extend(recoverPlayersFromAnswer(answer))
+            playerTalkTo(player,answer,playersVoting)
+
+        # Unanimous consensus → stop
+        if choices and all(i == choices[0] for i in choices):
+            break
+
+        # NEW: Detect tie for top vote → continue discussion
+        count = Counter(choices)
+        most_common = count.most_common()
+        if len(most_common) > 1 and most_common[0][1] == most_common[1][1]:
+            continue
+        else:
+            break
+
+    choice = Counter(choices).most_common(1)[0][0]
+    return choice
+
+def voteConversationOld(playersVoting,convLength):
+    choices = []
+    for i in range(0,convLength):    
+        choices = []
+        for player in playersVoting:
             answer = player.gpt.tell("*"+player.name + " : ")#talk()
             choices.extend(recoverPlayersFromAnswer(answer))
             playerTalkTo(player,answer,playersVoting)
@@ -557,7 +586,7 @@ def dayDebate():
 
     dl = max(5,int(debatLengthPerPlayer * len(players) * 1.5)) 
     print("We are running " + str(dl) + " convo turns : " + str(debatLengthPerPlayer) + " for each " + str(len(players)))
-    conversation(2,5,dl,gpts,"*Start the debate and give your opinion",1)
+    conversation(conversationCoherence,conversationEquality,dl,gpts,"*Start the debate and give your opinion",1)
 
     updateGame(1)
 
@@ -638,6 +667,14 @@ def winConditionW():
 def winConditionV():
     return len(playerByRole["Werewolf"]) <= 0
 
+
+
+
+model = "gpt-4.1-2025-04-14"
+
+conversationCoherence = 3
+conversationEquality = 10
+
 enable_audio = int(sys.argv[1])
 replaying = len(sys.argv) >= 3
 
@@ -672,10 +709,11 @@ printPlayers()
 
 setup_window()
 
-for i in range(50):
+for i in range(100):
     updateGame(0.1)
 
 if not replaying:
+    
     for i in range(10): 
         partyTurn(i)
         if winConditionV(): #If there is no werewolf left, the village wins

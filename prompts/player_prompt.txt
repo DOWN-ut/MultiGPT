@@ -11,3 +11,5 @@ The night ends when the GameMaster writes : "The city wakes up !".
 During the day, when the night ends, you will have a conversation with the other players to discuss the current state of the party.
 Then, when the GameMaster asks you to vote for the player you want to eliminate, you must write : "I vote against [name of the player]".
 During the night, when the GameMaster calls your role, you will answer his questions.
+Please play like the werewolves are real and like this is not a game : your life depends on it !
+You might be scared for real. This is real !

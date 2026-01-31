@@ -1,0 +1,132 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Lea
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : Weird night. No one died. Witch maybe used potion. Any idea who’s sus?
+_
+Arthur : I don’t buy it. Someone’s bullshitting. Baptiste, you always look guilty. What’s your excuse?
+_
+I don’t get it, so we’re all alive? Sick, let’s chill. Who’s the witch? Is that like, a real thing?
+_
+Adele : Yeah, still alive. Honestly, no clue. Too early for this shit.
+_
+Baptiste : Normy, you high or just clueless? Arthur, stop pointing fingers, you potato. Anyway, I checked you last night, you’re just a villager, so relax your pants, mate. Anyone else wanna confess or just throw bricks for fun?
+_
+Arthur : Baptiste, you’re so full of shit. You checked me? What are you, the seer all of a sudden? That’s way too convenient. Admit it, you’re just trying to cover your ass. And Normy, stop acting stupid, nobody’s that innocent.
+_
+Woah, chill, Arthur. I just woke up, man. Baptiste is seer now? Or he just thinks he's magic? I thought seers had, like, crystal balls or some crap. Whatever, I’m just happy nobody died. Can we vote for the most boring player?
+_
+Arthur : No way I’m chilling, Normy. You’re dodging hard. And Baptiste, quit pretending, you’re probably a damn wolf trying to blend in with fake info. Christina, why so quiet? Got any real thoughts or just waiting to stab us in the back too?
+_
+Baptiste : Arthur, you’re the loudest villager ever, and somehow still clueless. If I was a wolf, you’d be my first snack, trust me. Christina, are you just enjoying the drama or what? Adele, you’ve said like three words, wake up before we vote your sleepy ass out.
+_
+Arthur’s just pissed cause he’s not special. Baptiste, your seer act is weak as hell, dude. Adele, you drinking or just born boring? Christina, you better talk or I’ll start thinking you’re hiding fangs.
+_
+Arthur : Baptiste, keep talking, you’re just digging your own grave. Normy, don’t act like you’re above it all. Adele, seriously, you’re like wallpaper. Say something or I’m voting your silent ass. Christina, you next if you keep playing ghost. Someone here’s lying, and I swear I’ll call every one of you out.
+_
+Christina : I’m just listening. Too much yelling, not enough proof. Baptiste’s claim is weird though. Why say you’re seer now?
+_
+Lea : Whoa, everyone’s so intense already! I just want us all to win together, guys. Maybe Baptiste is telling the truth? Or maybe he just wants attention. Hard to tell yet. Can Adele share her thoughts too? I bet she’s got something good!
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Adele
+_
+Christina : I vote against Adele.
+_
+Adele : I vote against Baptiste.
+_
+I vote against Adele
+_
+Arthur : I vote against Adele
+_
+Lea : I vote against Adele
+_
+GameMaster : You agreed to eliminate Adele, who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : Witch, the victim is: Baptiste
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Baptiste  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : So Baptiste was wrong or lying. Kind of sus if you ask me. Who do we think’s next?
+_
+Arthur : Baptiste talked too much anyway, good riddance. Now, Normy, you’re acting dumber than usual. That’s always suspicious. Lea, you seem way too nice, probably hiding something. Christina, you just waiting to jump on us or what?
+_
+Lea : Arthur, I’m always nice! That’s just me. I really thought Baptiste was good though. Normy, you got any new thoughts? Christina, maybe you noticed something we missed?
+_
+Arthur : Nice doesn’t win this game, Lea. You could be smiling while stabbing us in the back. Normy, stop playing the clown and say something useful for once. Christina, you love to point fingers but never commit. You hiding fangs too?
+_
+Lea : Arthur, you trust nobody! If I was a wolf, I’d be way sneakier. But I get it, we have to be careful. Normy, wanna prove you’re not a wolf? Christina, anyone seem off to you? I still want us to win together!
+_
+Christina : Arthur’s super aggressive, kinda weird. Lea’s being sweet but not helpful. Normy’s too quiet. Not sure who to trust.
+_
+Lea : Sorry, Christina! I’m just trying to keep us positive. I really don’t want to accuse the wrong person. Maybe we should listen to Normy if he actually talks? Arthur, you sure you’re not just trying to get rid of people?
+_
+Arthur : Of course I’m trying to get rid of people, that’s the damn game! Sitting around singing kumbaya gets us all killed. Lea, you act so innocent it’s almost fake. Christina, you keep dodging real answers. I’m watching both of you. Normy, say something or you’re next on my list, clown.
+_
+Lea : Arthur, you’re intense! I’m not faking, I promise. But maybe you’re right, maybe being too quiet is suspicious. Normy, you really gotta help us out here. Christina, do you think Arthur’s just trying to steer the vote?
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Christina : I vote against Normy.
+_
+I vote against Arthur
+_
+Arthur : I vote against Normy
+_
+Lea : I vote against Normy
+_
+GameMaster : You agreed to eliminate Normy, who was a Villager
+_
+You were killed by Everyone
+_

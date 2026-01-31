@@ -1,0 +1,230 @@
+Werewolf Villager Werewolf Villager Witch Seer 
+_
+GameMaster : The city falls asleep !
+_
+> sleep Baptiste
+_
+> sleep Christina
+_
+> sleep Adele
+_
+> sleep Normy
+_
+> sleep Arthur
+_
+> sleep Lea
+_
+GameMaster : The Seer wakes up.
+_
+> wake Lea
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+Lea : I choose to know the role of Christina.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+> sleep Lea
+_
+GameMaster : The Werewolf wakes up.
+_
+> wake Baptiste
+_
+> wake Adele
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Baptiste : I vote against Arthur
+_
+Adele : I vote against Arthur
+_
+> damocles Arthur
+_
+GameMaster : You agreed to kill Arthur
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+> sleep Baptiste
+_
+> sleep Adele
+_
+GameMaster : The Witch wakes up.
+_
+> wake Arthur
+_
+GameMaster : Witch, the victim is: Arthur
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+Arthur : I decide to save Arthur.
+_
+> undamocles Arthur
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+> sleep Arthur
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+> wake Baptiste
+_
+> wake Christina
+_
+> wake Adele
+_
+> wake Normy
+_
+> wake Arthur
+_
+> wake Lea
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Normy : I don't know who to trust in this game. Let's discuss before deciding who to vote for.
+_
+Arthur : I don't trust anyone here. Everyone's a liar.
+_
+Adele : I don't really care who we vote for.
+_
+Arthur : I have my suspicions, but no one cares anyway.
+_
+Christina : I think we should listen to everyone before making a decision.
+_
+Baptiste : Let's all just relax and have fun, it's just a game after all.
+_
+Christina : I vote against Arthur.
+_
+Baptiste : I vote against Arthur.
+_
+Normy : I vote against Arthur.
+_
+Arthur : I vote against Christina.
+_
+Adele : I vote against Arthur.
+_
+Arthur : I vote against Christina.
+_
+Baptiste : I vote against Arthur.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur.
+_
+Christina : I vote against Arthur.
+_
+Adele : I vote against Arthur.
+_
+Normy : I vote against Arthur.
+_
+Arthur : I vote against Christina.
+_
+Lea : I vote against Arthur.
+_
+GameMaster : You agreed to eliminate Arthur, who was a Witch
+_
+> kill Arthur
+_
+GameMaster : The city falls asleep !
+_
+> sleep Baptiste
+_
+> sleep Christina
+_
+> sleep Adele
+_
+> sleep Normy
+_
+> sleep Lea
+_
+GameMaster : The Seer wakes up.
+_
+> wake Lea
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+Lea : I choose to know the role of Normy.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+> sleep Lea
+_
+GameMaster : The Werewolf wakes up.
+_
+> wake Baptiste
+_
+> wake Adele
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Baptiste : I vote against Normy.
+_
+Adele : I vote against Normy.
+_
+> damocles Normy
+_
+GameMaster : You agreed to kill Normy
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+> sleep Baptiste
+_
+> sleep Adele
+_
+> kill Normy
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+> wake Baptiste
+_
+> wake Christina
+_
+> wake Adele
+_
+> wake Lea
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Normy  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Lea : I'm devastated we lost Normy, let's be careful with our votes.
+_
+Baptiste : We need to stay united and trust each other to win this game. Let's think before voting.
+_
+Christina : We need to be cautious and analyze everything before voting.
+_
+Adele : I don't care who we vote for, it's pointless anyway.
+_
+Lea : Let's remember we're all in this together, let's discuss before making any decisions.
+_
+Adele : I guess we should just go with the flow and vote for someone.
+_
+Christina : I think we should discuss a bit more before making a decision.
+_
+Lea : Let's take our time to consider all options before voting.
+_
+Baptiste : Let's make sure we're all on the same page before deciding who to eliminate.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Lea.
+_
+Christina : I vote against Lea.
+_
+Adele : I vote against Lea.
+_
+Lea : I vote against myself.
+_
+GameMaster : You agreed to eliminate Lea, who was a Seer
+_
+> kill Lea
+_
+GameMaster : The werewolves wins !
+_

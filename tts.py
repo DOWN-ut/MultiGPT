@@ -1,9 +1,9 @@
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="wolfgpt-4a2c849c9aac.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="wolfgpt-3d812b1b74b5.json"
 
 import google.cloud.texttospeech as tts
 import io
-from playsound import playsound
+from playsound3 import playsound
 
 def list_voices(language_code=None):
     client = tts.TextToSpeechClient()
