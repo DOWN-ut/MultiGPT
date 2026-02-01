@@ -128,9 +128,11 @@ def speak(player,text):
     replayAudioIndex += 1
 
 
-def conversationTalk(playerId,agents,text):
+def conversationTalk(playerId,agents,text,handlerAgent = None):
     #addDisplayPlayerText(players[playerId],text)
     playerTalk(players[playerId],text)
+    if handlerAgent is not None:
+        handlerAgent.addContext(players[playerId].name + " : " + text)
 
 def addDisplayPlayerText(player,text):
     addDisplayText(player.name + " : " + text)
@@ -249,7 +251,7 @@ class Player:
         self.displayer.position = id * (360.0 / len(players))
 
     def saveData(self):
-        f = open(partyId + "/" + self.name + ".txt","x")
+        f = open(partyId + "/" + self.name + ".txt","x", encoding="utf-8")
         f.write(contextToFile(self,self.gpt.context))
         f.close()
 
@@ -329,6 +331,7 @@ def recoverPlayersFromAnswer(text):
 
 def tellTo(prompt,playersToTalk):
     for player in playersToTalk:
+        #print("> telling to " + player.name + " : " + prompt)
         player.gpt.addContext(prompt)
         
 def playerTalk(player,text):
@@ -354,7 +357,7 @@ def voteConversation(playersVoting,convLength):
     for i in range(0,convLength):    
         choices = []
         for player in playersVoting:
-            answer = player.gpt.tell("*"+player.name + " : ")
+            answer = player.gpt.talk()#tell("*"+player.name + " : ")
             choices.extend(recoverPlayersFromAnswer(answer))
             playerTalkTo(player,answer,playersVoting)
 
@@ -439,9 +442,9 @@ def playWitch():
     if len(playerByRole["Witch"]) <= 0:
         return
     
-    gameMasterTell("Witch, the victim is: " + nightKills.get("Werewolf")[-1].name)
+    gameMasterTellTo("Witch, the victim is: " + nightKills.get("Werewolf")[-1].name,playerByRole["Witch"])
     updateGame()
-    gameMasterTell("Do you wish to : let it die, save it or kill someone else ?")
+    gameMasterTellTo("Do you wish to : let it die, save it or kill someone else ?",playerByRole["Witch"])
     updateGame()
 
     # add prompt to give more explanations
@@ -503,9 +506,9 @@ def playWerewolf():
         for w in playerByRole["Werewolf"]:
             if w != player:
                 prompt += w.name + ","
-        prompt += ". So you should not vote against them"
+        prompt += ". So you should not target them"
         player.gpt.addContext(prompt)
-        player.gpt.addContextFromFile("werewolf_turn.txt")
+        player.gpt.addContextFromFile("werewolf_turn.txt","developer")
 
     choice = voteConversation(playerByRole["Werewolf"],werewolfConvLength)
     choice = players[choice]
@@ -586,7 +589,9 @@ def dayDebate():
 
     dl = max(5,int(debatLengthPerPlayer * len(players) * 1.5)) 
     print("We are running " + str(dl) + " convo turns : " + str(debatLengthPerPlayer) + " for each " + str(len(players)))
-    conversation(conversationCoherence,conversationEquality,dl,gpts,"*Start the debate and give your opinion",1)
+
+    handlerAgent = GptAgent("Handler",Fore.WHITE,"agent_handler.txt","","low")
+    conversation(conversationCoherence,conversationEquality,dl,gpts,"*Start the debate and give your opinion",1,handlerAgent)
 
     updateGame(1)
 
@@ -670,7 +675,7 @@ def winConditionV():
 
 
 
-model = "gpt-4.1-2025-04-14"
+model = "gpt-5-mini-2025-08-07"#gpt-4.1-2025-04-14"
 
 conversationCoherence = 3
 conversationEquality = 10
@@ -713,7 +718,7 @@ for i in range(100):
     updateGame(0.1)
 
 if not replaying:
-    
+
     for i in range(10): 
         partyTurn(i)
         if winConditionV(): #If there is no werewolf left, the village wins

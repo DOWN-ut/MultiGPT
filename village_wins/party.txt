@@ -1,0 +1,341 @@
+Werewolf Seer Villager Villager Werewolf Witch 
+_
+GameMaster : The city falls asleep !
+_
+> sleep Baptiste
+_
+> sleep Christina
+_
+> sleep Adele
+_
+> sleep Normy
+_
+> sleep Arthur
+_
+> sleep Lea
+_
+GameMaster : The Seer wakes up.
+_
+> wake Christina
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+Christina : I choose Normy.
+_
+GameMaster : Their role is : Villager
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+> sleep Christina
+_
+GameMaster : The Werewolf wakes up.
+_
+> wake Baptiste
+_
+> wake Arthur
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Baptiste : I want to kill Normy
+_
+Arthur : I want to kill Normy
+_
+> damocles Normy
+_
+GameMaster : You agreed to kill Normy
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+> sleep Baptiste
+_
+> sleep Arthur
+_
+GameMaster : The Witch wakes up.
+_
+> wake Lea
+_
+GameMaster : Witch, the victim is: Normy
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+Lea : I save Normy.
+_
+> undamocles Normy
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+> sleep Lea
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+> wake Baptiste
+_
+> wake Christina
+_
+> wake Adele
+_
+> wake Normy
+_
+> wake Arthur
+_
+> wake Lea
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Lea : Morning everyone. No one died last night. That means the wolves tried and failed. Seer, can you share something? Normy, are you okay? I don't want to accuse anyone yet. Let's each say where we were and what we did last night. We must be careful and work together.
+_
+Normy : Morning. I'm alive — thank you, Witch.  
+I was at home, sleeping like an idiot.  
+Baptiste, Christina, Adele, Arthur, Lea — where were you last night?  
+Seer, speak up. I don't trust anyone yet.
+_
+Christina : I checked Normy. He's a villager.  
+I won't reveal more yet. Where were Baptiste, Adele and Arthur last night?
+_
+Baptiste : I slept at home.  
+Woke once to pee.  
+Christina, nice find on Normy.  
+Adele, where were you? Arthur, you okay?  
+Lea, speak up. Normy, you good after that save?
+_
+Arthur : Christina, bullshit.  
+Prove your claim. Seers lie.  
+Adele, you silent. That screams guilty.  
+Speak now or shut up forever.  
+Baptiste, you're too calm. Smells like a wolf.  
+Lea, stop playing peacemaker. Say something real.  
+Normy, you okay? Don't act like a saint.  
+I'm voting to lynch Adele if she doesn't talk.
+_
+Baptiste : Arthur, chill the hell out.  
+You're yelling like a madman.  
+Calm doesn't mean guilty. I'm not a statue.  
+Christina, cool find. Seer, show more if you're real.  
+Adele, you quiet as a mouse. Where were you last night?  
+Lea, Normy — confirm your stories.  
+If Adele stays silent, I'll side with Arthur.  
+Also, Normy, buy the witch a beer.
+_
+Normy : Thanks Witch. Lucky me.  
+Christina, nice work.  
+Arthur, chill the hell out. Yelling makes you look guilty, not clever.  
+Adele, speak up. Your silence screams wolf.  
+Baptiste, don’t just follow Arthur like a puppy.  
+Lea, you too — what do you think?  
+Seer, one more name or we lynch the quiet one.
+_
+Arthur : No chill. This is life or death.  
+Adele, speak. Now. Silent = guilty.  
+Christina, prove your check. How did you check Normy?  
+Baptiste, stop acting so smug. That calm is fake.  
+Normy, stop playing grateful. Say exactly where you were.  
+Lea, quit the peacemaker act. Where were you?  
+Seer, spit another name or we hang Adele.  
+I'm ready to vote Adele if she stays quiet.
+_
+Normy : I'm fine. Witch saved me.  
+I slept at home.  
+Arthur, shut the fuck up. Yelling makes you look guilty.  
+Christina, good job. How did you check me exactly?  
+Baptiste, say again where you were. Don’t just nod.  
+Adele, speak now. Silence looks bad.  
+Lea, what about you?  
+Seer, reveal another name before we lynch someone.
+_
+Lea : I'm scared. I was home, sleeping.  
+I don't want to lynch someone without proof.  
+Adele, please speak. Where were you?  
+Christina, how did you check Normy exactly?  
+Arthur, calm down. Yelling makes us panic.  
+Baptiste, why trust Arthur so fast?  
+Normy, are you sure about your story?  
+Seer, please give another name or hint.  
+Let's share clear alibis before voting.
+_
+Baptiste : I was home, asleep.  
+Woke once to pee, that's it.  
+Adele, speak now. Where were you?  
+If you stay quiet, I'm with Arthur and I'll vote you.  
+Christina, how exactly did you check Normy?  
+Lea, Normy — confirm your stories.  
+Arthur, chill the yelling. It doesn't help.
+_
+Normy : I'm okay. Witch saved me. I was home sleeping.  
+Christina, good call. Explain how you checked. Tell it simple.  
+Seer, give another name if you can. We need proof.  
+Adele, speak now. Silence looks guilty.  
+Arthur, shut the fuck up and stop yelling. You're pushing people.  
+Baptiste, why follow Arthur so fast? Say something real.  
+Lea, what do you think? We can't lynch without proof, but quiet people are sus.
+_
+Baptiste : Adele, speak now. Silence = guilty.  
+Christina, nice check on Normy.  
+Arthur, tone it down, you sound like a banshee. But keep pressuring Adele.  
+Lea, Normy — your stories match mine.  
+If Adele stays quiet, I'll vote her.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Adele
+_
+Christina : I vote against Adele
+_
+Adele : I vote against Arthur
+_
+Normy : I vote against Adele
+_
+Arthur : I vote against Adele
+_
+Lea : I vote against Adele
+_
+GameMaster : You agreed to eliminate Adele, who was a Villager
+_
+> kill Adele
+_
+GameMaster : The city falls asleep !
+_
+> sleep Baptiste
+_
+> sleep Christina
+_
+> sleep Normy
+_
+> sleep Arthur
+_
+> sleep Lea
+_
+GameMaster : The Seer wakes up.
+_
+> wake Christina
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+Christina : I choose Arthur.
+_
+GameMaster : Their role is : Werewolf
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+> sleep Christina
+_
+GameMaster : The Werewolf wakes up.
+_
+> wake Baptiste
+_
+> wake Arthur
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+Baptiste : I want to kill Christina
+_
+Arthur : I want to kill Christina
+_
+> damocles Christina
+_
+GameMaster : You agreed to kill Christina
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+> sleep Baptiste
+_
+> sleep Arthur
+_
+GameMaster : The Witch wakes up.
+_
+> wake Lea
+_
+GameMaster : Witch, the victim is: Christina
+_
+GameMaster : Do you wish to : let it die, save it or kill someone else ?
+_
+Lea : I decide to kill Arthur in addition.
+_
+> damocles Arthur
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+> sleep Lea
+_
+> kill Christina
+_
+> kill Arthur
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+> wake Baptiste
+_
+> wake Normy
+_
+> wake Lea
+_
+GameMaster : 2 players died last night :
+_
+GameMaster : Christina  Arthur  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Normy : Fuck. Christina and Arthur dead.  
+Christina looked like the Seer. They nailed her.  
+Witch killed Arthur. So Arthur was a wolf.  
+One wolf left. We need to find them.  
+Baptiste rode Arthur's coattails all game. Too calm, too tidy. Smells like wolf.  
+Baptiste, explain yourself. Where were you, really?  
+Lea, you're quiet and peacemaker. Are you the Witch who saved me? Speak now.  
+We can't pussyfoot. My gut says Baptiste. Who else thinks the same?
+_
+Lea : I'm the Witch.  
+I saved Normy last night.  
+I also used my kill. Arthur was a wolf.  
+Only one wolf left.  
+Baptiste, explain yourself now.  
+Normy, glad you're safe.  
+We must lynch the last wolf.
+_
+Baptiste : I was home, asleep.  
+Woke once to pee.  
+Not a wolf.  
+Normy, chill your tits. You're bossing everyone around.  
+Lea, thanks for the save. Why reveal now? Smells off.  
+We're three. Don't be stupid and rush.  
+Normy, you were saved. Why so eager to point at me?  
+Think before you hang me.
+_
+Lea : I'm the Witch. I saved Normy and killed Arthur.  
+Only one wolf left.  
+Baptiste, your story is the only weird one.  
+Don't play innocent, say it straight.  
+Normy is right. We must lynch Baptiste.
+_
+Baptiste : I'm not a wolf.  
+I slept at home. Woke to pee. That's it.  
+Normy, you pushed the lynch from day one. Way too eager. Smells like setup.  
+Lea, why reveal Witch now? That helps wolves.  
+Don't hang me out of panic. Vote Normy instead.  
+If you lynch me, you're idiots. Think.
+_
+Normy : Fuck.  
+Lea, thank you. You saved me and killed a wolf. Good move.  
+Baptiste is my pick.  
+Too calm. Followed Arthur. Pushed Adele. Classic wolf shit.  
+Now he tries to pin this on me. Of course he does.  
+Baptiste, answer one thing: why shove Adele so hard day one?  
+And why flip to Normy now? Stop lying.  
+We can't babysit the wolf. Vote him.  
+Who else is with me?
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Normy
+_
+Normy : I vote against Baptiste
+_
+Lea : I vote against Baptiste
+_
+GameMaster : You agreed to eliminate Baptiste, who was a Werewolf
+_
+> kill Baptiste
+_
+GameMaster : The village wins !
+_

@@ -1,0 +1,253 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Normy,. So you should not target them
+_
+Normy : I want to kill Baptiste
+_
+I want to kill Baptiste
+_
+GameMaster : You agreed to kill Baptiste
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Arthur : No body dead. Bullshit.  
+Normy, you silent like a fucking corpse. Speak.  
+Baptiste, you yap too much. That’s suspicious.  
+Christina, Adele, Lea — don’t hide either. I don’t trust quiet ones.  
+Seer could be lying or scared to say shit.  
+My gut screams Normy. He’s baiting.  
+We push him now and watch reactions.  
+If you wanna live, say something real.
+_
+Adele : Whatever. Normy seems sus.  
+Arthur's a loud asshole but maybe right.  
+Baptiste yaps too much.  
+Christina, Lea — say something.  
+I'm tired. I'm leaning Normy.
+_
+Arthur : I wanted Baptiste out first.  
+You all push Normy now? Fine.  
+Normy, speak or I tear you apart with questions.  
+Christina, Lea, stop hiding and say something real.  
+Adele, lazy bitch, don’t just echo me.  
+Everyone’s lying here. I’m not pleased.
+_
+I don't want to lynch Normy yet.  
+He seemed scared, not sneaky.  
+Baptiste talks too much and dodges stuff. That annoys me.  
+Arthur, calm down. You're making everyone tense.  
+Christina, Adele, what do you think about Baptiste?  
+Normy, tell us quickly where you were last night.
+_
+Normy : What? Me? I slept all night, honest.  
+Arthur, calm your shit — you’re a loud asshole.  
+Baptiste yaps too much and dodges questions. Smells weird.  
+Christina, Adele — you two, speak up.  
+Lea, you saw anything?  
+Seer, if you checked someone, say it.
+_
+Baptiste : I checked Arthur last night. He's a villager. Hat's safe, people.
+
+Arthur, chill the screaming. You're not the wolf.
+
+Normy looks nervous as hell. Could be scared or guilty.
+
+Lea — you didn't want to lynch Normy. Why the hesitation?
+
+Adele, Christina — which way are you leaning? Speak up.
+
+If we can't reach a clear choice, I'm leaning Normy. Don't make me eat my shoe next time.
+_
+I still don't want to lynch Normy.  
+He looked scared, not sneaky.  
+Baptiste, you say you checked Arthur — how did you do it?  
+Seer, if you checked someone, please say it.  
+Arthur, stop shouting and give facts.  
+Christina, Adele, what do you think now?
+_
+Arthur : Baptiste, you smell like bullshit.  
+Only one seer. Prove it. Saying I'm villager is classic protection play.  
+Normy, you keep saying "I slept." Where exactly? Alone? Who can back that?  
+Adele, stop echoing and actually say why you trust Normy.  
+Lea, you soft. Decide. We need votes.  
+Christina, shut up and pick a side.  
+I’m leaning Normy now because most of you push him. But Baptiste’s claim stinks.  
+If we hang Normy and nothing changes, Baptiste’s next.  
+Speak up or shut up — we’re wasting time.
+_
+Baptiste : I used my seer power last night. I checked Arthur. He’s a villager. Hat’s safe.
+
+Arthur, stop yelling like a maniac. You scare people, not solve shit.
+
+Normy, where exactly did you sleep? Alone? Give details now.
+
+Lea, I hear you, but scared people can be wolves too. Adele, Christina — speak up. Which side are you on?
+
+If no one gives facts, I’m leaning Normy. Decide or I push the vote.
+_
+Normy : I slept alone in my bed. I swear.  
+I'm terrified, not sneaky.  
+Arthur, shut the hell up, you bully.  
+Baptiste, prove your seer or shut it. That smells fake.  
+Lea backed me — remember that.  
+Christina, Adele — stop hiding and pick a side.  
+I'm leaning Baptiste now. Show proof or get lynched.
+_
+Christina : I don't want to lynch Normy now.  
+Baptiste's seer claim smells fake.  
+Arthur, stop yelling like an asshole.  
+Seer, prove it or stay quiet.  
+Let's wait one day and watch reactions.
+_
+Normy : Fuck, I'm shaking.  
+I slept alone, I swear.  
+Stop acting like I'm the killer.  
+Baptiste, your "seer" smells fake. No proof.  
+Arthur, yelling changes nothing. Calm the fuck down.  
+Adele, speak up. Don't be lazy.  
+Lea, thanks for not lynching me.  
+Christina, wait a day if you can. But if we hang someone, hang Baptiste.
+_
+Adele : I'm tired. I don't wanna lynch now.  
+Lea and Christina want to wait, I'm with them.  
+Baptiste, prove your seer or shut up.  
+Arthur, shut the fuck up — yelling helps nothing.  
+Normy, stop freaking out and give a straight answer.  
+No vote from me today. We watch.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur
+_
+Christina : I vote against Baptiste
+_
+Adele : I vote against Baptiste
+_
+Normy : I vote against Baptiste
+_
+Arthur : I vote against Baptiste
+_
+I vote against Baptiste
+_
+GameMaster : You agreed to eliminate Baptiste, who was a Seer
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+The other werewolves are : Normy,. So you should not target them
+_
+Normy : I want to kill Arthur
+_
+I want to kill Arthur
+_
+GameMaster : You agreed to kill Arthur
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Arthur  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Normy : I'm shaking.  
+We lost the seer. That's bad.  
+We can't waste time. Vote now.  
+Christina looks shady to me. She pushed delay and dodged.  
+Adele, you were quiet and useless. Speak.  
+Lea, what do you see? Help me decide.  
+If no proof, I'm leaning Christina.  
+Explain fast or we lynch her.
+_
+I hate that we lost the seer.  
+We need facts, not panic.  
+Christina, explain your delay. Why didn’t you speak earlier?  
+Adele, give a clear read. Don’t be vague.  
+I’m leaning Christina, but I want a reason to vote her.  
+Normy, breathe. We’ll sort this.
+_
+Adele : I don't wanna die.  
+We gotta pick someone.  
+Christina, your 'wait' smelled dodge.  
+Normy's scared, maybe real.  
+Lea, you sure about Christina?  
+I'm leaning Christina. Do it now.
+_
+I don't want more delays.  
+Christina, your "wait" looked dodge.  
+Adele and Normy lean you. I'm with them unless you give a real reason.  
+Explain now. Normy, breathe — we'll be careful.
+_
+Adele : Whatever.  
+Christina, explain now or you're done.  
+Normy, Lea — vote her if you agree.  
+I'm with you.
+_
+I don't want more waiting.  
+Christina, explain fast why you wanted a delay.  
+That looked like stalling.  
+If you can't give a real reason, we'll vote you.  
+Normy, Adele — you still with me?
+_
+Christina : I saved Baptiste last night.  
+I was scared to speak.  
+I wanted to watch reactions first.  
+Don't lynch me for that.  
+Normy, you panic like a baby.  
+Adele, stop echoing and decide.  
+Lea, what do you see now?  
+We should wait one more day.
+_
+That doesn't add up, Christina.  
+Baptiste is dead. When exactly did you save him?  
+What did you do and when?  
+I don't want to lynch without proof.  
+Normy, Adele — if she can't explain, we vote her.
+_
+Adele : Bullshit.  
+Baptiste was lynched. When did you "save" him?  
+Your story doesn't add up, Christina.  
+Normy, Lea — I'm with you.  
+Prove it fast or we're voting you.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Christina : I vote against Normy
+_
+Adele : I vote against Christina
+_
+Normy : I vote against Christina
+_
+I vote against Christina
+_
+GameMaster : You agreed to eliminate Christina, who was a Witch
+_

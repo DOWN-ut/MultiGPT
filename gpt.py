@@ -3,16 +3,22 @@ from colorama import Fore, Back, Style
 import random
 import math
 import time
+from openai import OpenAI
 
 max_response_tokens = 100
 
 
 keyFile = open("key.txt", "r")
-openai.api_key = keyFile.read() #open key.txt
+#openai.api_key = keyFile.read() #open key.txt
+
+client = OpenAI(
+    # This is the default and can be omitted
+    api_key=keyFile.read(),
+)
 
 model = "gpt-3.5-turbo"
 
-def gptPull(context):
+def gptPull(context,reasoningLvl="medium"):
     while True:
         try:
             if model.startswith("gpt-3") or model.startswith("gpt-4"):
@@ -22,33 +28,42 @@ def gptPull(context):
                         temperature = 0.85,
                         max_tokens=max_response_tokens
                     )
+                choices = chat.choices
+                reply = choices[0].message.content
+                context.append({"role":"assistant","content":reply})
+                return context
             else:
-                chat = openai.Completion.create(
-                        model=model, 
-                        prompt=contextToStr(context)
-                        #max_completion_tokens=max_response_tokens
-                    )
-
-            choices = chat.choices
-            reply = choices[0].message.content
-            context.append({"role":"assistant","content":reply})
-            return context
-
+                chat = client.responses.create(
+                    model=model,
+                    reasoning={"effort": reasoningLvl},
+                    input=context
+                    #max_output_tokens = max_response_tokens
+                )
+                reply = chat.output_text
+                context.append({"role":"assistant","content":reply})
+                return context
         except Exception as error:
             print(">>>>>>>>>  OPEN AI RATE LIMIT  <<<< WAITING 5 seconds",error)
             time.sleep(5)
 
     return context
 
-def gptRequest(context,request):
+def gptRequest(context,request,reasoningLvl="medium"):
     context.append(request)
-    return gptPull(context)
+    return gptPull(context,reasoningLvl)
+
+def gptComplete(context,request,reasoningLvl="medium"):
+    context.append(request)
+    result = gptPull(context,reasoningLvl)
+    result.pop(len(result)-2)
+    result[len(result)-1]["content"] = filterAnwser(result[len(result)-1]["content"])
+    return result
 
 def displayContext(context):
     color = Fore.CYAN
     if context["role"] == "user":
         color = Fore.YELLOW
-    elif context["role"] == "system":
+    elif context["role"] == "system" or context["role"] == "developer":
         color = Fore.GREEN
     print(color + "> " + context["content"])
 
@@ -64,11 +79,11 @@ def displayContextOf(agent,context):
     print("CONTEXT OF " + agent.name)
     displayContexts(context,1)
 
-def makeRequest(text):
-    return {"role":"user", "content":text}
+def makeRequest(text, role="user"):
+    return {"role": role, "content": text}
 
 def makePrePrompt(text):
-    return {"role":"system", "content":text}
+    return {"role":"developer", "content":text}
 
 def contextToStr(context):
      text = ""
@@ -77,7 +92,7 @@ def contextToStr(context):
      return text
 
 class GptAgent:
-    def __init__(self, name, color,prepromtPath,additionnal=""):
+    def __init__(self, name, color,prepromtPath,additionnal="", reasoningLvl="medium"):
         self.name = name
         self.color = color
         if isinstance(prepromtPath,list):
@@ -89,25 +104,27 @@ class GptAgent:
             self.prepromt = makePrePrompt(open("prompts/"+prepromtPath, "r").read() + "\n" + additionnal)
         self.context = [self.prepromt]
         self.lastTalked = 1
-        
+        self.reasoningLvl = reasoningLvl
+
     def tellFromFile(self,file):
         return self.tell(open("prompts/"+file, "r").read())
 
     def tell(self,request):
-        self.context = gptRequest(self.context,makeRequest(request))
+        self.context = gptRequest(self.context,makeRequest(request),self.reasoningLvl)
         self.lastTalked = 1
         return self.context[len(self.context)-1]["content"]
 
     def talk(self):
-        self.context = gptPull(self.context)
+        self.context = gptComplete(self.context,makeRequest(self.name + " : ")) #gptRequest(self.context,makeRequest(self.name + " : ")) #gptPull(self.context)
         self.lastTalked = 1
+        #self.context[len(self.context)-1]["content"] = self.name + " : " + self.context[len(self.context)-1]["content"]
         return self.context[len(self.context)-1]["content"]
 
-    def addContext(self,context):
+    def addContext(self,context,role="user"):
         self.context.append(makeRequest(context))
     
-    def addContextFromFile(self,file):
-        return self.addContext(open("prompts/"+file, "r").read())
+    def addContextFromFile(self,file,role="user"):
+        return self.addContext(open("prompts/"+file, "r").read(),role)
 
     def removeLastContext(self):
         self.context.pop()
@@ -132,14 +149,16 @@ def filterAnwser(text):
     else:
         return text
 
-def recoverInterlocutors(answer,agents):
+def recoverInterlocutors(answer,agents, lastTalked = ""):
     res = []
     start = 0
-    while start < len(answer) and answer[start] != ':':
-        start += 1
+    #while start < len(answer) and answer[start] != ':':
+    #    start += 1
 
     for i in range(len(agents)):
         pos = start
+        if agents[i].name == lastTalked:
+            continue
         while True:#for pos in range(start,len(answer)):
             foundAt = answer.find(agents[i].name,pos)
             if foundAt != -1:
@@ -149,6 +168,7 @@ def recoverInterlocutors(answer,agents):
             else:
                 break
 
+    #print("Recovered interlocutors : ", res)
     return res
 
 def displayInterlocutors(ids,agents):
@@ -189,40 +209,60 @@ def processInterlocutors(ids,allIds,coherence,equality,agents):
         lis.append(id)
     return lis
 
-def conversationTalk(agentId,agents,text):
+def gptNextInterlocutor(handlerAgent,agents):
+    result = handlerAgent.tell("Who should talk next ?")
+    #print("   > Handler suggests : " + result)
+    result = recoverInterlocutors(result,agents)
+    #print("   > Processed interlocutors : ", result)
+    if(len(result) <= 0):
+        print("   > No interlocutor found, choosing random one.")
+        return random.choice([i for i in range(len(agents))])
+    else:
+        return result[0][0]
+
+def conversationTalk(agentId,agents,text,handlerAgent = None):
     p = agents[agentId].name + " : " + text
     for a in range(0,len(agents)):
         if a != agentId :
             agents[a].addContext(p)
+    if(handlerAgent != None):
+        handlerAgent.addContext(p)
     print(agents[agentId].color + p)
     print()
     return
 
-def conversation(coherence,equality,lenght,agents,initPrompt,delay=1):
+def conversation(coherence,equality,lenght,agents,initPrompt,delay=1,handlerAgent = None):
     answers = []
     ids = [i for i in range(len(agents))]
 
+    if(handlerAgent != None):
+        handlerAgent.addContext("The participants are :" + ", ".join([agent.name for agent in agents]) + ".")
+
     agentId = random.choice(ids)
     answer = agents[agentId].tell(initPrompt)
-    conversationTalk(agentId,agents,answer)
+    conversationTalk(agentId,agents,answer,handlerAgent)
 
     for i in range(lenght-1):
         time.sleep(delay)
-        #print("      -  Convo turn " + str(i))
-        interlocutors = recoverInterlocutors(answer,agents) 
+        if(handlerAgent == None):
+            print("      -  Convo turn " + str(i))
+            interlocutors = recoverInterlocutors(answer,agents,agents[agentId].name) 
 
-        interlocutors = processInterlocutors(interlocutors,ids,coherence,equality,agents)
+            interlocutors = processInterlocutors(interlocutors,ids,coherence,equality,agents)
 
-        while interlocutors.count(agentId) > 0:
-            interlocutors.remove(agentId)
+            while interlocutors.count(agentId) > 0:
+                interlocutors.remove(agentId)
 
-        if len(interlocutors) <= 0:
-            interlocutors.expend(ids)
+            if len(interlocutors) <= 0:
+                interlocutors.expend(ids)
 
-        agentId = random.choice(interlocutors)
+            agentId = random.choice(ids) #random.choice(interlocutors)
+        else:
+            agentId = gptNextInterlocutor(handlerAgent, agents) 
 
-        answer = agents[agentId].tell("*"+agents[agentId].name + " : ");#talk()
-        conversationTalk(agentId,agents,answer)
+        answer = agents[agentId].talk()#tell(agents[agentId].name + " : ");#talk()
+        conversationTalk(agentId,agents,answer,handlerAgent)
+        #displayContextOf(agents[agentId],agents[agentId].context)
 
         for ai in range(len(agents)):
             if ai != agentId:
@@ -320,24 +360,27 @@ def test():
 
     print(Fore.WHITE)
 
-def conversationFive():
-    bob = GptAgent("Bob",Fore.YELLOW,"agent_conversation.txt","Your name is Bob.")
-    alice = GptAgent("Alice",Fore.GREEN,"agent_conversation.txt","Your name is Alice.")
-    adele = GptAgent("Adele",Fore.RED,"agent_conversation.txt","Your name is Adele.")
-    arthur = GptAgent("Arthur",Fore.CYAN,"agent_conversation.txt","Your name is Arthur.")
+def conversationSix(handlerAgent):
+    arthur = GptAgent("Arthur",Fore.CYAN,["agent_conversation.txt","arthur_perso.txt"],"Your name is Arthur.")
+    adele = GptAgent("Adele",Fore.BLUE,["agent_conversation.txt","adele_perso.txt"],"Your name is Adele.")
+    baptiste = GptAgent("Baptiste",Fore.RED,["agent_conversation.txt","baptiste_perso.txt"],"Your name is Baptiste.")
+    christina = GptAgent("Christina",Fore.YELLOW,["agent_conversation.txt","christina_perso.txt"],"Your name is Christina.")
+    normy = GptAgent("Normy",Fore.MAGENTA,["agent_conversation.txt","normy_perso.txt"],"Your name is Normy.")
+    lea = GptAgent("Lea",Fore.GREEN,["agent_conversation.txt","lea_perso.txt"],"Your name is Lea.")
 
-    agents = [bob,alice,adele,arthur]
+    agents = [arthur,adele,baptiste,christina,normy,lea]
 
-    conversation(3,10,5,agents,"Say hi and introduce yourself",2)
+    conversation(3,5,10,agents,"Say hi and introduce yourself",2,handlerAgent)
 
 #print(Fore.WHITE)
 #print("----------------------------")
 
 #conversation_requests()
 
-#model = "gpt-5-mini-2025-08-07"
+model = "gpt-5-mini-2025-08-07"
 
-#conversationFive()
+#handlerAgent = GptAgent("Handler",Fore.WHITE,"agent_handler.txt","","low")
+#conversationSix(handlerAgent)
 
 
 

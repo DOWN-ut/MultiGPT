@@ -1,4 +1,5 @@
-*Please only write : "I vote against [name]" in order to choose the player named 'name' as a target.
+*Please only write : "I want to kill [name]" in order to choose the player named 'name' as a target.
 Please do not vote for an other Werewolf player.
 You will be asked to choose multiple times : please write your choice everytime, it can be the same.
 Please make your own choice at first, but then, please take account of the other werewolves' opinions, and adjust yours in order reach an agreement.
+This is the night attack of the werewolves. The rest of the village is asleep and cant hear any of this.

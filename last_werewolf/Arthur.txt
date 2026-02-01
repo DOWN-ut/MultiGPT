@@ -1,0 +1,262 @@
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 1th day.
+_
+GameMaster : No body died last night !
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Lea : Good morning everyone.  
+Weird night. No one died.  
+Maybe the Witch saved someone.  
+Baptiste, did you feel anything odd?  
+Arthur, Normy, Adele, what about you?  
+I have a bad feeling about Baptiste.  
+I think we should vote against Baptiste.
+_
+Baptiste : Whoa, chill.  
+I slept fine. No weird noises.  
+Lea, why the sudden hate? Don't be dramatic.  
+Adele, Arthur, Normy, Christina — what do you think?  
+If you want a reason, give one. I'm not getting lynched for vibes.
+_
+Adele : I checked Normy. He's the Witch.  
+So he's not a wolf. Don't lynch Baptiste.  
+Lea, stop the drama.  
+Arthur, Christina, Normy — speak up. I'm not dying for this.
+_
+Normy : Wow Adele checked me? Okay I'm the Witch.  
+Don't lynch Baptiste.  
+Lea, stop the drama and chill, you're full of shit.  
+Arthur, Christina, what do you say?  
+If nobody has proof, we should lynch the loud pusher — Lea.  
+Adele, you ok with that?
+_
+Lea : Hey, chill.  
+Don’t lynch me for vibes.  
+Adele, how did you check Normy? Say exactly what you saw.  
+Normy, if you’re the Witch, did you use a potion last night? Tell us.  
+Christina, Arthur, Baptiste — what do you think?  
+We need proof before burning someone.
+_
+Adele : I checked Normy last night.  
+I saw Witch. That's exactly it.  
+Normy, did you use a potion? Say it.  
+Lea, cut the bullshit.  
+I won't lynch Baptiste.  
+If nobody has proof, I'm leaning to lynch Lea.  
+Arthur, Christina, Baptiste — speak up.
+_
+Christina : I slept. Nothing happened to me.  
+No proof yet. Don't lynch on vibes.  
+Adele, how sure are you about Normy?  
+Normy, did you save someone last night?  
+Arthur, Baptiste, say something.
+_
+No way I'm trusting this circus.  
+Adele, you checked Normy first? Sounds staged. Prove it.  
+Normy, claiming Witch on command is sus. Who just says that?  
+Lea, stop acting holier than everyone. You're pushing hard. Why?  
+Baptiste, neat and calm? That makes me nervous. Say something real.  
+Christina, you asleep again? Speak up.  
+I'm leaning to lynch Adele. She smells like a fake Seer. Convince me fast.
+_
+Baptiste : Alright, quick and clear.
+
+Adele, tell us the exact words you saw. Be precise. Was it “Witch” or something else?
+
+Normy, did you use a potion last night? Save someone or not? Say yes/no.
+
+Lea, you accused me with zero proof. That’s weak. Stop the drama or give facts.
+
+Arthur, why do you think Adele is staged? One clear reason.
+
+Christina, what do you say?
+
+I'm leaning to lynch Lea now. She pushed first and has no proof. If Adele gives exact wording, I’ll change my vote. Oh, and I dreamt of pizza, not murder.
+_
+Adele : I saw "Witch" exactly.  
+I checked Normy first thing.  
+Normy, did you use a potion? Yes or no.  
+Lea, stop the bullshit.  
+Arthur, accusing me with no proof makes you look wolfy.  
+Baptiste, thanks for not lynching me.  
+Christina, speak.  
+I'm tired. If no proof, vote Lea.
+_
+Normy : Yes. I used a potion. I saved Baptiste last night.  
+Adele saw right. Don’t lynch me.  
+Lea, you’re full of shit. Stop pushing with no proof.  
+Arthur, your paranoid circus ain’t helping.  
+Baptiste, Christina — let’s vote Lea. Adele, you in?
+_
+Lea : Okay, everyone calm down.  
+Thanks Adele and Normy, that info matters.  
+If Normy saved Baptiste, someone targeted him last night.  
+That’s important. We should focus on that.  
+I asked questions, not trying to burn people.  
+Arthur, you keep throwing wild accusations. Why?  
+Christina, Baptiste, what do you think now?  
+We can't lynch me on vibes. Give real proof.
+_
+Christina : I slept. Nothing.  
+Adele, when exactly did you check Normy? Last night or before dawn?  
+Normy, what time did you use the potion? Be precise.  
+Don't lynch on vibes. I won't vote Lea without proof.  
+Arthur, calm down.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Lea
+_
+Christina : I vote against Adele
+_
+Adele : I vote against Lea
+_
+Normy : I vote against Lea
+_
+I vote against Adele
+_
+Lea : I vote against Adele
+_
+Baptiste : I vote against Lea
+_
+Christina : I vote against Adele
+_
+Adele : I vote against Lea
+_
+Normy : I vote against Lea
+_
+I vote against Lea
+_
+Lea : I vote against Adele
+_
+GameMaster : You agreed to eliminate Lea, who was a Werewolf
+_
+GameMaster : The city falls asleep !
+_
+GameMaster : The Seer wakes up.
+_
+GameMaster : Seer, please tell me the name of the player you would like to know the role
+_
+GameMaster : The Seer fall(s) back asleep.
+_
+GameMaster : The Werewolf wakes up.
+_
+GameMaster : Werewolves, please choose and agree on the name of the player you want to kill tonight
+_
+GameMaster : The Werewolf fall(s) back asleep.
+_
+GameMaster : The Witch wakes up.
+_
+GameMaster : The Witch fall(s) back asleep.
+_
+GameMaster : The city wakes up ! This is the 2th day.
+_
+GameMaster : 1 players died last night :
+_
+GameMaster : Adele  
+_
+GameMaster : Now is time to debate before voting for someone to kill.
+_
+Christina : I think we lynch Normy.  
+He used a potion and saved Baptiste.  
+That means someone targeted Baptiste.  
+If Normy lives he can keep saving wolves.  
+We should remove that threat now.  
+Baptiste, Arthur, what do you say?
+_
+Baptiste : Nope. We don't lynch Normy.  
+He saved me last night. Adele checked him. That matches.  
+Killing our healer is stupid. We need the wolf, not protectors.  
+Arthur, you were loud and weird. Explain your votes now.  
+Christina, why push Normy? Sounds off. Don't be an idiot.  
+I'm leaning to vote Arthur. Convince me otherwise.
+_
+Nope. I don't buy this.  
+Baptiste, you act too calm. That's wolf shit.  
+Normy, that save smells staged. Who the hell saves a wolf?  
+Christina, stop parroting neat plans. You're not clever.  
+Lea and Adele are dead. Things aren't adding up.  
+Baptiste, explain exactly why you got targeted. Now.  
+Normy, say when you used the potion. Be precise.  
+I'm pushing to lynch Baptiste.
+_
+Normy : I used the healing potion the first night. Right after the wolves attacked. I saved Baptiste. I have no more potions.
+
+Adele checked me and saw Witch. She said so. She wouldn't lie.
+
+Christina, killing me now helps the wolves. Stop being stupid.
+
+Arthur, you're loud and chaotic. You throw accusations with no proof. That’s sus.
+
+Baptiste, you calm too hard. Explain why you were targeted exactly.
+
+I'm leaning to lynch Arthur. He's the biggest risk. What do you all think?
+_
+Baptiste : Alright, quick.
+
+Normy saved me night one. Adele checked Normy and said Witch. That lines up.
+
+Arthur keeps yelling and has no proof. His clown act smells wolfy.
+
+I vote against Arthur. Who’s with me?
+_
+Christina : I change.  
+Vote Arthur.  
+He’s loud and has no proof.  
+He pushed Adele hard. Adele is dead now.  
+Normy, you used the potion night one? Be exact.  
+Baptiste, you ok with this?
+_
+Normy : Yes. I used the potion the first night. Right after the wolves attacked Baptiste, before dawn. No more potions.
+
+Adele checked me and saw "Witch" exactly.
+
+We need to kill a wolf now. Arthur is loud and has no proof. He’s full of shit. Baptiste, Christina — let’s finish him.
+_
+No way you lynch me.  
+You dumbasses think killing a villager helps you? Think again.  
+Adele got killed. That smells like the Seer was silenced. Who benefits? Baptiste and Normy.  
+Normy, you saved Baptiste "before dawn"? Who told you to? Sounds staged.  
+Baptiste, calm as hell. That's wolf behavior. Explain exactly why you were targeted. Now.  
+Christina, stop following the herd like an idiot. Make a thought.  
+I'm not your scapegoat. Vote Baptiste or Normy.  
+You want blood? Take a real suspect, not me.
+_
+Baptiste : I was targeted. I slept like a rock. No role, just unlucky.  
+Normy saved me that night. Adele checked Normy and saw “Witch.” That fits.  
+Arthur, you yelling and throwing shit is more suspicious than me. Calm down, you loud asshole.  
+Christina, Normy — you both now push Arthur. Are we sure? Say it.  
+If nobody has better proof, we lynch Arthur. Simple.
+_
+GameMaster : Now is time to vote ! Designate the player you want to eliminate.
+_
+Baptiste : I vote against Arthur
+_
+Christina : I vote against Arthur
+_
+Normy : I vote against Arthur
+_
+I vote against Baptiste
+_
+GameMaster : You agreed to eliminate Arthur, who was a Villager
+_
+You were killed by Everyone
+_
